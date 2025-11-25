@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수면 내시경 폐색 분석 보고서</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        .metadata {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .metadata-item {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .metadata-label {
+            font-weight: bold;
+            color: #2c3e50;
+            display: inline-block;
+            width: 200px;
+        }
+        .chart {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .chart img {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* 기준 이미지 섹션 */
+        .reference-section {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 3px solid #2196f3;
+        }
+        .reference-section h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+        .reference-image {
+            max-width: 600px;
+            border: 3px solid #2196f3;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        /* 심각도 기준표 */
+        .severity-guide {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #ffc107;
+        }
+        .severity-guide h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+        .severity-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .severity-table th, .severity-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .severity-table th {
+            background-color: #ffc107;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+            cursor: pointer;
+        }
+        .severity-mild {
+            background-color: #fff9c4;
+        }
+        .severity-moderate {
+            background-color: #ffe0b2;
+        }
+        .severity-severe {
+            background-color: #ffcdd2;
+        }
+        .severity-critical {
+            background-color: #ef5350;
+            color: white;
+        }
+        .summary {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 5px solid #2196f3;
+        }
+        .summary-item {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        
+        /* 모달 스타일 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            overflow: auto;
+        }
+        .modal-content {
+            margin: 2% auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #ff4444;
+        }
+        .modal-caption {
+            text-align: center;
+            color: #ccc;
+            padding: 10px;
+            font-size: 20px;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .image-grid img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            text-align: center;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔬 수면 내시경 기도 폐색 분석 보고서</h1>
+        
+        <div class="metadata">
+            <h2>📋 비디오 정보</h2>
+            <div class="metadata-item">
+                <span class="metadata-label">파일명:</span>
+                <span>uploads\30051661_80_OTEclip.mp4</span>
+            </div>
+            <div class="metadata-item">
+                <span class="metadata-label">총 프레임 수:</span>
+                <span>360개</span>
+            </div>
+            <div class="metadata-item">
+                <span class="metadata-label">영상 길이:</span>
+                <span>12.00초</span>
+            </div>
+            <div class="metadata-item">
+                <span class="metadata-label">FPS:</span>
+                <span>30.00</span>
+            </div>
+            <div class="metadata-item">
+                <span class="metadata-label">분석 프레임 수:</span>
+                <span>18개</span>
+            </div>
+            <div class="metadata-item">
+                <span class="metadata-label">폐색 기준:</span>
+                <span>기준 대비 30.0% 감소</span>
+            </div>
+        </div>
+        
+        <div class="severity-guide">
+            <h3>📊 폐색 심각도 분류 기준</h3>
+            <table class="severity-table">
+                <thead>
+                    <tr>
+                        <th>심각도</th>
+                        <th>면적 감소율</th>
+                        <th>임상적 의미</th>
+                        <th>권장 조치</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="severity-mild">
+                        <td><strong>Mild (경미)</strong></td>
+                        <td>30% - 50%</td>
+                        <td>경미한 기도 협착</td>
+                        <td>경과 관찰</td>
+                    </tr>
+                    <tr class="severity-moderate">
+                        <td><strong>Moderate (중등도)</strong></td>
+                        <td>50% - 70%</td>
+                        <td>중등도 기도 폐색</td>
+                        <td>치료 고려</td>
+                    </tr>
+                    <tr class="severity-severe">
+                        <td><strong>Severe (심각)</strong></td>
+                        <td>70% - 90%</td>
+                        <td>심각한 기도 폐색</td>
+                        <td>적극적 치료 권장</td>
+                    </tr>
+                    <tr class="severity-critical">
+                        <td><strong>Critical (위중)</strong></td>
+                        <td>90% 이상</td>
+                        <td>거의 완전 폐색</td>
+                        <td>즉시 치료 필요</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+            <div class="reference-section">
+                <h3>📸 기준 이미지 (최대 기도 개방 상태)</h3>
+                <p><strong>프레임 번호:</strong> 240</p>
+                <p><strong>ROI 면적:</strong> 326826 px²</p>
+                <p style="color: #666; margin-top: 10px;">
+                    💡 노란색 영역이 검출된 기도 개방 부분입니다. 이 면적을 기준으로 폐색 정도를 판단합니다.
+                </p>
+                <div style="text-align: center; margin-top: 15px;">
+                    <img src="overlays/reference_frame.jpg" class="reference-image" alt="기준 이미지">
+                </div>
+            </div>
+            
+        <div class="summary">
+            <h2>📊 분석 요약</h2>
+            <div class="summary-item">
+                ✅ <strong>최대 기도 개방 면적:</strong> 326826 px² 
+                (프레임 240)
+            </div>
+            <div class="summary-item">
+                ⚠️ <strong>폐색 이벤트 수:</strong> 14개
+            </div>
+        </div>
+        
+        <div class="chart">
+            <h2>📈 기도 개방 면적 변화</h2>
+            <img src="area_chart.png" alt="Area Chart">
+        </div>
+        
+        <div class="chart">
+            <h2>⏱️ 폐색 이벤트 타임라인</h2>
+            <img src="event_timeline.png" alt="Timeline">
+        </div>
+            
+        <h2>🚨 폐색 이벤트 상세 (클릭하여 이미지 확인)</h2>
+        <p style="color: #666; margin-bottom: 20px;">
+            💡 각 행을 클릭하면 해당 프레임의 상세 이미지를 확인할 수 있습니다.
+        </p>
+        
+        <table id="eventTable">
+            <thead>
+                <tr>
+                    <th>시간</th>
+                    <th>프레임 번호</th>
+                    <th>ROI 면적 (px²)</th>
+                    <th>감소율 (%)</th>
+                    <th>심각도</th>
+                    <th>이미지</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr class="severity-critical" onclick="showEventImages(0)" style="cursor: pointer;">
+                    <td>0:00:00</td>
+                    <td>0</td>
+                    <td>9562</td>
+                    <td>97.1%</td>
+                    <td><strong>Critical</strong></td>
+                    <td>🖼️ 클릭하여 보기</td>
+                </tr>
+                
+                <tr class="severity-critical" onclick="showEventImages(1)" style="cursor: pointer;">
+                    <td>0:00:00</td>
+                    <td>15</td>
+                    <td>4081</td>
+                    <td>98.8%</td>
+                    <td><strong>Critical</strong></td>
+                    <td>🖼️ 클릭하여 보기</td>
+                </tr>
+                
+                <tr class="severity-critical" onclick="showEventImages(2)" style="cursor: pointer;">
+                    <td>0:00:01</td>
+                    <td>30</td>
+                    <td>6199</td>
+                    <td>98.1%</td>
+                    <td><strong>Critical</strong></td>
+                    <td>🖼️ 클릭하여 보기</td>
+                </tr>
+                
+                <tr class="severity-critical" onclick="showEventImages(3)" style="cursor: pointer;">
+                    <td>0:00:01</td>
+                    <td>45</td>
+                    <td>5417</td>
+                    <td>98.3%</td>
+                    <td><strong>Critical</strong></td>
+                    <td>🖼️ 클릭하여 보기</td>
+                </tr>
+                
+                <tr class="severity-critical" onclick="showEventImages(4)" style="cursor: pointer;">
+                    <td>0:00:02</td>
+                    <td>60</td>
+                    <td>31386</td>
+                    <td>90.4%</td>
+                    <td><strong>Critical</strong></td>
+                    <td>🖼️ 클릭하여 보기</td>
+                </tr>
+                
+                <tr class="severity-severe" onclick="showEventImages(5)" style="cursor: pointer;">
+                    <td>0:00:02</td>
+                    <td>75</td>
+                    <td>151718</td>
+                    <td>53.6%</td>
+                    <td><strong>Severe</strong></td>
+                    <td>🖼️ 클릭하여 보기</td>
+                </tr>
+                
+                <tr class="severity-critical" onclick="showEventImages(6)" style="cursor: pointer;">
+                    <td>0:00:03</td>
+                    <td>90</td>
+                    <td>72648</td>
+                    <td>77.8%</td>
+                    <td><strong>Critical</strong></td>
+                    <td>🖼️ 클릭하여 보기</td>
+                </tr>
+                
+                <tr class="severity-moderate" onclick="showEventImages(7)" style="cursor: pointer;">
+                    <td>0:00:03</td>
+                    <td>105</td>
+                    <td>189785</td>
+                    <td>41.9%</td>
+                    <td><strong>Moderate</strong></td>
+                    <td>🖼️ 클릭하여 보기</td>
+                </tr>
+                
+                <tr class="severity-critical" onclick="showEventImages(8)" style="cursor: pointer;">
+                    <td>0:00:04</td>
+                    <td>120</td>
+                    <td>4313</td>
+                    <td>98.7%</td>
+                    <td><strong>Critical</strong></td>
+                    <td>🖼️ 클릭하여 보기</td>
+                </tr>
+                
+                <tr class="severity-moderate" onclick="showEventImages(9)" style="cursor: pointer;">
+                    <td>0:00:04</td>
+                    <td>135</td>
+                    <td>178711</td>
+                    <td>45.3%</td>
+                    <td><strong>Moderate</strong></td>
+                    <td>🖼️ 클릭하여 보기</td>
+                </tr>
+                
+                <tr class="severity-critical" onclick="showEventImages(10)" style="cursor: pointer;">
+                    <td>0:00:06</td>
+                    <td>180</td>
+                    <td>75752</td>
+                    <td>76.8%</td>
+                    <td><strong>Critical</strong></td>
+                    <td>🖼️ 클릭하여 보기</td>
+                </tr>
+                
+                <tr class="severity-critical" onclick="showEventImages(11)" style="cursor: pointer;">
+                    <td>0:00:06</td>
+                    <td>195</td>
+                    <td>86666</td>
+                    <td>73.5%</td>
+                    <td><strong>Critical</strong></td>
+                    <td>🖼️ 클릭하여 보기</td>
+                </tr>
+                
+                <tr class="severity-critical" onclick="showEventImages(12)" style="cursor: pointer;">
+                    <td>0:00:07</td>
+                    <td>210</td>
+                    <td>9592</td>
+                    <td>97.1%</td>
+                    <td><strong>Critical</strong></td>
+                    <td>🖼️ 클릭하여 보기</td>
+                </tr>
+                
+                <tr class="severity-critical" onclick="showEventImages(13)" style="cursor: pointer;">
+                    <td>0:00:08</td>
+                    <td>255</td>
+                    <td>423</td>
+                    <td>99.9%</td>
+                    <td><strong>Critical</strong></td>
+                    <td>🖼️ 클릭하여 보기</td>
+                </tr>
+                
+            </tbody>
+        </table>
+            
+        <!-- 이미지 모달 -->
+        <div id="imageModal" class="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <div class="modal-caption" id="modalCaption"></div>
+            <div class="image-comparison">
+                <div class="comparison-item">
+                    <h4>원본 프레임</h4>
+                    <img class="modal-content" id="modalImageOriginal">
+                </div>
+                <div class="comparison-item">
+                    <h4>Overlay (ROI 표시)</h4>
+                    <img class="modal-content" id="modalImageOverlay">
+                </div>
+            </div>
+        </div>
+        
+        <script>
+        // 이벤트 데이터
+        const events = [{"overlay_path": "outputs\\30051661_80_OTEclip\\overlays\\overlay_000000.jpg", "mask_path": "outputs\\30051661_80_OTEclip\\masks\\mask_000000.png", "crop_path": "outputs\\30051661_80_OTEclip\\crops\\roi_crop_000000.jpg", "frame_path": "outputs\\30051661_80_OTEclip\\frames\\frame_000000.jpg", "time_str": "0:00:00", "severity": "Critical", "reduction": "97.1%"}, {"overlay_path": "outputs\\30051661_80_OTEclip\\overlays\\overlay_000001.jpg", "mask_path": "outputs\\30051661_80_OTEclip\\masks\\mask_000001.png", "crop_path": "outputs\\30051661_80_OTEclip\\crops\\roi_crop_000001.jpg", "frame_path": "outputs\\30051661_80_OTEclip\\frames\\frame_000001.jpg", "time_str": "0:00:00", "severity": "Critical", "reduction": "98.8%"}, {"overlay_path": "outputs\\30051661_80_OTEclip\\overlays\\overlay_000002.jpg", "mask_path": "outputs\\30051661_80_OTEclip\\masks\\mask_000002.png", "crop_path": "outputs\\30051661_80_OTEclip\\crops\\roi_crop_000002.jpg", "frame_path": "outputs\\30051661_80_OTEclip\\frames\\frame_000002.jpg", "time_str": "0:00:01", "severity": "Critical", "reduction": "98.1%"}, {"overlay_path": "outputs\\30051661_80_OTEclip\\overlays\\overlay_000003.jpg", "mask_path": "outputs\\30051661_80_OTEclip\\masks\\mask_000003.png", "crop_path": "outputs\\30051661_80_OTEclip\\crops\\roi_crop_000003.jpg", "frame_path": "outputs\\30051661_80_OTEclip\\frames\\frame_000003.jpg", "time_str": "0:00:01", "severity": "Critical", "reduction": "98.3%"}, {"overlay_path": "outputs\\30051661_80_OTEclip\\overlays\\overlay_000004.jpg", "mask_path": "outputs\\30051661_80_OTEclip\\masks\\mask_000004.png", "crop_path": "outputs\\30051661_80_OTEclip\\crops\\roi_crop_000004.jpg", "frame_path": "outputs\\30051661_80_OTEclip\\frames\\frame_000004.jpg", "time_str": "0:00:02", "severity": "Critical", "reduction": "90.4%"}, {"overlay_path": "outputs\\30051661_80_OTEclip\\overlays\\overlay_000005.jpg", "mask_path": "outputs\\30051661_80_OTEclip\\masks\\mask_000005.png", "crop_path": "outputs\\30051661_80_OTEclip\\crops\\roi_crop_000005.jpg", "frame_path": "outputs\\30051661_80_OTEclip\\frames\\frame_000005.jpg", "time_str": "0:00:02", "severity": "Severe", "reduction": "53.6%"}, {"overlay_path": "outputs\\30051661_80_OTEclip\\overlays\\overlay_000006.jpg", "mask_path": "outputs\\30051661_80_OTEclip\\masks\\mask_000006.png", "crop_path": "outputs\\30051661_80_OTEclip\\crops\\roi_crop_000006.jpg", "frame_path": "outputs\\30051661_80_OTEclip\\frames\\frame_000006.jpg", "time_str": "0:00:03", "severity": "Critical", "reduction": "77.8%"}, {"overlay_path": "outputs\\30051661_80_OTEclip\\overlays\\overlay_000007.jpg", "mask_path": "outputs\\30051661_80_OTEclip\\masks\\mask_000007.png", "crop_path": "outputs\\30051661_80_OTEclip\\crops\\roi_crop_000007.jpg", "frame_path": "outputs\\30051661_80_OTEclip\\frames\\frame_000007.jpg", "time_str": "0:00:03", "severity": "Moderate", "reduction": "41.9%"}, {"overlay_path": "outputs\\30051661_80_OTEclip\\overlays\\overlay_000008.jpg", "mask_path": "outputs\\30051661_80_OTEclip\\masks\\mask_000008.png", "crop_path": "outputs\\30051661_80_OTEclip\\crops\\roi_crop_000008.jpg", "frame_path": "outputs\\30051661_80_OTEclip\\frames\\frame_000008.jpg", "time_str": "0:00:04", "severity": "Critical", "reduction": "98.7%"}, {"overlay_path": "outputs\\30051661_80_OTEclip\\overlays\\overlay_000009.jpg", "mask_path": "outputs\\30051661_80_OTEclip\\masks\\mask_000009.png", "crop_path": "outputs\\30051661_80_OTEclip\\crops\\roi_crop_000009.jpg", "frame_path": "outputs\\30051661_80_OTEclip\\frames\\frame_000009.jpg", "time_str": "0:00:04", "severity": "Moderate", "reduction": "45.3%"}, {"overlay_path": "outputs\\30051661_80_OTEclip\\overlays\\overlay_000012.jpg", "mask_path": "outputs\\30051661_80_OTEclip\\masks\\mask_000012.png", "crop_path": "outputs\\30051661_80_OTEclip\\crops\\roi_crop_000012.jpg", "frame_path": "outputs\\30051661_80_OTEclip\\frames\\frame_000012.jpg", "time_str": "0:00:06", "severity": "Critical", "reduction": "76.8%"}, {"overlay_path": "outputs\\30051661_80_OTEclip\\overlays\\overlay_000013.jpg", "mask_path": "outputs\\30051661_80_OTEclip\\masks\\mask_000013.png", "crop_path": "outputs\\30051661_80_OTEclip\\crops\\roi_crop_000013.jpg", "frame_path": "outputs\\30051661_80_OTEclip\\frames\\frame_000013.jpg", "time_str": "0:00:06", "severity": "Critical", "reduction": "73.5%"}, {"overlay_path": "outputs\\30051661_80_OTEclip\\overlays\\overlay_000014.jpg", "mask_path": "outputs\\30051661_80_OTEclip\\masks\\mask_000014.png", "crop_path": "outputs\\30051661_80_OTEclip\\crops\\roi_crop_000014.jpg", "frame_path": "outputs\\30051661_80_OTEclip\\frames\\frame_000014.jpg", "time_str": "0:00:07", "severity": "Critical", "reduction": "97.1%"}, {"overlay_path": "outputs\\30051661_80_OTEclip\\overlays\\overlay_000017.jpg", "mask_path": "outputs\\30051661_80_OTEclip\\masks\\mask_000017.png", "crop_path": "outputs\\30051661_80_OTEclip\\crops\\roi_crop_000017.jpg", "frame_path": "outputs\\30051661_80_OTEclip\\frames\\frame_000017.jpg", "time_str": "0:00:08", "severity": "Critical", "reduction": "99.9%"}];
+        
+        function showEventImages(index) {
+            const event = events[index];
+            if (!event.overlay_path) return;
+            
+            const modal = document.getElementById('imageModal');
+            const modalImgOriginal = document.getElementById('modalImageOriginal');
+            const modalImgOverlay = document.getElementById('modalImageOverlay');
+            const caption = document.getElementById('modalCaption');
+            
+            // 파일명 추출
+            const frameFilename = event.frame_path.split('/').pop().split('\\').pop();
+            const overlayFilename = event.overlay_path.split('/').pop().split('\\').pop();
+            
+            modal.style.display = 'block';
+            modalImgOriginal.src = 'frames/' + frameFilename;
+            modalImgOverlay.src = 'overlays/' + overlayFilename;
+            caption.innerHTML = `
+                <strong>${event.time_str}</strong> | 
+                심각도: <strong>${event.severity}</strong> | 
+                감소율: <strong>${event.reduction}</strong>
+            `;
+        }
+        
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+        
+        // ESC 키로 모달 닫기
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+        </script>
+        
+        <div class="footer">
+            <p>생성 시간: 2025-11-05 12:01:38</p>
+            <p>Airway Occlusion Analysis System v2.0</p>
+            <p>의료진 판독 보조용 - 최종 진단은 전문의의 판단을 따르시기 바랍니다.</p>
+        </div>
+    </div>
+</body>
+</html>
+        

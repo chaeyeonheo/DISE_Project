@@ -1,0 +1,151 @@
+OTE/Velum/None 분류 프로젝트 - 파일 구조
+
+============================================================
+📦 핵심 파일 (Core Files)
+============================================================
+
+[데이터 전처리 - Data Preprocessing]
+  ⭐ preprocess_with_analyzer.py    - video_analyzer.py 활용 (추천)
+  ⭐ preprocess_videos_robust.py    - 6가지 지표 종합 분석
+     preprocess_videos_smart.py     - 자동 검사 구간 감지
+     preprocess_videos_improved.py  - 개선된 None 전략
+     preprocess_videos.py           - 기본 전처리
+
+[모델 & 학습 - Model & Training]
+  dataset.py                         - PyTorch Dataset & DataLoader
+  model.py                           - 모델 정의 (ResNet, EfficientNet)
+  train.py                           - 학습 스크립트
+  inference.py                       - 추론 스크립트
+
+[모델 공유 - Model Sharing]
+  download_model.py                  - 모델 다운로드
+  upload_model.py                    - 모델 업로드
+  example_download.py                - 다운로드 예제
+
+[기타 - Others]
+  requirements.txt                   - Python 패키지 목록
+
+============================================================
+📚 가이드 문서 (Documentation)
+============================================================
+
+  ⭐ FINAL_README.md                - 최종 통합 가이드 (시작!)
+  ⭐ COMPLETE_GUIDE.md              - 전체 사용 가이드
+     ANALYZER_GUIDE.md              - video_analyzer.py 활용
+     SMART_DETECTION_GUIDE.md       - 자동 검사 구간 감지
+     NONE_STRATEGY_GUIDE.md         - None 레이블 전략
+     README.md                      - 프로젝트 기본 개요
+
+============================================================
+🚀 빠른 시작 가이드
+============================================================
+
+1. 환경 설정
+   pip install -r requirements.txt
+
+2. 데이터 준비
+   mkdir -p dataset/OTE dataset/Velum
+   # 비디오 파일 복사
+
+3. 전처리 (하나 선택)
+   python preprocess_with_analyzer.py     # A. video_analyzer 활용
+   python preprocess_videos_robust.py     # B. Robust 방법
+   python preprocess_videos_smart.py      # C. Smart 방법
+
+4. 학습
+   python train.py
+
+5. 추론
+   python inference.py --model checkpoints/best_model.pth --input test.mp4
+
+============================================================
+📖 추천 읽기 순서
+============================================================
+
+1. FINAL_README.md          - 전체 개요 파악
+2. COMPLETE_GUIDE.md         - 상세 사용법
+3. 선택한 전처리 가이드      - 해당 방법 상세
+4. 코드 실행                - 실제 사용
+
+============================================================
+🔍 파일별 상세 설명
+============================================================
+
+preprocess_with_analyzer.py
+├─ 기능: video_analyzer.py의 ROI 검출 활용
+├─ 장점: 자동 품질 분석, OTE/Velum/None 자동 분류
+└─ 요구: video_analyzer.py 필요
+
+preprocess_videos_robust.py
+├─ 기능: 6가지 지표 종합 분석 (밝기/선명도/대비/엣지/색상/움직임)
+├─ 장점: 상세 시각화 (8개 그래프), 3가지 검사 구간 감지 방법
+└─ 옵션: --method [threshold|derivative|combined]
+
+preprocess_videos_smart.py
+├─ 기능: 밝기/선명도 기반 자동 검사 구간 감지
+├─ 장점: 빠른 처리, 품질 프로파일 시각화
+└─ 적합: 빠른 프로토타입, 영상별 적응 처리
+
+dataset.py
+├─ 기능: PyTorch Dataset 클래스
+├─ 포함: 데이터 증강, train/val/test 분할
+└─ 사용: train.py에서 자동 호출
+
+model.py
+├─ 기능: 분류 모델 정의
+├─ 지원: ResNet-50/18, EfficientNet-B0, Custom CNN
+└─ 확장: 새 모델 추가 가능
+
+train.py
+├─ 기능: 모델 학습 및 평가
+├─ 출력: best_model.pth, history plots, confusion matrix
+└─ 설정: config 딕셔너리에서 하이퍼파라미터 조정
+
+inference.py
+├─ 기능: 이미지/비디오 추론
+├─ 모드: 프레임별, 세그먼트별 분석
+└─ 옵션: --visualize로 결과 비디오 생성
+
+download_model.py / upload_model.py
+├─ 기능: 모델 공유
+├─ 지원: Google Drive, Hugging Face Hub
+└─ 사용: 학습된 모델 배포 및 다운로드
+
+============================================================
+💡 시나리오별 추천
+============================================================
+
+[시나리오 1] video_analyzer.py가 있는 경우
+→ preprocess_with_analyzer.py 사용
+→ ANALYZER_GUIDE.md 참조
+
+[시나리오 2] 정밀한 분석이 필요한 경우
+→ preprocess_videos_robust.py --method combined
+→ SMART_DETECTION_GUIDE.md 참조
+
+[시나리오 3] 빠른 프로토타입
+→ preprocess_videos.py 또는 preprocess_videos_smart.py
+→ COMPLETE_GUIDE.md 참조
+
+============================================================
+📊 예상 출력 구조
+============================================================
+
+실행 후 생성되는 폴더:
+
+processed_dataset/
+├── OTE/                    프레임 이미지들
+├── Velum/                  프레임 이미지들
+├── None/                   프레임 이미지들
+├── annotations.json        전체 레이블 정보
+├── dataset_stats.json      통계
+└── visualizations/         분석 그래프 (Robust 사용 시)
+
+checkpoints/
+├── best_model.pth          최고 성능 모델
+├── training_history.json   학습 기록
+├── training_history.png    학습 곡선
+├── confusion_matrix.png    혼동 행렬
+└── test_results.json       테스트 결과
+
+============================================================

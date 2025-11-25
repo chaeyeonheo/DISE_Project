@@ -1,0 +1,882 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수면 내시경 폐색 분석 보고서</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        .metadata {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .metadata-item {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .metadata-label {
+            font-weight: bold;
+            color: #2c3e50;
+            display: inline-block;
+            width: 200px;
+        }
+        .chart {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .chart img {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .severity-mild {
+            background-color: #fff9c4;
+        }
+        .severity-moderate {
+            background-color: #ffe0b2;
+        }
+        .severity-severe {
+            background-color: #ffcdd2;
+        }
+        .severity-critical {
+            background-color: #ef5350;
+            color: white;
+        }
+        .summary {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 5px solid #2196f3;
+        }
+        .summary-item {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            text-align: center;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔬 수면 내시경 기도 폐색 분석 보고서</h1>
+        
+        <div class="metadata">
+            <h2>📋 비디오 정보</h2>
+            <div class="metadata-item">
+                <span class="metadata-label">파일명:</span>
+                <span>uploads\30021201_86_OTEclip.mp4</span>
+            </div>
+            <div class="metadata-item">
+                <span class="metadata-label">총 프레임 수:</span>
+                <span>570개</span>
+            </div>
+            <div class="metadata-item">
+                <span class="metadata-label">영상 길이:</span>
+                <span>19.00초</span>
+            </div>
+            <div class="metadata-item">
+                <span class="metadata-label">FPS:</span>
+                <span>30.00</span>
+            </div>
+            <div class="metadata-item">
+                <span class="metadata-label">분석 프레임 수:</span>
+                <span>95개</span>
+            </div>
+            <div class="metadata-item">
+                <span class="metadata-label">폐색 기준:</span>
+                <span>기준 대비 30.0% 감소</span>
+            </div>
+        </div>
+        
+        <div class="summary">
+            <h2>📊 분석 요약</h2>
+            <div class="summary-item">
+                ✅ <strong>최대 기도 개방 면적:</strong> 1376320 px² 
+                (프레임 522)
+            </div>
+            <div class="summary-item">
+                ⚠️ <strong>폐색 이벤트 수:</strong> 87개
+            </div>
+        </div>
+        
+        <div class="chart">
+            <h2>📈 기도 개방 면적 변화</h2>
+            <img src="area_chart.png" alt="Area Chart">
+        </div>
+        
+        <div class="chart">
+            <h2>⏱️ 폐색 이벤트 타임라인</h2>
+            <img src="event_timeline.png" alt="Timeline">
+        </div>
+        
+        <h2>🚨 폐색 이벤트 상세</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>시간</th>
+                    <th>프레임 번호</th>
+                    <th>ROI 면적 (px²)</th>
+                    <th>감소율 (%)</th>
+                    <th>심각도</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr class="severity-critical">
+                    <td>0:00:00</td>
+                    <td>0</td>
+                    <td>103212</td>
+                    <td>92.5%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:00</td>
+                    <td>6</td>
+                    <td>104721</td>
+                    <td>92.4%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:00</td>
+                    <td>12</td>
+                    <td>13619</td>
+                    <td>99.0%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:00</td>
+                    <td>18</td>
+                    <td>1907</td>
+                    <td>99.9%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:00</td>
+                    <td>24</td>
+                    <td>1995</td>
+                    <td>99.9%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:01</td>
+                    <td>30</td>
+                    <td>6120</td>
+                    <td>99.6%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:01</td>
+                    <td>36</td>
+                    <td>15094</td>
+                    <td>98.9%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:01</td>
+                    <td>42</td>
+                    <td>5840</td>
+                    <td>99.6%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:01</td>
+                    <td>48</td>
+                    <td>58690</td>
+                    <td>95.7%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:01</td>
+                    <td>54</td>
+                    <td>134121</td>
+                    <td>90.3%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:02</td>
+                    <td>60</td>
+                    <td>213301</td>
+                    <td>84.5%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:02</td>
+                    <td>66</td>
+                    <td>205788</td>
+                    <td>85.0%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:02</td>
+                    <td>72</td>
+                    <td>176057</td>
+                    <td>87.2%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:02</td>
+                    <td>78</td>
+                    <td>172105</td>
+                    <td>87.5%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:02</td>
+                    <td>84</td>
+                    <td>167548</td>
+                    <td>87.8%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:03</td>
+                    <td>90</td>
+                    <td>152814</td>
+                    <td>88.9%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:03</td>
+                    <td>96</td>
+                    <td>153007</td>
+                    <td>88.9%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:03</td>
+                    <td>102</td>
+                    <td>156830</td>
+                    <td>88.6%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:03</td>
+                    <td>108</td>
+                    <td>60624</td>
+                    <td>95.6%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:03</td>
+                    <td>114</td>
+                    <td>35670</td>
+                    <td>97.4%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:04</td>
+                    <td>120</td>
+                    <td>27551</td>
+                    <td>98.0%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:04</td>
+                    <td>126</td>
+                    <td>98883</td>
+                    <td>92.8%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:04</td>
+                    <td>132</td>
+                    <td>114312</td>
+                    <td>91.7%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:04</td>
+                    <td>138</td>
+                    <td>77427</td>
+                    <td>94.4%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:04</td>
+                    <td>144</td>
+                    <td>82035</td>
+                    <td>94.0%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:05</td>
+                    <td>150</td>
+                    <td>92669</td>
+                    <td>93.3%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:05</td>
+                    <td>156</td>
+                    <td>96090</td>
+                    <td>93.0%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:05</td>
+                    <td>162</td>
+                    <td>24874</td>
+                    <td>98.2%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:05</td>
+                    <td>168</td>
+                    <td>15444</td>
+                    <td>98.9%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:05</td>
+                    <td>174</td>
+                    <td>14522</td>
+                    <td>98.9%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:06</td>
+                    <td>180</td>
+                    <td>13424</td>
+                    <td>99.0%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:06</td>
+                    <td>186</td>
+                    <td>12469</td>
+                    <td>99.1%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:06</td>
+                    <td>192</td>
+                    <td>11395</td>
+                    <td>99.2%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:06</td>
+                    <td>198</td>
+                    <td>12095</td>
+                    <td>99.1%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:06</td>
+                    <td>204</td>
+                    <td>11916</td>
+                    <td>99.1%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:07</td>
+                    <td>210</td>
+                    <td>11531</td>
+                    <td>99.2%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:07</td>
+                    <td>216</td>
+                    <td>12504</td>
+                    <td>99.1%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:07</td>
+                    <td>222</td>
+                    <td>13156</td>
+                    <td>99.0%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:07</td>
+                    <td>228</td>
+                    <td>13584</td>
+                    <td>99.0%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:07</td>
+                    <td>234</td>
+                    <td>19781</td>
+                    <td>98.6%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:08</td>
+                    <td>240</td>
+                    <td>24902</td>
+                    <td>98.2%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:08</td>
+                    <td>246</td>
+                    <td>23731</td>
+                    <td>98.3%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:08</td>
+                    <td>252</td>
+                    <td>30705</td>
+                    <td>97.8%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:08</td>
+                    <td>258</td>
+                    <td>102318</td>
+                    <td>92.6%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:08</td>
+                    <td>264</td>
+                    <td>224650</td>
+                    <td>83.7%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:09</td>
+                    <td>270</td>
+                    <td>78790</td>
+                    <td>94.3%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:09</td>
+                    <td>276</td>
+                    <td>31404</td>
+                    <td>97.7%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:09</td>
+                    <td>282</td>
+                    <td>32400</td>
+                    <td>97.6%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:09</td>
+                    <td>288</td>
+                    <td>25952</td>
+                    <td>98.1%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:09</td>
+                    <td>294</td>
+                    <td>24745</td>
+                    <td>98.2%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:10</td>
+                    <td>300</td>
+                    <td>24195</td>
+                    <td>98.2%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:10</td>
+                    <td>306</td>
+                    <td>17367</td>
+                    <td>98.7%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:10</td>
+                    <td>312</td>
+                    <td>12083</td>
+                    <td>99.1%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:10</td>
+                    <td>318</td>
+                    <td>11701</td>
+                    <td>99.1%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:10</td>
+                    <td>324</td>
+                    <td>10038</td>
+                    <td>99.3%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:11</td>
+                    <td>330</td>
+                    <td>9594</td>
+                    <td>99.3%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:11</td>
+                    <td>336</td>
+                    <td>10580</td>
+                    <td>99.2%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:11</td>
+                    <td>342</td>
+                    <td>10086</td>
+                    <td>99.3%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:11</td>
+                    <td>348</td>
+                    <td>10114</td>
+                    <td>99.3%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:11</td>
+                    <td>354</td>
+                    <td>10923</td>
+                    <td>99.2%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:12</td>
+                    <td>360</td>
+                    <td>10626</td>
+                    <td>99.2%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:12</td>
+                    <td>366</td>
+                    <td>10203</td>
+                    <td>99.3%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:12</td>
+                    <td>372</td>
+                    <td>10982</td>
+                    <td>99.2%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:12</td>
+                    <td>378</td>
+                    <td>10363</td>
+                    <td>99.2%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:12</td>
+                    <td>384</td>
+                    <td>10334</td>
+                    <td>99.2%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:13</td>
+                    <td>390</td>
+                    <td>14285</td>
+                    <td>99.0%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:13</td>
+                    <td>396</td>
+                    <td>70561</td>
+                    <td>94.9%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:13</td>
+                    <td>402</td>
+                    <td>178502</td>
+                    <td>87.0%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:13</td>
+                    <td>408</td>
+                    <td>183802</td>
+                    <td>86.6%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:13</td>
+                    <td>414</td>
+                    <td>117140</td>
+                    <td>91.5%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:14</td>
+                    <td>420</td>
+                    <td>57239</td>
+                    <td>95.8%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:14</td>
+                    <td>426</td>
+                    <td>24077</td>
+                    <td>98.3%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:14</td>
+                    <td>432</td>
+                    <td>191660</td>
+                    <td>86.1%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:14</td>
+                    <td>438</td>
+                    <td>63194</td>
+                    <td>95.4%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:14</td>
+                    <td>444</td>
+                    <td>232593</td>
+                    <td>83.1%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:15</td>
+                    <td>450</td>
+                    <td>259924</td>
+                    <td>81.1%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:15</td>
+                    <td>456</td>
+                    <td>264415</td>
+                    <td>80.8%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:15</td>
+                    <td>462</td>
+                    <td>248819</td>
+                    <td>81.9%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:15</td>
+                    <td>468</td>
+                    <td>94114</td>
+                    <td>93.2%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:15</td>
+                    <td>474</td>
+                    <td>153141</td>
+                    <td>88.9%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:16</td>
+                    <td>480</td>
+                    <td>169895</td>
+                    <td>87.7%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:16</td>
+                    <td>486</td>
+                    <td>183717</td>
+                    <td>86.7%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:16</td>
+                    <td>492</td>
+                    <td>159161</td>
+                    <td>88.4%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:16</td>
+                    <td>498</td>
+                    <td>161504</td>
+                    <td>88.3%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:16</td>
+                    <td>504</td>
+                    <td>185235</td>
+                    <td>86.5%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:17</td>
+                    <td>510</td>
+                    <td>196931</td>
+                    <td>85.7%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+                <tr class="severity-critical">
+                    <td>0:00:17</td>
+                    <td>516</td>
+                    <td>164349</td>
+                    <td>88.1%</td>
+                    <td><strong>Critical</strong></td>
+                </tr>
+                
+            </tbody>
+        </table>
+            
+        <div class="footer">
+            <p>생성 시간: 2025-11-05 11:37:03</p>
+            <p>Airway Occlusion Analysis System v1.0</p>
+        </div>
+    </div>
+</body>
+</html>
+        

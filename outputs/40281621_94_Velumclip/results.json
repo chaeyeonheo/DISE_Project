@@ -1,0 +1,3462 @@
+{
+  "frames": [
+    {
+      "frame_number": 60,
+      "extracted_index": 0,
+      "timestamp": 2.0,
+      "time_str": "0:00:02",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 118.0,
+      "roi_bbox": [
+        1012,
+        0,
+        8,
+        17
+      ],
+      "roi_center": [
+        1015.7372881355932,
+        6.9576271186440675
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000000.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000000.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000000.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000000.jpg",
+      "area_reduction_percent": 99.9712680761542
+    },
+    {
+      "frame_number": 66,
+      "extracted_index": 1,
+      "timestamp": 2.2,
+      "time_str": "0:00:02",
+      "preprocessing_bbox": [
+        145,
+        144,
+        1020,
+        793
+      ],
+      "roi_area": 5519.0,
+      "roi_bbox": [
+        0,
+        0,
+        106,
+        96
+      ],
+      "roi_center": [
+        33.975901431418734,
+        35.35568037687987
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000001.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000001.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000001.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000001.jpg",
+      "area_reduction_percent": 98.65617383300909
+    },
+    {
+      "frame_number": 72,
+      "extracted_index": 2,
+      "timestamp": 2.4,
+      "time_str": "0:00:02",
+      "preprocessing_bbox": [
+        145,
+        145,
+        1020,
+        791
+      ],
+      "roi_area": 206752.0,
+      "roi_bbox": [
+        0,
+        0,
+        1020,
+        791
+      ],
+      "roi_center": [
+        283.77962486457204,
+        244.1626683175979
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000002.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000002.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000002.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000002.jpg",
+      "area_reduction_percent": 49.65777356809101
+    },
+    {
+      "frame_number": 78,
+      "extracted_index": 3,
+      "timestamp": 2.6,
+      "time_str": "0:00:02",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 60403.0,
+      "roi_bbox": [
+        0,
+        0,
+        516,
+        415
+      ],
+      "roi_center": [
+        137.736023045213,
+        101.21096634273133
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000003.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000003.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000003.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000003.jpg",
+      "area_reduction_percent": 85.29242037239496
+    },
+    {
+      "frame_number": 84,
+      "extracted_index": 4,
+      "timestamp": 2.8,
+      "time_str": "0:00:02",
+      "preprocessing_bbox": [
+        145,
+        144,
+        1020,
+        792
+      ],
+      "roi_area": 81541.0,
+      "roi_bbox": [
+        0,
+        0,
+        1020,
+        267
+      ],
+      "roi_center": [
+        318.7606970726383,
+        65.03725733066801
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000004.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000004.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000004.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000004.jpg",
+      "area_reduction_percent": 80.14551014991733
+    },
+    {
+      "frame_number": 90,
+      "extracted_index": 5,
+      "timestamp": 3.0,
+      "time_str": "0:00:03",
+      "preprocessing_bbox": [
+        146,
+        146,
+        1019,
+        790
+      ],
+      "roi_area": 410693.0,
+      "roi_bbox": [
+        0,
+        0,
+        1019,
+        790
+      ],
+      "roi_center": [
+        412.67477653624485,
+        236.35554781795648
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000005.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000005.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000005.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000005.jpg",
+      "area_reduction_percent": 0.0
+    },
+    {
+      "frame_number": 96,
+      "extracted_index": 6,
+      "timestamp": 3.2,
+      "time_str": "0:00:03",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1019,
+        792
+      ],
+      "roi_area": 214087.0,
+      "roi_bbox": [
+        0,
+        0,
+        1019,
+        699
+      ],
+      "roi_center": [
+        638.4704302456478,
+        477.35524342907325
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000006.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000006.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000006.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000006.jpg",
+      "area_reduction_percent": 47.871767962930946
+    },
+    {
+      "frame_number": 102,
+      "extracted_index": 7,
+      "timestamp": 3.4,
+      "time_str": "0:00:03",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 79004.0,
+      "roi_bbox": [
+        442,
+        403,
+        500,
+        256
+      ],
+      "roi_center": [
+        715.8169206622449,
+        542.9202825173409
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000007.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000007.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000007.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000007.jpg",
+      "area_reduction_percent": 80.76324651260187
+    },
+    {
+      "frame_number": 108,
+      "extracted_index": 8,
+      "timestamp": 3.6,
+      "time_str": "0:00:03",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 86175.0,
+      "roi_bbox": [
+        415,
+        400,
+        510,
+        272
+      ],
+      "roi_center": [
+        684.0726544821584,
+        548.1811662315057
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000008.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000008.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000008.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000008.jpg",
+      "area_reduction_percent": 79.01717341176986
+    },
+    {
+      "frame_number": 114,
+      "extracted_index": 9,
+      "timestamp": 3.8,
+      "time_str": "0:00:03",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 50023.0,
+      "roi_bbox": [
+        464,
+        422,
+        420,
+        217
+      ],
+      "roi_center": [
+        684.8147851988085,
+        542.0734462147412
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000009.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000009.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000009.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000009.jpg",
+      "area_reduction_percent": 87.81985570730448
+    },
+    {
+      "frame_number": 120,
+      "extracted_index": 10,
+      "timestamp": 4.0,
+      "time_str": "0:00:04",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 77917.0,
+      "roi_bbox": [
+        503,
+        486,
+        438,
+        272
+      ],
+      "roi_center": [
+        728.6132807987988,
+        627.5740980787248
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000010.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000010.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000010.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000010.jpg",
+      "area_reduction_percent": 81.02792109921523
+    },
+    {
+      "frame_number": 126,
+      "extracted_index": 11,
+      "timestamp": 4.2,
+      "time_str": "0:00:04",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 98048.0,
+      "roi_bbox": [
+        499,
+        508,
+        485,
+        285
+      ],
+      "roi_center": [
+        749.7423710835509,
+        671.4579389686684
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000011.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000011.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000011.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000011.jpg",
+      "area_reduction_percent": 76.12620619294704
+    },
+    {
+      "frame_number": 132,
+      "extracted_index": 12,
+      "timestamp": 4.4,
+      "time_str": "0:00:04",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 74153.0,
+      "roi_bbox": [
+        543,
+        544,
+        397,
+        249
+      ],
+      "roi_center": [
+        733.6866748479495,
+        684.7847828139118
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000012.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000012.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000012.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000012.jpg",
+      "area_reduction_percent": 81.94442077171999
+    },
+    {
+      "frame_number": 138,
+      "extracted_index": 13,
+      "timestamp": 4.6,
+      "time_str": "0:00:04",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 61319.0,
+      "roi_bbox": [
+        560,
+        567,
+        354,
+        226
+      ],
+      "roi_center": [
+        735.0715438934099,
+        684.5578858102709
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000013.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000013.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000013.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000013.jpg",
+      "area_reduction_percent": 85.06938272626998
+    },
+    {
+      "frame_number": 144,
+      "extracted_index": 14,
+      "timestamp": 4.8,
+      "time_str": "0:00:04",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 64303.0,
+      "roi_bbox": [
+        547,
+        567,
+        366,
+        226
+      ],
+      "roi_center": [
+        730.4157348801766,
+        683.4194050044322
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000014.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000014.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000014.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000014.jpg",
+      "area_reduction_percent": 84.34280594020352
+    },
+    {
+      "frame_number": 150,
+      "extracted_index": 15,
+      "timestamp": 5.0,
+      "time_str": "0:00:05",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 39863.0,
+      "roi_bbox": [
+        556,
+        568,
+        328,
+        165
+      ],
+      "roi_center": [
+        726.0462584351403,
+        649.5783558688508
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000015.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000015.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000015.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000015.jpg",
+      "area_reduction_percent": 90.29372304860321
+    },
+    {
+      "frame_number": 156,
+      "extracted_index": 16,
+      "timestamp": 5.2,
+      "time_str": "0:00:05",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 0
+    },
+    {
+      "frame_number": 162,
+      "extracted_index": 17,
+      "timestamp": 5.4,
+      "time_str": "0:00:05",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 3008.0,
+      "roi_bbox": [
+        728,
+        501,
+        86,
+        60
+      ],
+      "roi_center": [
+        771.7716090425532,
+        535.0265957446809
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000017.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000017.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000017.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000017.jpg",
+      "area_reduction_percent": 99.26757943281234
+    },
+    {
+      "frame_number": 168,
+      "extracted_index": 18,
+      "timestamp": 5.6,
+      "time_str": "0:00:05",
+      "preprocessing_bbox": [
+        144,
+        142,
+        1021,
+        794
+      ],
+      "roi_area": 2667.0,
+      "roi_bbox": [
+        738,
+        500,
+        78,
+        56
+      ],
+      "roi_center": [
+        775.4184476940383,
+        530.891263592051
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000018.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000018.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000018.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000018.jpg",
+      "area_reduction_percent": 99.35060982290909
+    },
+    {
+      "frame_number": 174,
+      "extracted_index": 19,
+      "timestamp": 5.8,
+      "time_str": "0:00:05",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 3618.0,
+      "roi_bbox": [
+        716,
+        501,
+        102,
+        64
+      ],
+      "roi_center": [
+        771.0702045328911,
+        537.7844112769486
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000019.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000019.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000019.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000019.jpg",
+      "area_reduction_percent": 99.1190499959824
+    },
+    {
+      "frame_number": 180,
+      "extracted_index": 20,
+      "timestamp": 6.0,
+      "time_str": "0:00:06",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 3897.0,
+      "roi_bbox": [
+        698,
+        506,
+        116,
+        68
+      ],
+      "roi_center": [
+        763.3471901462664,
+        546.9984603541186
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000020.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000020.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000020.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000020.jpg",
+      "area_reduction_percent": 99.0511160404487
+    },
+    {
+      "frame_number": 186,
+      "extracted_index": 21,
+      "timestamp": 6.2,
+      "time_str": "0:00:06",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 3648.0,
+      "roi_bbox": [
+        683,
+        523,
+        120,
+        54
+      ],
+      "roi_center": [
+        748.9237938596491,
+        553.843201754386
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000021.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000021.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000021.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000021.jpg",
+      "area_reduction_percent": 99.11174526958094
+    },
+    {
+      "frame_number": 192,
+      "extracted_index": 22,
+      "timestamp": 6.4,
+      "time_str": "0:00:06",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 2272.0,
+      "roi_bbox": [
+        705,
+        526,
+        90,
+        46
+      ],
+      "roi_center": [
+        756.4238556338029,
+        551.5198063380282
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000022.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000022.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000022.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000022.jpg",
+      "area_reduction_percent": 99.44678872052847
+    },
+    {
+      "frame_number": 198,
+      "extracted_index": 23,
+      "timestamp": 6.6,
+      "time_str": "0:00:06",
+      "preprocessing_bbox": [
+        145,
+        144,
+        1020,
+        792
+      ],
+      "roi_area": 1476.0,
+      "roi_bbox": [
+        733,
+        510,
+        60,
+        42
+      ],
+      "roi_center": [
+        762.9559620596206,
+        534.1023035230352
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000023.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000023.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000023.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000023.jpg",
+      "area_reduction_percent": 99.64060746104755
+    },
+    {
+      "frame_number": 204,
+      "extracted_index": 24,
+      "timestamp": 6.8,
+      "time_str": "0:00:06",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 1595.0,
+      "roi_bbox": [
+        722,
+        492,
+        67,
+        48
+      ],
+      "roi_center": [
+        751.4307210031347,
+        520.0996865203762
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000024.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000024.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000024.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000024.jpg",
+      "area_reduction_percent": 99.6116320463217
+    },
+    {
+      "frame_number": 210,
+      "extracted_index": 25,
+      "timestamp": 7.0,
+      "time_str": "0:00:07",
+      "preprocessing_bbox": [
+        145,
+        144,
+        1020,
+        792
+      ],
+      "roi_area": 12322.0,
+      "roi_bbox": [
+        566,
+        516,
+        263,
+        76
+      ],
+      "roi_center": [
+        705.1284694043175,
+        556.4905047881838
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000025.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000025.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000025.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000025.jpg",
+      "area_reduction_percent": 96.99970537603514
+    },
+    {
+      "frame_number": 216,
+      "extracted_index": 26,
+      "timestamp": 7.2,
+      "time_str": "0:00:07",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 26287.0,
+      "roi_bbox": [
+        568,
+        541,
+        302,
+        120
+      ],
+      "roi_center": [
+        718.1798988092974,
+        601.6747441701222
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000026.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000026.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000026.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000026.jpg",
+      "area_reduction_percent": 93.59935523614963
+    },
+    {
+      "frame_number": 222,
+      "extracted_index": 27,
+      "timestamp": 7.4,
+      "time_str": "0:00:07",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 30731.0,
+      "roi_bbox": [
+        580,
+        557,
+        282,
+        144
+      ],
+      "roi_center": [
+        721.2540756890436,
+        627.2034102372197
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000027.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000027.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000027.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000027.jpg",
+      "area_reduction_percent": 92.51728176521148
+    },
+    {
+      "frame_number": 228,
+      "extracted_index": 28,
+      "timestamp": 7.6,
+      "time_str": "0:00:07",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 27078.0,
+      "roi_bbox": [
+        593,
+        579,
+        244,
+        142
+      ],
+      "roi_center": [
+        714.3638008715562,
+        648.8247654922816
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000028.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000028.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000028.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000028.jpg",
+      "area_reduction_percent": 93.40675395003079
+    },
+    {
+      "frame_number": 234,
+      "extracted_index": 29,
+      "timestamp": 7.8,
+      "time_str": "0:00:07",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 26677.0,
+      "roi_bbox": [
+        594,
+        586,
+        224,
+        149
+      ],
+      "roi_center": [
+        708.3865127263185,
+        659.1142557259062
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000029.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000029.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000029.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000029.jpg",
+      "area_reduction_percent": 93.50439379293049
+    },
+    {
+      "frame_number": 240,
+      "extracted_index": 30,
+      "timestamp": 8.0,
+      "time_str": "0:00:08",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 25998.0,
+      "roi_bbox": [
+        599,
+        588,
+        218,
+        160
+      ],
+      "roi_center": [
+        710.3257173628741,
+        666.1554350334641
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000030.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000030.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000030.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000030.jpg",
+      "area_reduction_percent": 93.66972410048382
+    },
+    {
+      "frame_number": 246,
+      "extracted_index": 31,
+      "timestamp": 8.2,
+      "time_str": "0:00:08",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 25207.0,
+      "roi_bbox": [
+        600,
+        591,
+        217,
+        162
+      ],
+      "roi_center": [
+        707.2427897012734,
+        669.3952076804062
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000031.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000031.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000031.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000031.jpg",
+      "area_reduction_percent": 93.86232538660263
+    },
+    {
+      "frame_number": 252,
+      "extracted_index": 32,
+      "timestamp": 8.4,
+      "time_str": "0:00:08",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 31858.0,
+      "roi_bbox": [
+        592,
+        587,
+        238,
+        164
+      ],
+      "roi_center": [
+        711.0211563814427,
+        670.0794149036349
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000032.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000032.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000032.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000032.jpg",
+      "area_reduction_percent": 92.24286754339617
+    },
+    {
+      "frame_number": 258,
+      "extracted_index": 33,
+      "timestamp": 8.6,
+      "time_str": "0:00:08",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 22751.0,
+      "roi_bbox": [
+        580,
+        586,
+        249,
+        117
+      ],
+      "roi_center": [
+        708.5934244648587,
+        641.916706957936
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000033.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000033.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000033.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000033.jpg",
+      "area_reduction_percent": 94.4603389880032
+    },
+    {
+      "frame_number": 264,
+      "extracted_index": 34,
+      "timestamp": 8.8,
+      "time_str": "0:00:08",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 6906.0,
+      "roi_bbox": [
+        603,
+        568,
+        207,
+        56
+      ],
+      "roi_center": [
+        710.6665218650448,
+        596.6726035331595
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000034.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000034.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000034.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000034.jpg",
+      "area_reduction_percent": 98.318451982381
+    },
+    {
+      "frame_number": 270,
+      "extracted_index": 35,
+      "timestamp": 9.0,
+      "time_str": "0:00:09",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 14005.0,
+      "roi_bbox": [
+        570,
+        559,
+        255,
+        77
+      ],
+      "roi_center": [
+        702.6503391645841,
+        596.7576579792931
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000035.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000035.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000035.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000035.jpg",
+      "area_reduction_percent": 96.58991022491253
+    },
+    {
+      "frame_number": 276,
+      "extracted_index": 36,
+      "timestamp": 9.2,
+      "time_str": "0:00:09",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 14252.0,
+      "roi_bbox": [
+        562,
+        559,
+        268,
+        78
+      ],
+      "roi_center": [
+        702.3932079708111,
+        599.2376508560202
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000036.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000036.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000036.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000036.jpg",
+      "area_reduction_percent": 96.5297679775404
+    },
+    {
+      "frame_number": 282,
+      "extracted_index": 37,
+      "timestamp": 9.4,
+      "time_str": "0:00:09",
+      "preprocessing_bbox": [
+        145,
+        144,
+        1020,
+        792
+      ],
+      "roi_area": 8908.0,
+      "roi_bbox": [
+        577,
+        560,
+        235,
+        59
+      ],
+      "roi_center": [
+        697.1411091154018,
+        589.8207229456668
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000037.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000037.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000037.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000037.jpg",
+      "area_reduction_percent": 97.83098324052273
+    },
+    {
+      "frame_number": 288,
+      "extracted_index": 38,
+      "timestamp": 9.6,
+      "time_str": "0:00:09",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 5508.0,
+      "roi_bbox": [
+        596,
+        558,
+        197,
+        44
+      ],
+      "roi_center": [
+        698.7238562091503,
+        581.2194989106754
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000038.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000038.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000038.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000038.jpg",
+      "area_reduction_percent": 98.65885223268963
+    },
+    {
+      "frame_number": 294,
+      "extracted_index": 39,
+      "timestamp": 9.8,
+      "time_str": "0:00:09",
+      "preprocessing_bbox": [
+        145,
+        144,
+        1020,
+        792
+      ],
+      "roi_area": 4650.0,
+      "roi_bbox": [
+        605,
+        558,
+        181,
+        40
+      ],
+      "roi_center": [
+        697.6139784946237,
+        577.5389247311828
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000039.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000039.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000039.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000039.jpg",
+      "area_reduction_percent": 98.86776740777175
+    },
+    {
+      "frame_number": 300,
+      "extracted_index": 40,
+      "timestamp": 10.0,
+      "time_str": "0:00:10",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 2833.0,
+      "roi_bbox": [
+        625,
+        556,
+        141,
+        32
+      ],
+      "roi_center": [
+        698.2248499823509,
+        571.303212142605
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000040.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000040.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000040.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000040.jpg",
+      "area_reduction_percent": 99.31019033682094
+    },
+    {
+      "frame_number": 306,
+      "extracted_index": 41,
+      "timestamp": 10.2,
+      "time_str": "0:00:10",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 2113.0,
+      "roi_bbox": [
+        647,
+        550,
+        119,
+        34
+      ],
+      "roi_center": [
+        710.5262659725508,
+        569.7903454803596
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000041.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000041.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000041.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000041.jpg",
+      "area_reduction_percent": 99.48550377045628
+    },
+    {
+      "frame_number": 312,
+      "extracted_index": 42,
+      "timestamp": 10.4,
+      "time_str": "0:00:10",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 988.0,
+      "roi_bbox": [
+        709,
+        539,
+        50,
+        35
+      ],
+      "roi_center": [
+        732.7368421052631,
+        558.8886639676114
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000042.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000042.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000042.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000042.jpg",
+      "area_reduction_percent": 99.7594310105115
+    },
+    {
+      "frame_number": 318,
+      "extracted_index": 43,
+      "timestamp": 10.6,
+      "time_str": "0:00:10",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 888.0,
+      "roi_bbox": [
+        716,
+        542,
+        42,
+        33
+      ],
+      "roi_center": [
+        735.0731981981982,
+        561.1171171171171
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000043.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000043.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000043.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000043.jpg",
+      "area_reduction_percent": 99.7837800985164
+    },
+    {
+      "frame_number": 324,
+      "extracted_index": 44,
+      "timestamp": 10.8,
+      "time_str": "0:00:10",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 938.0,
+      "roi_bbox": [
+        712,
+        541,
+        48,
+        31
+      ],
+      "roi_center": [
+        735.8592750533049,
+        557.6098081023454
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000044.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000044.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000044.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000044.jpg",
+      "area_reduction_percent": 99.77160555451395
+    },
+    {
+      "frame_number": 330,
+      "extracted_index": 45,
+      "timestamp": 11.0,
+      "time_str": "0:00:11",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 792.0,
+      "roi_bbox": [
+        710,
+        543,
+        42,
+        28
+      ],
+      "roi_center": [
+        731.2853535353536,
+        557.9494949494949
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000045.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000045.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000045.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000045.jpg",
+      "area_reduction_percent": 99.80715522300112
+    },
+    {
+      "frame_number": 336,
+      "extracted_index": 46,
+      "timestamp": 11.2,
+      "time_str": "0:00:11",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 677.0,
+      "roi_bbox": [
+        710,
+        542,
+        45,
+        25
+      ],
+      "roi_center": [
+        732.0738552437223,
+        555.2407680945347
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000046.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000046.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000046.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000046.jpg",
+      "area_reduction_percent": 99.83515667420677
+    },
+    {
+      "frame_number": 342,
+      "extracted_index": 47,
+      "timestamp": 11.4,
+      "time_str": "0:00:11",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 257.0,
+      "roi_bbox": [
+        737,
+        549,
+        19,
+        18
+      ],
+      "roi_center": [
+        745.7003891050583,
+        557.8988326848249
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000047.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000047.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000047.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000047.jpg",
+      "area_reduction_percent": 99.93742284382738
+    },
+    {
+      "frame_number": 348,
+      "extracted_index": 48,
+      "timestamp": 11.6,
+      "time_str": "0:00:11",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 411.0,
+      "roi_bbox": [
+        715,
+        542,
+        27,
+        21
+      ],
+      "roi_center": [
+        727.3576642335767,
+        553.0024330900243
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000048.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000048.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000048.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000048.jpg",
+      "area_reduction_percent": 99.89992524829982
+    },
+    {
+      "frame_number": 354,
+      "extracted_index": 49,
+      "timestamp": 11.8,
+      "time_str": "0:00:11",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 393.0,
+      "roi_bbox": [
+        716,
+        540,
+        30,
+        23
+      ],
+      "roi_center": [
+        730.4656488549618,
+        551.3562340966921
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000049.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000049.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000049.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000049.jpg",
+      "area_reduction_percent": 99.90430808414071
+    },
+    {
+      "frame_number": 360,
+      "extracted_index": 50,
+      "timestamp": 12.0,
+      "time_str": "0:00:12",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 687.0,
+      "roi_bbox": [
+        706,
+        532,
+        42,
+        27
+      ],
+      "roi_center": [
+        726.665211062591,
+        546.5807860262008
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000050.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000050.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000050.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000050.jpg",
+      "area_reduction_percent": 99.83272176540628
+    },
+    {
+      "frame_number": 366,
+      "extracted_index": 51,
+      "timestamp": 12.2,
+      "time_str": "0:00:12",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 353.0,
+      "roi_bbox": [
+        716,
+        527,
+        26,
+        22
+      ],
+      "roi_center": [
+        728.5297450424929,
+        538.0254957507082
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000051.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000051.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000051.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000051.jpg",
+      "area_reduction_percent": 99.91404771934268
+    },
+    {
+      "frame_number": 372,
+      "extracted_index": 52,
+      "timestamp": 12.4,
+      "time_str": "0:00:12",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 1478.0,
+      "roi_bbox": [
+        650,
+        532,
+        88,
+        28
+      ],
+      "roi_center": [
+        693.4411366711772,
+        547.1962110960758
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000052.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000052.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000052.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000052.jpg",
+      "area_reduction_percent": 99.64012047928745
+    },
+    {
+      "frame_number": 378,
+      "extracted_index": 53,
+      "timestamp": 12.6,
+      "time_str": "0:00:12",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 2713.0,
+      "roi_bbox": [
+        614,
+        548,
+        122,
+        39
+      ],
+      "roi_center": [
+        678.7869517139698,
+        567.6092886103944
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000053.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000053.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000053.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000053.jpg",
+      "area_reduction_percent": 99.33940924242683
+    },
+    {
+      "frame_number": 384,
+      "extracted_index": 54,
+      "timestamp": 12.8,
+      "time_str": "0:00:12",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 2800.0,
+      "roi_bbox": [
+        610,
+        552,
+        114,
+        42
+      ],
+      "roi_center": [
+        667.6857142857143,
+        572.9892857142858
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000054.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000054.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000054.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000054.jpg",
+      "area_reduction_percent": 99.31822553586255
+    },
+    {
+      "frame_number": 390,
+      "extracted_index": 55,
+      "timestamp": 13.0,
+      "time_str": "0:00:13",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 2930.0,
+      "roi_bbox": [
+        621,
+        571,
+        105,
+        46
+      ],
+      "roi_center": [
+        678.4013651877133,
+        591.7713310580205
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000055.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000055.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000055.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000055.jpg",
+      "area_reduction_percent": 99.28657172145617
+    },
+    {
+      "frame_number": 396,
+      "extracted_index": 56,
+      "timestamp": 13.2,
+      "time_str": "0:00:13",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 3510.0,
+      "roi_bbox": [
+        625,
+        573,
+        106,
+        49
+      ],
+      "roi_center": [
+        680.8584045584046,
+        596.1219373219374
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000056.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000056.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000056.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000056.jpg",
+      "area_reduction_percent": 99.14534701102771
+    },
+    {
+      "frame_number": 402,
+      "extracted_index": 57,
+      "timestamp": 13.4,
+      "time_str": "0:00:13",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 3310.0,
+      "roi_bbox": [
+        636,
+        572,
+        106,
+        51
+      ],
+      "roi_center": [
+        691.7148036253776,
+        596.8649546827795
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000057.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000057.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000057.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000057.jpg",
+      "area_reduction_percent": 99.19404518703752
+    },
+    {
+      "frame_number": 408,
+      "extracted_index": 58,
+      "timestamp": 13.6,
+      "time_str": "0:00:13",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 2808.0,
+      "roi_bbox": [
+        642,
+        581,
+        100,
+        43
+      ],
+      "roi_center": [
+        694.9928774928775,
+        600.6538461538462
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000058.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000058.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000058.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000058.jpg",
+      "area_reduction_percent": 99.31627760882216
+    },
+    {
+      "frame_number": 414,
+      "extracted_index": 59,
+      "timestamp": 13.8,
+      "time_str": "0:00:13",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 2565.0,
+      "roi_bbox": [
+        653,
+        579,
+        87,
+        44
+      ],
+      "roi_center": [
+        697.425730994152,
+        598.9076023391813
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000059.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000059.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000059.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000059.jpg",
+      "area_reduction_percent": 99.37544589267408
+    },
+    {
+      "frame_number": 420,
+      "extracted_index": 60,
+      "timestamp": 14.0,
+      "time_str": "0:00:14",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 2507.0,
+      "roi_bbox": [
+        652,
+        575,
+        86,
+        44
+      ],
+      "roi_center": [
+        695.9609094535301,
+        596.2489030714
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000060.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000060.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000060.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000060.jpg",
+      "area_reduction_percent": 99.38956836371695
+    },
+    {
+      "frame_number": 426,
+      "extracted_index": 61,
+      "timestamp": 14.2,
+      "time_str": "0:00:14",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 2706.0,
+      "roi_bbox": [
+        640,
+        556,
+        90,
+        57
+      ],
+      "roi_center": [
+        683.6670362158167,
+        589.0384331116038
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000061.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000061.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000061.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000061.jpg",
+      "area_reduction_percent": 99.34111367858716
+    },
+    {
+      "frame_number": 432,
+      "extracted_index": 62,
+      "timestamp": 14.4,
+      "time_str": "0:00:14",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 2182.0,
+      "roi_bbox": [
+        651,
+        566,
+        76,
+        53
+      ],
+      "roi_center": [
+        686.7057745187901,
+        595.3551787351054
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000062.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000062.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000062.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000062.jpg",
+      "area_reduction_percent": 99.46870289973289
+    },
+    {
+      "frame_number": 438,
+      "extracted_index": 63,
+      "timestamp": 14.6,
+      "time_str": "0:00:14",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 2755.0,
+      "roi_bbox": [
+        651,
+        566,
+        82,
+        65
+      ],
+      "roi_center": [
+        690.0947368421052,
+        601.9477313974592
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000063.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000063.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000063.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000063.jpg",
+      "area_reduction_percent": 99.32918262546477
+    },
+    {
+      "frame_number": 444,
+      "extracted_index": 64,
+      "timestamp": 14.8,
+      "time_str": "0:00:14",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 3278.0,
+      "roi_bbox": [
+        660,
+        568,
+        82,
+        77
+      ],
+      "roi_center": [
+        698.5485051860891,
+        609.95759609518
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000064.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000064.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000064.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000064.jpg",
+      "area_reduction_percent": 99.2018368951991
+    },
+    {
+      "frame_number": 450,
+      "extracted_index": 65,
+      "timestamp": 15.0,
+      "time_str": "0:00:15",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 2961.0,
+      "roi_bbox": [
+        671,
+        573,
+        78,
+        70
+      ],
+      "roi_center": [
+        705.548463356974,
+        611.4150624788923
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000065.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000065.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000065.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000065.jpg",
+      "area_reduction_percent": 99.27902350417465
+    },
+    {
+      "frame_number": 456,
+      "extracted_index": 66,
+      "timestamp": 15.2,
+      "time_str": "0:00:15",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 2864.0,
+      "roi_bbox": [
+        678,
+        573,
+        74,
+        70
+      ],
+      "roi_center": [
+        712.0757681564246,
+        611.2444134078212
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000066.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000066.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000066.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000066.jpg",
+      "area_reduction_percent": 99.30264211953941
+    },
+    {
+      "frame_number": 462,
+      "extracted_index": 67,
+      "timestamp": 15.4,
+      "time_str": "0:00:15",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 3302.0,
+      "roi_bbox": [
+        677,
+        573,
+        81,
+        73
+      ],
+      "roi_center": [
+        714.0272562083586,
+        611.9264082374318
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000067.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000067.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000067.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000067.jpg",
+      "area_reduction_percent": 99.19599311407791
+    },
+    {
+      "frame_number": 468,
+      "extracted_index": 68,
+      "timestamp": 15.6,
+      "time_str": "0:00:15",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 3540.0,
+      "roi_bbox": [
+        678,
+        573,
+        85,
+        77
+      ],
+      "roi_center": [
+        716.8793785310735,
+        612.7025423728813
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000068.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000068.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000068.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000068.jpg",
+      "area_reduction_percent": 99.13804228462622
+    },
+    {
+      "frame_number": 474,
+      "extracted_index": 69,
+      "timestamp": 15.8,
+      "time_str": "0:00:15",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 2709.0,
+      "roi_bbox": [
+        690,
+        574,
+        76,
+        72
+      ],
+      "roi_center": [
+        725.7984496124031,
+        613.3399778516058
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000069.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000069.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000069.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000069.jpg",
+      "area_reduction_percent": 99.34038320594702
+    },
+    {
+      "frame_number": 480,
+      "extracted_index": 70,
+      "timestamp": 16.0,
+      "time_str": "0:00:16",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 2709.0,
+      "roi_bbox": [
+        697,
+        579,
+        82,
+        58
+      ],
+      "roi_center": [
+        736.4828349944629,
+        610.8039867109635
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000070.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000070.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000070.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000070.jpg",
+      "area_reduction_percent": 99.34038320594702
+    },
+    {
+      "frame_number": 486,
+      "extracted_index": 71,
+      "timestamp": 16.2,
+      "time_str": "0:00:16",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 2445.0,
+      "roi_bbox": [
+        699,
+        588,
+        80,
+        51
+      ],
+      "roi_center": [
+        739.2425357873211,
+        612.7521472392638
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000071.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000071.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000071.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000071.jpg",
+      "area_reduction_percent": 99.40466479827998
+    },
+    {
+      "frame_number": 492,
+      "extracted_index": 72,
+      "timestamp": 16.4,
+      "time_str": "0:00:16",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 1964.0,
+      "roi_bbox": [
+        700,
+        588,
+        71,
+        43
+      ],
+      "roi_center": [
+        732.7189409368635,
+        611.6150712830957
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000072.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000072.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000072.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000072.jpg",
+      "area_reduction_percent": 99.5217839115836
+    },
+    {
+      "frame_number": 498,
+      "extracted_index": 73,
+      "timestamp": 16.6,
+      "time_str": "0:00:16",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 1875.0,
+      "roi_bbox": [
+        705,
+        594,
+        63,
+        46
+      ],
+      "roi_center": [
+        736.3530666666667,
+        615.8352
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000073.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000073.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000073.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000073.jpg",
+      "area_reduction_percent": 99.54345459990796
+    },
+    {
+      "frame_number": 504,
+      "extracted_index": 74,
+      "timestamp": 16.8,
+      "time_str": "0:00:16",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 2169.0,
+      "roi_bbox": [
+        705,
+        576,
+        62,
+        63
+      ],
+      "roi_center": [
+        732.6897187644075,
+        610.1387736284001
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000074.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000074.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000074.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000074.jpg",
+      "area_reduction_percent": 99.47186828117353
+    },
+    {
+      "frame_number": 510,
+      "extracted_index": 75,
+      "timestamp": 17.0,
+      "time_str": "0:00:17",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 2120.0,
+      "roi_bbox": [
+        706,
+        586,
+        57,
+        59
+      ],
+      "roi_center": [
+        734.4462264150943,
+        615.7405660377359
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000075.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000075.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000075.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000075.jpg",
+      "area_reduction_percent": 99.48379933429592
+    },
+    {
+      "frame_number": 516,
+      "extracted_index": 76,
+      "timestamp": 17.2,
+      "time_str": "0:00:17",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 1894.0,
+      "roi_bbox": [
+        705,
+        593,
+        58,
+        49
+      ],
+      "roi_center": [
+        733.6409714889123,
+        616.9002111932418
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000076.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000076.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000076.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000076.jpg",
+      "area_reduction_percent": 99.53882827318704
+    },
+    {
+      "frame_number": 522,
+      "extracted_index": 77,
+      "timestamp": 17.4,
+      "time_str": "0:00:17",
+      "preprocessing_bbox": [
+        145,
+        143,
+        1020,
+        793
+      ],
+      "roi_area": 1889.0,
+      "roi_bbox": [
+        703,
+        586,
+        56,
+        53
+      ],
+      "roi_center": [
+        730.9692959237692,
+        613.9613552143992
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000077.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000077.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000077.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000077.jpg",
+      "area_reduction_percent": 99.54004572758728
+    },
+    {
+      "frame_number": 528,
+      "extracted_index": 78,
+      "timestamp": 17.6,
+      "time_str": "0:00:17",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 1728.0,
+      "roi_bbox": [
+        704,
+        586,
+        58,
+        47
+      ],
+      "roi_center": [
+        731.6556712962963,
+        610.4629629629629
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000078.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000078.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000078.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000078.jpg",
+      "area_reduction_percent": 99.57924775927518
+    },
+    {
+      "frame_number": 534,
+      "extracted_index": 79,
+      "timestamp": 17.8,
+      "time_str": "0:00:17",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 1511.0,
+      "roi_bbox": [
+        701,
+        591,
+        55,
+        47
+      ],
+      "roi_center": [
+        728.518861681006,
+        613.4553275976175
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000079.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000079.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000079.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000079.jpg",
+      "area_reduction_percent": 99.63208528024583
+    },
+    {
+      "frame_number": 540,
+      "extracted_index": 80,
+      "timestamp": 18.0,
+      "time_str": "0:00:18",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 1238.0,
+      "roi_bbox": [
+        702,
+        591,
+        47,
+        41
+      ],
+      "roi_center": [
+        725.2358642972537,
+        611.1332794830372
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000080.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000080.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000080.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000080.jpg",
+      "area_reduction_percent": 99.69855829049922
+    },
+    {
+      "frame_number": 546,
+      "extracted_index": 81,
+      "timestamp": 18.2,
+      "time_str": "0:00:18",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 1538.0,
+      "roi_bbox": [
+        698,
+        590,
+        54,
+        49
+      ],
+      "roi_center": [
+        724.8309492847854,
+        613.6690507152146
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000081.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000081.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000081.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000081.jpg",
+      "area_reduction_percent": 99.6255110264845
+    },
+    {
+      "frame_number": 552,
+      "extracted_index": 82,
+      "timestamp": 18.4,
+      "time_str": "0:00:18",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 1671.0,
+      "roi_bbox": [
+        702,
+        585,
+        55,
+        53
+      ],
+      "roi_center": [
+        728.3824057450628,
+        612.3171753441053
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000082.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000082.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000082.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000082.jpg",
+      "area_reduction_percent": 99.59312673943798
+    },
+    {
+      "frame_number": 558,
+      "extracted_index": 83,
+      "timestamp": 18.6,
+      "time_str": "0:00:18",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 1175.0,
+      "roi_bbox": [
+        709,
+        590,
+        43,
+        46
+      ],
+      "roi_center": [
+        730.2970212765957,
+        612.7778723404256
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000083.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000083.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000083.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000083.jpg",
+      "area_reduction_percent": 99.71389821594232
+    },
+    {
+      "frame_number": 564,
+      "extracted_index": 84,
+      "timestamp": 18.8,
+      "time_str": "0:00:18",
+      "preprocessing_bbox": [
+        144,
+        143,
+        1021,
+        793
+      ],
+      "roi_area": 1348.0,
+      "roi_bbox": [
+        710,
+        589,
+        46,
+        48
+      ],
+      "roi_center": [
+        733.433234421365,
+        612.5244807121662
+      ],
+      "saved_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000084.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000084.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000084.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000084.jpg",
+      "area_reduction_percent": 99.67177429369383
+    }
+  ],
+  "max_area": 410693,
+  "max_area_frame": 90,
+  "occlusion_events": [
+    {
+      "frame_number": 60,
+      "extracted_index": 0,
+      "timestamp": 2.0,
+      "time_str": "0:00:02",
+      "roi_area": 118.0,
+      "area_reduction_percent": 99.9712680761542,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000000.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000000.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000000.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000000.jpg"
+    },
+    {
+      "frame_number": 66,
+      "extracted_index": 1,
+      "timestamp": 2.2,
+      "time_str": "0:00:02",
+      "roi_area": 5519.0,
+      "area_reduction_percent": 98.65617383300909,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000001.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000001.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000001.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000001.jpg"
+    },
+    {
+      "frame_number": 72,
+      "extracted_index": 2,
+      "timestamp": 2.4,
+      "time_str": "0:00:02",
+      "roi_area": 206752.0,
+      "area_reduction_percent": 49.65777356809101,
+      "severity": "Moderate",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000002.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000002.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000002.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000002.jpg"
+    },
+    {
+      "frame_number": 78,
+      "extracted_index": 3,
+      "timestamp": 2.6,
+      "time_str": "0:00:02",
+      "roi_area": 60403.0,
+      "area_reduction_percent": 85.29242037239496,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000003.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000003.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000003.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000003.jpg"
+    },
+    {
+      "frame_number": 84,
+      "extracted_index": 4,
+      "timestamp": 2.8,
+      "time_str": "0:00:02",
+      "roi_area": 81541.0,
+      "area_reduction_percent": 80.14551014991733,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000004.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000004.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000004.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000004.jpg"
+    },
+    {
+      "frame_number": 96,
+      "extracted_index": 6,
+      "timestamp": 3.2,
+      "time_str": "0:00:03",
+      "roi_area": 214087.0,
+      "area_reduction_percent": 47.871767962930946,
+      "severity": "Moderate",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000006.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000006.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000006.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000006.jpg"
+    },
+    {
+      "frame_number": 102,
+      "extracted_index": 7,
+      "timestamp": 3.4,
+      "time_str": "0:00:03",
+      "roi_area": 79004.0,
+      "area_reduction_percent": 80.76324651260187,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000007.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000007.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000007.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000007.jpg"
+    },
+    {
+      "frame_number": 108,
+      "extracted_index": 8,
+      "timestamp": 3.6,
+      "time_str": "0:00:03",
+      "roi_area": 86175.0,
+      "area_reduction_percent": 79.01717341176986,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000008.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000008.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000008.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000008.jpg"
+    },
+    {
+      "frame_number": 114,
+      "extracted_index": 9,
+      "timestamp": 3.8,
+      "time_str": "0:00:03",
+      "roi_area": 50023.0,
+      "area_reduction_percent": 87.81985570730448,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000009.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000009.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000009.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000009.jpg"
+    },
+    {
+      "frame_number": 120,
+      "extracted_index": 10,
+      "timestamp": 4.0,
+      "time_str": "0:00:04",
+      "roi_area": 77917.0,
+      "area_reduction_percent": 81.02792109921523,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000010.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000010.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000010.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000010.jpg"
+    },
+    {
+      "frame_number": 126,
+      "extracted_index": 11,
+      "timestamp": 4.2,
+      "time_str": "0:00:04",
+      "roi_area": 98048.0,
+      "area_reduction_percent": 76.12620619294704,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000011.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000011.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000011.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000011.jpg"
+    },
+    {
+      "frame_number": 132,
+      "extracted_index": 12,
+      "timestamp": 4.4,
+      "time_str": "0:00:04",
+      "roi_area": 74153.0,
+      "area_reduction_percent": 81.94442077171999,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000012.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000012.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000012.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000012.jpg"
+    },
+    {
+      "frame_number": 138,
+      "extracted_index": 13,
+      "timestamp": 4.6,
+      "time_str": "0:00:04",
+      "roi_area": 61319.0,
+      "area_reduction_percent": 85.06938272626998,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000013.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000013.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000013.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000013.jpg"
+    },
+    {
+      "frame_number": 144,
+      "extracted_index": 14,
+      "timestamp": 4.8,
+      "time_str": "0:00:04",
+      "roi_area": 64303.0,
+      "area_reduction_percent": 84.34280594020352,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000014.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000014.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000014.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000014.jpg"
+    },
+    {
+      "frame_number": 150,
+      "extracted_index": 15,
+      "timestamp": 5.0,
+      "time_str": "0:00:05",
+      "roi_area": 39863.0,
+      "area_reduction_percent": 90.29372304860321,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000015.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000015.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000015.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000015.jpg"
+    },
+    {
+      "frame_number": 162,
+      "extracted_index": 17,
+      "timestamp": 5.4,
+      "time_str": "0:00:05",
+      "roi_area": 3008.0,
+      "area_reduction_percent": 99.26757943281234,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000017.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000017.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000017.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000017.jpg"
+    },
+    {
+      "frame_number": 168,
+      "extracted_index": 18,
+      "timestamp": 5.6,
+      "time_str": "0:00:05",
+      "roi_area": 2667.0,
+      "area_reduction_percent": 99.35060982290909,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000018.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000018.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000018.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000018.jpg"
+    },
+    {
+      "frame_number": 174,
+      "extracted_index": 19,
+      "timestamp": 5.8,
+      "time_str": "0:00:05",
+      "roi_area": 3618.0,
+      "area_reduction_percent": 99.1190499959824,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000019.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000019.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000019.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000019.jpg"
+    },
+    {
+      "frame_number": 180,
+      "extracted_index": 20,
+      "timestamp": 6.0,
+      "time_str": "0:00:06",
+      "roi_area": 3897.0,
+      "area_reduction_percent": 99.0511160404487,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000020.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000020.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000020.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000020.jpg"
+    },
+    {
+      "frame_number": 186,
+      "extracted_index": 21,
+      "timestamp": 6.2,
+      "time_str": "0:00:06",
+      "roi_area": 3648.0,
+      "area_reduction_percent": 99.11174526958094,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000021.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000021.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000021.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000021.jpg"
+    },
+    {
+      "frame_number": 192,
+      "extracted_index": 22,
+      "timestamp": 6.4,
+      "time_str": "0:00:06",
+      "roi_area": 2272.0,
+      "area_reduction_percent": 99.44678872052847,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000022.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000022.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000022.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000022.jpg"
+    },
+    {
+      "frame_number": 198,
+      "extracted_index": 23,
+      "timestamp": 6.6,
+      "time_str": "0:00:06",
+      "roi_area": 1476.0,
+      "area_reduction_percent": 99.64060746104755,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000023.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000023.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000023.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000023.jpg"
+    },
+    {
+      "frame_number": 204,
+      "extracted_index": 24,
+      "timestamp": 6.8,
+      "time_str": "0:00:06",
+      "roi_area": 1595.0,
+      "area_reduction_percent": 99.6116320463217,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000024.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000024.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000024.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000024.jpg"
+    },
+    {
+      "frame_number": 210,
+      "extracted_index": 25,
+      "timestamp": 7.0,
+      "time_str": "0:00:07",
+      "roi_area": 12322.0,
+      "area_reduction_percent": 96.99970537603514,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000025.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000025.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000025.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000025.jpg"
+    },
+    {
+      "frame_number": 216,
+      "extracted_index": 26,
+      "timestamp": 7.2,
+      "time_str": "0:00:07",
+      "roi_area": 26287.0,
+      "area_reduction_percent": 93.59935523614963,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000026.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000026.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000026.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000026.jpg"
+    },
+    {
+      "frame_number": 222,
+      "extracted_index": 27,
+      "timestamp": 7.4,
+      "time_str": "0:00:07",
+      "roi_area": 30731.0,
+      "area_reduction_percent": 92.51728176521148,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000027.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000027.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000027.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000027.jpg"
+    },
+    {
+      "frame_number": 228,
+      "extracted_index": 28,
+      "timestamp": 7.6,
+      "time_str": "0:00:07",
+      "roi_area": 27078.0,
+      "area_reduction_percent": 93.40675395003079,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000028.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000028.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000028.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000028.jpg"
+    },
+    {
+      "frame_number": 234,
+      "extracted_index": 29,
+      "timestamp": 7.8,
+      "time_str": "0:00:07",
+      "roi_area": 26677.0,
+      "area_reduction_percent": 93.50439379293049,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000029.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000029.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000029.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000029.jpg"
+    },
+    {
+      "frame_number": 240,
+      "extracted_index": 30,
+      "timestamp": 8.0,
+      "time_str": "0:00:08",
+      "roi_area": 25998.0,
+      "area_reduction_percent": 93.66972410048382,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000030.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000030.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000030.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000030.jpg"
+    },
+    {
+      "frame_number": 246,
+      "extracted_index": 31,
+      "timestamp": 8.2,
+      "time_str": "0:00:08",
+      "roi_area": 25207.0,
+      "area_reduction_percent": 93.86232538660263,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000031.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000031.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000031.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000031.jpg"
+    },
+    {
+      "frame_number": 252,
+      "extracted_index": 32,
+      "timestamp": 8.4,
+      "time_str": "0:00:08",
+      "roi_area": 31858.0,
+      "area_reduction_percent": 92.24286754339617,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000032.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000032.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000032.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000032.jpg"
+    },
+    {
+      "frame_number": 258,
+      "extracted_index": 33,
+      "timestamp": 8.6,
+      "time_str": "0:00:08",
+      "roi_area": 22751.0,
+      "area_reduction_percent": 94.4603389880032,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000033.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000033.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000033.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000033.jpg"
+    },
+    {
+      "frame_number": 264,
+      "extracted_index": 34,
+      "timestamp": 8.8,
+      "time_str": "0:00:08",
+      "roi_area": 6906.0,
+      "area_reduction_percent": 98.318451982381,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000034.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000034.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000034.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000034.jpg"
+    },
+    {
+      "frame_number": 270,
+      "extracted_index": 35,
+      "timestamp": 9.0,
+      "time_str": "0:00:09",
+      "roi_area": 14005.0,
+      "area_reduction_percent": 96.58991022491253,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000035.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000035.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000035.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000035.jpg"
+    },
+    {
+      "frame_number": 276,
+      "extracted_index": 36,
+      "timestamp": 9.2,
+      "time_str": "0:00:09",
+      "roi_area": 14252.0,
+      "area_reduction_percent": 96.5297679775404,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000036.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000036.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000036.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000036.jpg"
+    },
+    {
+      "frame_number": 282,
+      "extracted_index": 37,
+      "timestamp": 9.4,
+      "time_str": "0:00:09",
+      "roi_area": 8908.0,
+      "area_reduction_percent": 97.83098324052273,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000037.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000037.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000037.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000037.jpg"
+    },
+    {
+      "frame_number": 288,
+      "extracted_index": 38,
+      "timestamp": 9.6,
+      "time_str": "0:00:09",
+      "roi_area": 5508.0,
+      "area_reduction_percent": 98.65885223268963,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000038.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000038.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000038.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000038.jpg"
+    },
+    {
+      "frame_number": 294,
+      "extracted_index": 39,
+      "timestamp": 9.8,
+      "time_str": "0:00:09",
+      "roi_area": 4650.0,
+      "area_reduction_percent": 98.86776740777175,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000039.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000039.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000039.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000039.jpg"
+    },
+    {
+      "frame_number": 300,
+      "extracted_index": 40,
+      "timestamp": 10.0,
+      "time_str": "0:00:10",
+      "roi_area": 2833.0,
+      "area_reduction_percent": 99.31019033682094,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000040.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000040.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000040.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000040.jpg"
+    },
+    {
+      "frame_number": 306,
+      "extracted_index": 41,
+      "timestamp": 10.2,
+      "time_str": "0:00:10",
+      "roi_area": 2113.0,
+      "area_reduction_percent": 99.48550377045628,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000041.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000041.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000041.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000041.jpg"
+    },
+    {
+      "frame_number": 312,
+      "extracted_index": 42,
+      "timestamp": 10.4,
+      "time_str": "0:00:10",
+      "roi_area": 988.0,
+      "area_reduction_percent": 99.7594310105115,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000042.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000042.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000042.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000042.jpg"
+    },
+    {
+      "frame_number": 318,
+      "extracted_index": 43,
+      "timestamp": 10.6,
+      "time_str": "0:00:10",
+      "roi_area": 888.0,
+      "area_reduction_percent": 99.7837800985164,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000043.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000043.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000043.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000043.jpg"
+    },
+    {
+      "frame_number": 324,
+      "extracted_index": 44,
+      "timestamp": 10.8,
+      "time_str": "0:00:10",
+      "roi_area": 938.0,
+      "area_reduction_percent": 99.77160555451395,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000044.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000044.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000044.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000044.jpg"
+    },
+    {
+      "frame_number": 330,
+      "extracted_index": 45,
+      "timestamp": 11.0,
+      "time_str": "0:00:11",
+      "roi_area": 792.0,
+      "area_reduction_percent": 99.80715522300112,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000045.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000045.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000045.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000045.jpg"
+    },
+    {
+      "frame_number": 336,
+      "extracted_index": 46,
+      "timestamp": 11.2,
+      "time_str": "0:00:11",
+      "roi_area": 677.0,
+      "area_reduction_percent": 99.83515667420677,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000046.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000046.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000046.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000046.jpg"
+    },
+    {
+      "frame_number": 342,
+      "extracted_index": 47,
+      "timestamp": 11.4,
+      "time_str": "0:00:11",
+      "roi_area": 257.0,
+      "area_reduction_percent": 99.93742284382738,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000047.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000047.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000047.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000047.jpg"
+    },
+    {
+      "frame_number": 348,
+      "extracted_index": 48,
+      "timestamp": 11.6,
+      "time_str": "0:00:11",
+      "roi_area": 411.0,
+      "area_reduction_percent": 99.89992524829982,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000048.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000048.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000048.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000048.jpg"
+    },
+    {
+      "frame_number": 354,
+      "extracted_index": 49,
+      "timestamp": 11.8,
+      "time_str": "0:00:11",
+      "roi_area": 393.0,
+      "area_reduction_percent": 99.90430808414071,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000049.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000049.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000049.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000049.jpg"
+    },
+    {
+      "frame_number": 360,
+      "extracted_index": 50,
+      "timestamp": 12.0,
+      "time_str": "0:00:12",
+      "roi_area": 687.0,
+      "area_reduction_percent": 99.83272176540628,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000050.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000050.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000050.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000050.jpg"
+    },
+    {
+      "frame_number": 366,
+      "extracted_index": 51,
+      "timestamp": 12.2,
+      "time_str": "0:00:12",
+      "roi_area": 353.0,
+      "area_reduction_percent": 99.91404771934268,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000051.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000051.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000051.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000051.jpg"
+    },
+    {
+      "frame_number": 372,
+      "extracted_index": 52,
+      "timestamp": 12.4,
+      "time_str": "0:00:12",
+      "roi_area": 1478.0,
+      "area_reduction_percent": 99.64012047928745,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000052.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000052.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000052.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000052.jpg"
+    },
+    {
+      "frame_number": 378,
+      "extracted_index": 53,
+      "timestamp": 12.6,
+      "time_str": "0:00:12",
+      "roi_area": 2713.0,
+      "area_reduction_percent": 99.33940924242683,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000053.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000053.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000053.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000053.jpg"
+    },
+    {
+      "frame_number": 384,
+      "extracted_index": 54,
+      "timestamp": 12.8,
+      "time_str": "0:00:12",
+      "roi_area": 2800.0,
+      "area_reduction_percent": 99.31822553586255,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000054.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000054.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000054.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000054.jpg"
+    },
+    {
+      "frame_number": 390,
+      "extracted_index": 55,
+      "timestamp": 13.0,
+      "time_str": "0:00:13",
+      "roi_area": 2930.0,
+      "area_reduction_percent": 99.28657172145617,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000055.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000055.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000055.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000055.jpg"
+    },
+    {
+      "frame_number": 396,
+      "extracted_index": 56,
+      "timestamp": 13.2,
+      "time_str": "0:00:13",
+      "roi_area": 3510.0,
+      "area_reduction_percent": 99.14534701102771,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000056.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000056.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000056.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000056.jpg"
+    },
+    {
+      "frame_number": 402,
+      "extracted_index": 57,
+      "timestamp": 13.4,
+      "time_str": "0:00:13",
+      "roi_area": 3310.0,
+      "area_reduction_percent": 99.19404518703752,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000057.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000057.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000057.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000057.jpg"
+    },
+    {
+      "frame_number": 408,
+      "extracted_index": 58,
+      "timestamp": 13.6,
+      "time_str": "0:00:13",
+      "roi_area": 2808.0,
+      "area_reduction_percent": 99.31627760882216,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000058.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000058.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000058.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000058.jpg"
+    },
+    {
+      "frame_number": 414,
+      "extracted_index": 59,
+      "timestamp": 13.8,
+      "time_str": "0:00:13",
+      "roi_area": 2565.0,
+      "area_reduction_percent": 99.37544589267408,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000059.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000059.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000059.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000059.jpg"
+    },
+    {
+      "frame_number": 420,
+      "extracted_index": 60,
+      "timestamp": 14.0,
+      "time_str": "0:00:14",
+      "roi_area": 2507.0,
+      "area_reduction_percent": 99.38956836371695,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000060.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000060.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000060.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000060.jpg"
+    },
+    {
+      "frame_number": 426,
+      "extracted_index": 61,
+      "timestamp": 14.2,
+      "time_str": "0:00:14",
+      "roi_area": 2706.0,
+      "area_reduction_percent": 99.34111367858716,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000061.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000061.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000061.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000061.jpg"
+    },
+    {
+      "frame_number": 432,
+      "extracted_index": 62,
+      "timestamp": 14.4,
+      "time_str": "0:00:14",
+      "roi_area": 2182.0,
+      "area_reduction_percent": 99.46870289973289,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000062.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000062.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000062.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000062.jpg"
+    },
+    {
+      "frame_number": 438,
+      "extracted_index": 63,
+      "timestamp": 14.6,
+      "time_str": "0:00:14",
+      "roi_area": 2755.0,
+      "area_reduction_percent": 99.32918262546477,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000063.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000063.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000063.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000063.jpg"
+    },
+    {
+      "frame_number": 444,
+      "extracted_index": 64,
+      "timestamp": 14.8,
+      "time_str": "0:00:14",
+      "roi_area": 3278.0,
+      "area_reduction_percent": 99.2018368951991,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000064.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000064.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000064.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000064.jpg"
+    },
+    {
+      "frame_number": 450,
+      "extracted_index": 65,
+      "timestamp": 15.0,
+      "time_str": "0:00:15",
+      "roi_area": 2961.0,
+      "area_reduction_percent": 99.27902350417465,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000065.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000065.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000065.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000065.jpg"
+    },
+    {
+      "frame_number": 456,
+      "extracted_index": 66,
+      "timestamp": 15.2,
+      "time_str": "0:00:15",
+      "roi_area": 2864.0,
+      "area_reduction_percent": 99.30264211953941,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000066.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000066.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000066.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000066.jpg"
+    },
+    {
+      "frame_number": 462,
+      "extracted_index": 67,
+      "timestamp": 15.4,
+      "time_str": "0:00:15",
+      "roi_area": 3302.0,
+      "area_reduction_percent": 99.19599311407791,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000067.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000067.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000067.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000067.jpg"
+    },
+    {
+      "frame_number": 468,
+      "extracted_index": 68,
+      "timestamp": 15.6,
+      "time_str": "0:00:15",
+      "roi_area": 3540.0,
+      "area_reduction_percent": 99.13804228462622,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000068.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000068.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000068.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000068.jpg"
+    },
+    {
+      "frame_number": 474,
+      "extracted_index": 69,
+      "timestamp": 15.8,
+      "time_str": "0:00:15",
+      "roi_area": 2709.0,
+      "area_reduction_percent": 99.34038320594702,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000069.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000069.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000069.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000069.jpg"
+    },
+    {
+      "frame_number": 480,
+      "extracted_index": 70,
+      "timestamp": 16.0,
+      "time_str": "0:00:16",
+      "roi_area": 2709.0,
+      "area_reduction_percent": 99.34038320594702,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000070.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000070.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000070.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000070.jpg"
+    },
+    {
+      "frame_number": 486,
+      "extracted_index": 71,
+      "timestamp": 16.2,
+      "time_str": "0:00:16",
+      "roi_area": 2445.0,
+      "area_reduction_percent": 99.40466479827998,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000071.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000071.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000071.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000071.jpg"
+    },
+    {
+      "frame_number": 492,
+      "extracted_index": 72,
+      "timestamp": 16.4,
+      "time_str": "0:00:16",
+      "roi_area": 1964.0,
+      "area_reduction_percent": 99.5217839115836,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000072.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000072.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000072.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000072.jpg"
+    },
+    {
+      "frame_number": 498,
+      "extracted_index": 73,
+      "timestamp": 16.6,
+      "time_str": "0:00:16",
+      "roi_area": 1875.0,
+      "area_reduction_percent": 99.54345459990796,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000073.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000073.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000073.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000073.jpg"
+    },
+    {
+      "frame_number": 504,
+      "extracted_index": 74,
+      "timestamp": 16.8,
+      "time_str": "0:00:16",
+      "roi_area": 2169.0,
+      "area_reduction_percent": 99.47186828117353,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000074.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000074.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000074.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000074.jpg"
+    },
+    {
+      "frame_number": 510,
+      "extracted_index": 75,
+      "timestamp": 17.0,
+      "time_str": "0:00:17",
+      "roi_area": 2120.0,
+      "area_reduction_percent": 99.48379933429592,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000075.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000075.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000075.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000075.jpg"
+    },
+    {
+      "frame_number": 516,
+      "extracted_index": 76,
+      "timestamp": 17.2,
+      "time_str": "0:00:17",
+      "roi_area": 1894.0,
+      "area_reduction_percent": 99.53882827318704,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000076.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000076.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000076.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000076.jpg"
+    },
+    {
+      "frame_number": 522,
+      "extracted_index": 77,
+      "timestamp": 17.4,
+      "time_str": "0:00:17",
+      "roi_area": 1889.0,
+      "area_reduction_percent": 99.54004572758728,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000077.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000077.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000077.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000077.jpg"
+    },
+    {
+      "frame_number": 528,
+      "extracted_index": 78,
+      "timestamp": 17.6,
+      "time_str": "0:00:17",
+      "roi_area": 1728.0,
+      "area_reduction_percent": 99.57924775927518,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000078.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000078.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000078.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000078.jpg"
+    },
+    {
+      "frame_number": 534,
+      "extracted_index": 79,
+      "timestamp": 17.8,
+      "time_str": "0:00:17",
+      "roi_area": 1511.0,
+      "area_reduction_percent": 99.63208528024583,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000079.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000079.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000079.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000079.jpg"
+    },
+    {
+      "frame_number": 540,
+      "extracted_index": 80,
+      "timestamp": 18.0,
+      "time_str": "0:00:18",
+      "roi_area": 1238.0,
+      "area_reduction_percent": 99.69855829049922,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000080.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000080.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000080.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000080.jpg"
+    },
+    {
+      "frame_number": 546,
+      "extracted_index": 81,
+      "timestamp": 18.2,
+      "time_str": "0:00:18",
+      "roi_area": 1538.0,
+      "area_reduction_percent": 99.6255110264845,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000081.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000081.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000081.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000081.jpg"
+    },
+    {
+      "frame_number": 552,
+      "extracted_index": 82,
+      "timestamp": 18.4,
+      "time_str": "0:00:18",
+      "roi_area": 1671.0,
+      "area_reduction_percent": 99.59312673943798,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000082.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000082.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000082.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000082.jpg"
+    },
+    {
+      "frame_number": 558,
+      "extracted_index": 83,
+      "timestamp": 18.6,
+      "time_str": "0:00:18",
+      "roi_area": 1175.0,
+      "area_reduction_percent": 99.71389821594232,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000083.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000083.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000083.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000083.jpg"
+    },
+    {
+      "frame_number": 564,
+      "extracted_index": 84,
+      "timestamp": 18.8,
+      "time_str": "0:00:18",
+      "roi_area": 1348.0,
+      "area_reduction_percent": 99.67177429369383,
+      "severity": "Critical",
+      "frame_path": "outputs\\40281621_94_Velumclip\\frames\\frame_000084.jpg",
+      "overlay_path": "outputs\\40281621_94_Velumclip\\overlays\\overlay_000084.jpg",
+      "mask_path": "outputs\\40281621_94_Velumclip\\masks\\mask_000084.png",
+      "crop_path": "outputs\\40281621_94_Velumclip\\crops\\roi_crop_000084.jpg"
+    }
+  ],
+  "max_area_frame_index": 5,
+  "metadata": {
+    "video_file": "uploads\\40281621_94_Velumclip.mp4",
+    "total_frames": 660,
+    "extracted_frames": 85,
+    "fps": 30.0,
+    "duration_seconds": 22.0,
+    "extraction_fps": 5,
+    "threshold_percent": 30.0
+  }
+}

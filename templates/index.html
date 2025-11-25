@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수면 내시경 기도 폐색 분석 시스템</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .upload-section {
+            border: 3px dashed #667eea;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+        
+        .upload-section:hover {
+            border-color: #764ba2;
+            background: #f8f9ff;
+        }
+        
+        .upload-section.dragover {
+            background: #e8ebff;
+            border-color: #764ba2;
+        }
+        
+        .file-input-label {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        
+        .file-input-label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        input[type="file"] {
+            display: none;
+        }
+        
+        .file-name {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .settings {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .settings h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .setting-item {
+            margin-bottom: 20px;
+        }
+        
+        .setting-item label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .setting-item input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .setting-item input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .setting-item .help-text {
+            font-size: 13px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .analyze-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .analyze-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .analyze-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .progress {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #f0f0f0;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .progress-text {
+            text-align: center;
+            margin-top: 10px;
+            color: #666;
+        }
+        
+        .results {
+            display: none;
+            margin-top: 30px;
+            padding: 25px;
+            background: #e8f5e9;
+            border-radius: 15px;
+            border: 2px solid #4caf50;
+        }
+        
+        .results h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+        
+        .result-item {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        
+        .result-item strong {
+            color: #1b5e20;
+        }
+        
+        .view-report-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .view-report-btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+        
+        .error {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #ffebee;
+            border: 2px solid #f44336;
+            border-radius: 15px;
+            color: #c62828;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔬 수면 내시경 기도 폐색 분석 시스템</h1>
+            <p>Sleep Endoscopy Airway Occlusion Analysis System</p>
+        </div>
+        
+        <div class="content">
+            <div class="upload-section" id="uploadSection">
+                <h2>📹 비디오 업로드</h2>
+                <p style="color: #666; margin: 15px 0;">분석할 수면 내시경 비디오를 선택하세요</p>
+                <label for="videoFile" class="file-input-label">
+                    파일 선택
+                </label>
+                <input type="file" id="videoFile" accept="video/*">
+                <div class="file-name" id="fileName">파일이 선택되지 않았습니다</div>
+            </div>
+            
+            <div class="settings">
+                <h3>⚙️ 분석 설정</h3>
+                
+                <div class="setting-item">
+                    <label for="fpsExtract">프레임 추출 빈도 (FPS)</label>
+                    <input type="number" id="fpsExtract" min="1" max="30" value="5">
+                    <div class="help-text">초당 추출할 프레임 수 (권장: 5)</div>
+                </div>
+                
+                <div class="setting-item">
+                    <label for="threshold">폐색 기준 (%)</label>
+                    <input type="number" id="threshold" min="10" max="90" value="30">
+                    <div class="help-text">기준 대비 몇 % 감소 시 폐색으로 판단 (권장: 30%)</div>
+                </div>
+            </div>
+            
+            <button class="analyze-btn" id="analyzeBtn" onclick="analyzeVideo()">
+                분석 시작
+            </button>
+            
+            <div class="progress" id="progress">
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" id="progressFill">
+                        <span id="progressPercent">0%</span>
+                    </div>
+                </div>
+                <div class="progress-text" id="progressText">분석 중...</div>
+            </div>
+            
+            <div class="results" id="results">
+                <h3>✅ 분석 완료!</h3>
+                <div class="result-item">
+                    <strong>최대 기도 개방 면적:</strong> 
+                    <span id="maxArea">-</span> px²
+                </div>
+                <div class="result-item">
+                    <strong>폐색 이벤트 수:</strong> 
+                    <span id="totalEvents">-</span>개
+                </div>
+                <div class="result-item">
+                    <strong>분석 프레임 수:</strong> 
+                    <span id="analyzedFrames">-</span>개
+                </div>
+                <a href="#" id="reportLink" class="view-report-btn" target="_blank">
+                    📄 상세 보고서 보기
+                </a>
+            </div>
+            
+            <div class="error" id="error">
+                <strong>오류 발생:</strong> <span id="errorMessage"></span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const fileInput = document.getElementById('videoFile');
+        const fileName = document.getElementById('fileName');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        const uploadSection = document.getElementById('uploadSection');
+        const progress = document.getElementById('progress');
+        const progressFill = document.getElementById('progressFill');
+        const progressPercent = document.getElementById('progressPercent');
+        const progressText = document.getElementById('progressText');
+        const results = document.getElementById('results');
+        const error = document.getElementById('error');
+        
+        // 파일 선택
+        fileInput.addEventListener('change', function(e) {
+            if (this.files.length > 0) {
+                fileName.textContent = this.files[0].name;
+                analyzeBtn.disabled = false;
+            } else {
+                fileName.textContent = '파일이 선택되지 않았습니다';
+                analyzeBtn.disabled = true;
+            }
+        });
+        
+        // 드래그 앤 드롭
+        uploadSection.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadSection.classList.add('dragover');
+        });
+        
+        uploadSection.addEventListener('dragleave', () => {
+            uploadSection.classList.remove('dragover');
+        });
+        
+        uploadSection.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadSection.classList.remove('dragover');
+            
+            if (e.dataTransfer.files.length > 0) {
+                fileInput.files = e.dataTransfer.files;
+                fileName.textContent = e.dataTransfer.files[0].name;
+                analyzeBtn.disabled = false;
+            }
+        });
+        
+        // 분석 시작
+        async function analyzeVideo() {
+            const file = fileInput.files[0];
+            if (!file) {
+                alert('파일을 선택해주세요.');
+                return;
+            }
+            
+            // UI 초기화
+            results.style.display = 'none';
+            error.style.display = 'none';
+            progress.style.display = 'block';
+            analyzeBtn.disabled = true;
+            
+            // FormData 생성
+            const formData = new FormData();
+            formData.append('video', file);
+            formData.append('fps_extract', document.getElementById('fpsExtract').value);
+            formData.append('threshold_percent', document.getElementById('threshold').value);
+            
+            // 프로그레스 시뮬레이션
+            let progressValue = 0;
+            const progressInterval = setInterval(() => {
+                if (progressValue < 90) {
+                    progressValue += 5;
+                    updateProgress(progressValue, '분석 진행 중...');
+                }
+            }, 1000);
+            
+            try {
+                const response = await fetch('/api/analyze', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                clearInterval(progressInterval);
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    updateProgress(100, '완료!');
+                    setTimeout(() => {
+                        progress.style.display = 'none';
+                        showResults(data);
+                    }, 500);
+                } else {
+                    showError(data.error || '분석 중 오류가 발생했습니다.');
+                }
+            } catch (err) {
+                clearInterval(progressInterval);
+                showError('서버 연결 오류: ' + err.message);
+            } finally {
+                analyzeBtn.disabled = false;
+            }
+        }
+        
+        function updateProgress(value, text) {
+            progressFill.style.width = value + '%';
+            progressPercent.textContent = value + '%';
+            progressText.textContent = text;
+        }
+        
+        function showResults(data) {
+            document.getElementById('maxArea').textContent = 
+                Math.round(data.results.max_area).toLocaleString();
+            document.getElementById('totalEvents').textContent = 
+                data.results.total_events;
+            document.getElementById('analyzedFrames').textContent = 
+                data.results.metadata.extracted_frames;
+            document.getElementById('reportLink').href = data.report_url;
+            
+            results.style.display = 'block';
+        }
+        
+        function showError(message) {
+            progress.style.display = 'none';
+            error.style.display = 'block';
+            document.getElementById('errorMessage').textContent = message;
+        }
+    </script>
+</body>
+</html>
