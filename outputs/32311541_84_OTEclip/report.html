@@ -28,18 +28,18 @@
                 <div>
                     <h3 class="text-sm font-bold text-slate-400 uppercase mb-4"><i class="fas fa-user"></i> Patient Info</h3>
                     <div class="space-y-2 text-sm">
-                        <div class="flex justify-between border-b pb-1"><span>ID</span><span class="font-bold">40301551_79_Velumclip</span></div>
+                        <div class="flex justify-between border-b pb-1"><span>ID</span><span class="font-bold">32311541_84_OTEclip</span></div>
                         <div class="flex justify-between border-b pb-1"><span>Age/Sex</span><span class="font-bold">55 / M</span></div>
-                        <div class="flex justify-between border-b pb-1"><span>Diagnosis</span><span class="font-bold text-indigo-600">sleepapnea</span></div>
-                        <div class="flex justify-between border-b pb-1"><span>Threshold</span><span class="font-bold text-red-600">20%</span></div>
+                        <div class="flex justify-between border-b pb-1"><span>Diagnosis</span><span class="font-bold text-indigo-600">normal</span></div>
+                        <div class="flex justify-between border-b pb-1"><span>Threshold</span><span class="font-bold text-red-600">15%</span></div>
                     </div>
                 </div>
                 <div>
                     <h3 class="text-sm font-bold text-slate-400 uppercase mb-2">Reference Frames</h3>
                     <div class='space-y-3'>
                     <div class="relative group">
-                        <div class="text-xs font-bold mb-1" style="color: #9b59b6">Velum Reference (Max: 438657 px²)</div>
-                        <img src="overlays/reference_Velum.jpg" class="w-full rounded-lg border-4 shadow-md transition-transform group-hover:scale-[1.02]" style="border-color: #9b59b6">
+                        <div class="text-xs font-bold mb-1" style="color: #3498db">OTE Reference (Max: 253408 px²)</div>
+                        <img src="overlays/reference_OTE.jpg" class="w-full rounded-lg border-4 shadow-md transition-transform group-hover:scale-[1.02]" style="border-color: #3498db">
                     </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                     <i class="fas fa-user-md"></i> AI Doctor's Note
                 </h3>
                 <div class="prose prose-sm max-w-none text-slate-700 leading-relaxed">
-                    AI Analysis Failed.<br><span style='font-size:0.8em; color:gray'>Error: 403 Your API key was reported as leaked. Please use another API key.</span>
+                    ## 의료진용 판독 소견서<br><br>**1. 환자 개요**<br>M/55세 환자로, 기저 질환은 없는 것으로 확인됩니다. 수면다원검사 결과 AHI 2.8로, 이는 일반적인 수면 무호흡증 진단 기준(AHI 5 이상)에 비추어 볼 때 경미한 수준이거나 수면 무호흡증으로 진단하기 어려운 범위에 해당합니다.<br><br>**2. 영상 소견**<br>총 17.0초의 DISE 영상 분석 결과, 2회의 폐쇄 이벤트가 감지되었습니다.<br><br>*   **OTE (Oropharyngeal Tongue Epiglottis) 영역:**<br>    OTE 영역에서는 1구간의 폐쇄 이벤트가 관찰되었습니다. 이는 최대 기도 면적(기준 면적: 253408 px² (Frame 84)) 대비 15% 이상 감소한 폐쇄로 판단되며, 감지된 2개의 폐쇄 이벤트 모두 'Critical' 수준으로 분류되었습니다. 이는 OTE 부위에서 매우 심각한 수준의 기도 협착이 발생함을 시사합니다.<br><br>*   **Velum 영역:**<br>    Velum 영역에서는 해당 threshold (최대 기도 면적 대비 15% 이상 감소) 기준으로 특이적인 폐색이 관찰되지 않았습니다.<br><br>**3. 종합 평가**<br>환자의 AHI 수치는 경미한 수준이지만, DISE 영상에서 OTE 영역에 국한되어 'Critical' 수준의 심한 폐쇄가 2회 관찰된 점은 주목할 만합니다. 이는 수면 중 OTE 부위에서의 명확하고 심각한 해부학적 폐쇄 패턴을 시사하며, 비록 AHI가 낮더라도 이러한 심한 폐쇄가 환자의 주간 졸림, 코골이 등 임상 증상에 영향을 미치거나 장기적으로 수면 무호흡증으로 발전할 잠재적 위험성을 가지고 있을 수 있습니다.<br><br>따라서 환자의 현재 증상(예: 코골이, 주간 졸림, 수면의 질 저하 등)에 대한 면밀한 재평가가 필요하며, DISE에서 확인된 OTE 부위의 심각한 폐쇄가 임상적으로 유의미한지 추가적인 관찰이 중요합니다. 만약 관련 증상이 있다면, OTE 부위의 폐쇄를 해소하기 위한 맞춤형 치료 접근법(예: 구강 내 장치, 또는 수술적 치료의 가능성)에 대해 환자와 상담을 고려해 볼 수 있습니다.
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
                 <img src="timeline.png" class="w-full rounded-lg border">
                 <div class="ai-box">
                     <i class="fas fa-info-circle mr-2"></i> <strong>Chart Insight:</strong><br>
-                    해석 생성 실패.
+                    17초 영상 분석 결과, 환자는 연구개(Velum) 부위에서 기준 면적의 15% 미만으로 감소하는 두 차례의 폐쇄 패턴을 보였습니다.
                 </div>
             </div>
             <div class="card lg:col-span-1">
@@ -69,13 +69,13 @@
                 <img src="severity_chart.png" class="w-full rounded-lg border">
                 <div class="ai-box">
                     <i class="fas fa-chart-bar mr-2"></i> <strong>Analysis:</strong><br>
-                    해석 생성 실패.
+                    모든 사례가 'Critical' 수준에 해당하므로, 전체 중증도는 극히 높은 수준으로 평가됩니다.
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <h3 class="text-lg font-bold text-slate-700 mb-6">Detected Events (7)</h3>
+            <h3 class="text-lg font-bold text-slate-700 mb-6">Detected Events (2)</h3>
             <table class="w-full text-sm text-left">
                 <thead class="bg-slate-50 text-slate-500 font-medium border-b">
                     <tr>
@@ -89,12 +89,12 @@
                 </thead>
                 <tbody class="divide-y">
         
-                    <tr onclick="playVideo('event_clips/event_01_Velum_Critical.mp4', 'Event #1')" class="hover:bg-slate-50 cursor-pointer transition">
+                    <tr onclick="playVideo('event_clips/event_01_OTE_Critical.mp4', 'Event #1')" class="hover:bg-slate-50 cursor-pointer transition">
                         <td class="px-6 py-4"><span class="severity-badge s-Critical">Critical</span></td>
-                        <td class="px-6 py-4 font-bold text-slate-700">Velum</td>
-                        <td class="px-6 py-4 text-slate-500">0.0s ~ 1.8s</td>
+                        <td class="px-6 py-4 font-bold text-slate-700">OTE</td>
+                        <td class="px-6 py-4 text-slate-500">0.0s ~ 2.6s</td>
                         <td class="px-6 py-4 font-bold text-red-600">100.0%</td>
-                        <td class="px-6 py-4 text-slate-600">438657 px²</td>
+                        <td class="px-6 py-4 text-slate-600">253408 px²</td>
                         <td class="px-6 py-4 text-center">
                             <button class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">
                                 <i class="fas fa-play text-xs"></i>
@@ -102,77 +102,12 @@
                         </td>
                     </tr>
                 
-                    <tr onclick="playVideo('event_clips/event_02_Velum_Critical.mp4', 'Event #2')" class="hover:bg-slate-50 cursor-pointer transition">
+                    <tr onclick="playVideo('event_clips/event_02_OTE_Critical.mp4', 'Event #2')" class="hover:bg-slate-50 cursor-pointer transition">
                         <td class="px-6 py-4"><span class="severity-badge s-Critical">Critical</span></td>
-                        <td class="px-6 py-4 font-bold text-slate-700">Velum</td>
-                        <td class="px-6 py-4 text-slate-500">3.4s ~ 5.4s</td>
-                        <td class="px-6 py-4 font-bold text-red-600">93.8%</td>
-                        <td class="px-6 py-4 text-slate-600">438657 px²</td>
-                        <td class="px-6 py-4 text-center">
-                            <button class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">
-                                <i class="fas fa-play text-xs"></i>
-                            </button>
-                        </td>
-                    </tr>
-                
-                    <tr onclick="playVideo('event_clips/event_03_Velum_Critical.mp4', 'Event #3')" class="hover:bg-slate-50 cursor-pointer transition">
-                        <td class="px-6 py-4"><span class="severity-badge s-Critical">Critical</span></td>
-                        <td class="px-6 py-4 font-bold text-slate-700">Velum</td>
-                        <td class="px-6 py-4 text-slate-500">6.8s ~ 7.8s</td>
+                        <td class="px-6 py-4 font-bold text-slate-700">OTE</td>
+                        <td class="px-6 py-4 text-slate-500">3.0s ~ 16.8s</td>
                         <td class="px-6 py-4 font-bold text-red-600">100.0%</td>
-                        <td class="px-6 py-4 text-slate-600">438657 px²</td>
-                        <td class="px-6 py-4 text-center">
-                            <button class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">
-                                <i class="fas fa-play text-xs"></i>
-                            </button>
-                        </td>
-                    </tr>
-                
-                    <tr onclick="playVideo('event_clips/event_04_Velum_Critical.mp4', 'Event #4')" class="hover:bg-slate-50 cursor-pointer transition">
-                        <td class="px-6 py-4"><span class="severity-badge s-Critical">Critical</span></td>
-                        <td class="px-6 py-4 font-bold text-slate-700">Velum</td>
-                        <td class="px-6 py-4 text-slate-500">9.4s ~ 10.2s</td>
-                        <td class="px-6 py-4 font-bold text-red-600">100.0%</td>
-                        <td class="px-6 py-4 text-slate-600">438657 px²</td>
-                        <td class="px-6 py-4 text-center">
-                            <button class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">
-                                <i class="fas fa-play text-xs"></i>
-                            </button>
-                        </td>
-                    </tr>
-                
-                    <tr onclick="playVideo('event_clips/event_05_Velum_Critical.mp4', 'Event #5')" class="hover:bg-slate-50 cursor-pointer transition">
-                        <td class="px-6 py-4"><span class="severity-badge s-Critical">Critical</span></td>
-                        <td class="px-6 py-4 font-bold text-slate-700">Velum</td>
-                        <td class="px-6 py-4 text-slate-500">14.8s ~ 16.0s</td>
-                        <td class="px-6 py-4 font-bold text-red-600">100.0%</td>
-                        <td class="px-6 py-4 text-slate-600">438657 px²</td>
-                        <td class="px-6 py-4 text-center">
-                            <button class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">
-                                <i class="fas fa-play text-xs"></i>
-                            </button>
-                        </td>
-                    </tr>
-                
-                    <tr onclick="playVideo('event_clips/event_06_Velum_Critical.mp4', 'Event #6')" class="hover:bg-slate-50 cursor-pointer transition">
-                        <td class="px-6 py-4"><span class="severity-badge s-Critical">Critical</span></td>
-                        <td class="px-6 py-4 font-bold text-slate-700">Velum</td>
-                        <td class="px-6 py-4 text-slate-500">17.6s ~ 20.2s</td>
-                        <td class="px-6 py-4 font-bold text-red-600">100.0%</td>
-                        <td class="px-6 py-4 text-slate-600">438657 px²</td>
-                        <td class="px-6 py-4 text-center">
-                            <button class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">
-                                <i class="fas fa-play text-xs"></i>
-                            </button>
-                        </td>
-                    </tr>
-                
-                    <tr onclick="playVideo('event_clips/event_07_Velum_Critical.mp4', 'Event #7')" class="hover:bg-slate-50 cursor-pointer transition">
-                        <td class="px-6 py-4"><span class="severity-badge s-Critical">Critical</span></td>
-                        <td class="px-6 py-4 font-bold text-slate-700">Velum</td>
-                        <td class="px-6 py-4 text-slate-500">21.0s ~ 21.8s</td>
-                        <td class="px-6 py-4 font-bold text-red-600">100.0%</td>
-                        <td class="px-6 py-4 text-slate-600">438657 px²</td>
+                        <td class="px-6 py-4 text-slate-600">253408 px²</td>
                         <td class="px-6 py-4 text-center">
                             <button class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">
                                 <i class="fas fa-play text-xs"></i>

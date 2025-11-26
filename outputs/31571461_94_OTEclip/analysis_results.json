@@ -1,0 +1,2173 @@
+{
+  "video_info": {
+    "filename": "31571461_94_OTEclip.mp4",
+    "fps": 30.0,
+    "total_frames": 660,
+    "duration": 22.0
+  },
+  "frame_classifications": [
+    {
+      "frame_number": 0,
+      "timestamp": 0.0,
+      "label": "None",
+      "roi_area": 0
+    },
+    {
+      "frame_number": 6,
+      "timestamp": 0.2,
+      "label": "None",
+      "roi_area": 0
+    },
+    {
+      "frame_number": 12,
+      "timestamp": 0.4,
+      "label": "None",
+      "roi_area": 0
+    },
+    {
+      "frame_number": 18,
+      "timestamp": 0.6,
+      "label": "OTE",
+      "roi_area": 206184.0,
+      "reduction_percent": 29.34137071928664
+    },
+    {
+      "frame_number": 24,
+      "timestamp": 0.8,
+      "label": "OTE",
+      "roi_area": 87105.0,
+      "reduction_percent": 70.149381603342
+    },
+    {
+      "frame_number": 30,
+      "timestamp": 1.0,
+      "label": "OTE",
+      "roi_area": 175386.0,
+      "reduction_percent": 39.89575158583016
+    },
+    {
+      "frame_number": 36,
+      "timestamp": 1.2,
+      "label": "OTE",
+      "roi_area": 221660.0,
+      "reduction_percent": 24.03779262036374
+    },
+    {
+      "frame_number": 42,
+      "timestamp": 1.4,
+      "label": "OTE",
+      "roi_area": 221099.0,
+      "reduction_percent": 24.23004561296491
+    },
+    {
+      "frame_number": 48,
+      "timestamp": 1.6,
+      "label": "OTE",
+      "roi_area": 192435.0,
+      "reduction_percent": 34.05311117431966
+    },
+    {
+      "frame_number": 54,
+      "timestamp": 1.8,
+      "label": "OTE",
+      "roi_area": 17328.0,
+      "reduction_percent": 94.06174713762367
+    },
+    {
+      "frame_number": 60,
+      "timestamp": 2.0,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 66,
+      "timestamp": 2.2,
+      "label": "OTE",
+      "roi_area": 30574.0,
+      "reduction_percent": 89.52238325171434
+    },
+    {
+      "frame_number": 72,
+      "timestamp": 2.4,
+      "label": "OTE",
+      "roi_area": 35373.0,
+      "reduction_percent": 87.87778055743087
+    },
+    {
+      "frame_number": 78,
+      "timestamp": 2.6,
+      "label": "OTE",
+      "roi_area": 82731.0,
+      "reduction_percent": 71.64833809110942
+    },
+    {
+      "frame_number": 84,
+      "timestamp": 2.8,
+      "label": "OTE",
+      "roi_area": 103915.0,
+      "reduction_percent": 64.38864576443697
+    },
+    {
+      "frame_number": 90,
+      "timestamp": 3.0,
+      "label": "OTE",
+      "roi_area": 29652.0,
+      "reduction_percent": 89.83834984561501
+    },
+    {
+      "frame_number": 96,
+      "timestamp": 3.2,
+      "label": "OTE",
+      "roi_area": 16914.0,
+      "reduction_percent": 94.20362367761813
+    },
+    {
+      "frame_number": 102,
+      "timestamp": 3.4,
+      "label": "OTE",
+      "roi_area": 18046.0,
+      "reduction_percent": 93.81569072285069
+    },
+    {
+      "frame_number": 108,
+      "timestamp": 3.6,
+      "label": "OTE",
+      "roi_area": 24787.0,
+      "reduction_percent": 91.50557053902804
+    },
+    {
+      "frame_number": 114,
+      "timestamp": 3.8,
+      "label": "OTE",
+      "roi_area": 25681.0,
+      "reduction_percent": 91.1991994599096
+    },
+    {
+      "frame_number": 120,
+      "timestamp": 4.0,
+      "label": "OTE",
+      "roi_area": 15146.0,
+      "reduction_percent": 94.80951189672484
+    },
+    {
+      "frame_number": 126,
+      "timestamp": 4.2,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 132,
+      "timestamp": 4.4,
+      "label": "OTE",
+      "roi_area": 85523.0,
+      "reduction_percent": 70.69152818853816
+    },
+    {
+      "frame_number": 138,
+      "timestamp": 4.6,
+      "label": "OTE",
+      "roi_area": 126840.0,
+      "reduction_percent": 56.53231803648352
+    },
+    {
+      "frame_number": 144,
+      "timestamp": 4.8,
+      "label": "OTE",
+      "roi_area": 15244.0,
+      "reduction_percent": 94.77592759498702
+    },
+    {
+      "frame_number": 150,
+      "timestamp": 5.0,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 156,
+      "timestamp": 5.2,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 162,
+      "timestamp": 5.4,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 168,
+      "timestamp": 5.6,
+      "label": "OTE",
+      "roi_area": 9762.0,
+      "reduction_percent": 96.65459231056569
+    },
+    {
+      "frame_number": 174,
+      "timestamp": 5.8,
+      "label": "None",
+      "roi_area": 0
+    },
+    {
+      "frame_number": 180,
+      "timestamp": 6.0,
+      "label": "None",
+      "roi_area": 0
+    },
+    {
+      "frame_number": 186,
+      "timestamp": 6.2,
+      "label": "None",
+      "roi_area": 0
+    },
+    {
+      "frame_number": 192,
+      "timestamp": 6.4,
+      "label": "None",
+      "roi_area": 0
+    },
+    {
+      "frame_number": 198,
+      "timestamp": 6.6,
+      "label": "OTE",
+      "roi_area": 291803.0,
+      "reduction_percent": 0.0
+    },
+    {
+      "frame_number": 204,
+      "timestamp": 6.8,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 210,
+      "timestamp": 7.0,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 216,
+      "timestamp": 7.2,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 222,
+      "timestamp": 7.4,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 228,
+      "timestamp": 7.6,
+      "label": "OTE",
+      "roi_area": 1520.0,
+      "reduction_percent": 99.47910062610734
+    },
+    {
+      "frame_number": 234,
+      "timestamp": 7.8,
+      "label": "OTE",
+      "roi_area": 6419.0,
+      "reduction_percent": 97.80022823617304
+    },
+    {
+      "frame_number": 240,
+      "timestamp": 8.0,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 246,
+      "timestamp": 8.2,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 252,
+      "timestamp": 8.4,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 258,
+      "timestamp": 8.6,
+      "label": "OTE",
+      "roi_area": 1137.0,
+      "reduction_percent": 99.61035356045002
+    },
+    {
+      "frame_number": 264,
+      "timestamp": 8.8,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 270,
+      "timestamp": 9.0,
+      "label": "OTE",
+      "roi_area": 54232.0,
+      "reduction_percent": 81.41485865464028
+    },
+    {
+      "frame_number": 276,
+      "timestamp": 9.2,
+      "label": "OTE",
+      "roi_area": 112158.0,
+      "reduction_percent": 61.56379475193881
+    },
+    {
+      "frame_number": 282,
+      "timestamp": 9.4,
+      "label": "OTE",
+      "roi_area": 526.0,
+      "reduction_percent": 99.81974140087661
+    },
+    {
+      "frame_number": 288,
+      "timestamp": 9.6,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 294,
+      "timestamp": 9.8,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 300,
+      "timestamp": 10.0,
+      "label": "OTE",
+      "roi_area": 966.0,
+      "reduction_percent": 99.66895474001295
+    },
+    {
+      "frame_number": 306,
+      "timestamp": 10.2,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 312,
+      "timestamp": 10.4,
+      "label": "OTE",
+      "roi_area": 1711.0,
+      "reduction_percent": 99.41364550741424
+    },
+    {
+      "frame_number": 318,
+      "timestamp": 10.6,
+      "label": "OTE",
+      "roi_area": 2956.0,
+      "reduction_percent": 98.98698779656138
+    },
+    {
+      "frame_number": 324,
+      "timestamp": 10.8,
+      "label": "OTE",
+      "roi_area": 1916.0,
+      "reduction_percent": 99.34339263133005
+    },
+    {
+      "frame_number": 330,
+      "timestamp": 11.0,
+      "label": "OTE",
+      "roi_area": 1654.0,
+      "reduction_percent": 99.43317923393522
+    },
+    {
+      "frame_number": 336,
+      "timestamp": 11.2,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 342,
+      "timestamp": 11.4,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 348,
+      "timestamp": 11.6,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 354,
+      "timestamp": 11.8,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 360,
+      "timestamp": 12.0,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 366,
+      "timestamp": 12.2,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 372,
+      "timestamp": 12.4,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 378,
+      "timestamp": 12.6,
+      "label": "OTE",
+      "roi_area": 289.0,
+      "reduction_percent": 99.9009605795691
+    },
+    {
+      "frame_number": 384,
+      "timestamp": 12.8,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 390,
+      "timestamp": 13.0,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 396,
+      "timestamp": 13.2,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 402,
+      "timestamp": 13.4,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 408,
+      "timestamp": 13.6,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 414,
+      "timestamp": 13.8,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 420,
+      "timestamp": 14.0,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 426,
+      "timestamp": 14.2,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 432,
+      "timestamp": 14.4,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 438,
+      "timestamp": 14.6,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 444,
+      "timestamp": 14.8,
+      "label": "OTE",
+      "roi_area": 306.0,
+      "reduction_percent": 99.89513473130846
+    },
+    {
+      "frame_number": 450,
+      "timestamp": 15.0,
+      "label": "OTE",
+      "roi_area": 10352.0,
+      "reduction_percent": 96.45240110622578
+    },
+    {
+      "frame_number": 456,
+      "timestamp": 15.2,
+      "label": "OTE",
+      "roi_area": 21321.0,
+      "reduction_percent": 92.6933581902859
+    },
+    {
+      "frame_number": 462,
+      "timestamp": 15.4,
+      "label": "OTE",
+      "roi_area": 19148.0,
+      "reduction_percent": 93.43803867677852
+    },
+    {
+      "frame_number": 468,
+      "timestamp": 15.6,
+      "label": "OTE",
+      "roi_area": 17933.0,
+      "reduction_percent": 93.85441547893613
+    },
+    {
+      "frame_number": 474,
+      "timestamp": 15.8,
+      "label": "OTE",
+      "roi_area": 23037.0,
+      "reduction_percent": 92.10529021291762
+    },
+    {
+      "frame_number": 480,
+      "timestamp": 16.0,
+      "label": "OTE",
+      "roi_area": 30851.0,
+      "reduction_percent": 89.42745619476153
+    },
+    {
+      "frame_number": 486,
+      "timestamp": 16.2,
+      "label": "OTE",
+      "roi_area": 37380.0,
+      "reduction_percent": 87.18998776571864
+    },
+    {
+      "frame_number": 492,
+      "timestamp": 16.4,
+      "label": "OTE",
+      "roi_area": 75599.0,
+      "reduction_percent": 74.09245278492682
+    },
+    {
+      "frame_number": 498,
+      "timestamp": 16.6,
+      "label": "OTE",
+      "roi_area": 99492.0,
+      "reduction_percent": 65.90439440307331
+    },
+    {
+      "frame_number": 504,
+      "timestamp": 16.8,
+      "label": "OTE",
+      "roi_area": 60500.0,
+      "reduction_percent": 79.26683413124607
+    },
+    {
+      "frame_number": 510,
+      "timestamp": 17.0,
+      "label": "OTE",
+      "roi_area": 38046.0,
+      "reduction_percent": 86.96175159268411
+    },
+    {
+      "frame_number": 516,
+      "timestamp": 17.2,
+      "label": "OTE",
+      "roi_area": 35415.0,
+      "reduction_percent": 87.86338728525752
+    },
+    {
+      "frame_number": 522,
+      "timestamp": 17.4,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 528,
+      "timestamp": 17.6,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 534,
+      "timestamp": 17.8,
+      "label": "OTE",
+      "roi_area": 8363.0,
+      "reduction_percent": 97.13402535272084
+    },
+    {
+      "frame_number": 540,
+      "timestamp": 18.0,
+      "label": "OTE",
+      "roi_area": 8979.0,
+      "reduction_percent": 96.92292402751171
+    },
+    {
+      "frame_number": 546,
+      "timestamp": 18.2,
+      "label": "OTE",
+      "roi_area": 12019.0,
+      "reduction_percent": 95.88112527972639
+    },
+    {
+      "frame_number": 552,
+      "timestamp": 18.4,
+      "label": "OTE",
+      "roi_area": 36009.0,
+      "reduction_percent": 87.65982529309157
+    },
+    {
+      "frame_number": 558,
+      "timestamp": 18.6,
+      "label": "OTE",
+      "roi_area": 39763.0,
+      "reduction_percent": 86.3733409183593
+    },
+    {
+      "frame_number": 564,
+      "timestamp": 18.8,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 570,
+      "timestamp": 19.0,
+      "label": "OTE",
+      "roi_area": 92887.0,
+      "reduction_percent": 68.16790780081082
+    },
+    {
+      "frame_number": 576,
+      "timestamp": 19.2,
+      "label": "OTE",
+      "roi_area": 6372.0,
+      "reduction_percent": 97.81633499312893
+    },
+    {
+      "frame_number": 582,
+      "timestamp": 19.4,
+      "label": "OTE",
+      "roi_area": 2307.0,
+      "reduction_percent": 99.20939812133528
+    },
+    {
+      "frame_number": 588,
+      "timestamp": 19.6,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 594,
+      "timestamp": 19.8,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 600,
+      "timestamp": 20.0,
+      "label": "OTE",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 606,
+      "timestamp": 20.2,
+      "label": "None",
+      "roi_area": 0
+    },
+    {
+      "frame_number": 612,
+      "timestamp": 20.4,
+      "label": "None",
+      "roi_area": 0
+    },
+    {
+      "frame_number": 618,
+      "timestamp": 20.6,
+      "label": "None",
+      "roi_area": 0
+    },
+    {
+      "frame_number": 624,
+      "timestamp": 20.8,
+      "label": "None",
+      "roi_area": 0
+    },
+    {
+      "frame_number": 630,
+      "timestamp": 21.0,
+      "label": "OTE",
+      "roi_area": 104154.0,
+      "reduction_percent": 64.30674119183148
+    },
+    {
+      "frame_number": 636,
+      "timestamp": 21.2,
+      "label": "OTE",
+      "roi_area": 80601.0,
+      "reduction_percent": 72.37828260847216
+    },
+    {
+      "frame_number": 642,
+      "timestamp": 21.4,
+      "label": "OTE",
+      "roi_area": 70623.0,
+      "reduction_percent": 75.79771284051226
+    },
+    {
+      "frame_number": 648,
+      "timestamp": 21.6,
+      "label": "OTE",
+      "roi_area": 66139.0,
+      "reduction_percent": 77.33436599349561
+    },
+    {
+      "frame_number": 654,
+      "timestamp": 21.8,
+      "label": "OTE",
+      "roi_area": 46152.0,
+      "reduction_percent": 84.1838500632276
+    }
+  ],
+  "segments": [
+    {
+      "label": "OTE",
+      "start_frame": 18,
+      "start_time": 0.6,
+      "frames": [
+        {
+          "frame_number": 18,
+          "timestamp": 0.6,
+          "label": "OTE",
+          "roi_area": 206184.0,
+          "reduction_percent": 29.34137071928664
+        },
+        {
+          "frame_number": 24,
+          "timestamp": 0.8,
+          "label": "OTE",
+          "roi_area": 87105.0,
+          "reduction_percent": 70.149381603342
+        },
+        {
+          "frame_number": 30,
+          "timestamp": 1.0,
+          "label": "OTE",
+          "roi_area": 175386.0,
+          "reduction_percent": 39.89575158583016
+        },
+        {
+          "frame_number": 36,
+          "timestamp": 1.2,
+          "label": "OTE",
+          "roi_area": 221660.0,
+          "reduction_percent": 24.03779262036374
+        },
+        {
+          "frame_number": 42,
+          "timestamp": 1.4,
+          "label": "OTE",
+          "roi_area": 221099.0,
+          "reduction_percent": 24.23004561296491
+        },
+        {
+          "frame_number": 48,
+          "timestamp": 1.6,
+          "label": "OTE",
+          "roi_area": 192435.0,
+          "reduction_percent": 34.05311117431966
+        },
+        {
+          "frame_number": 54,
+          "timestamp": 1.8,
+          "label": "OTE",
+          "roi_area": 17328.0,
+          "reduction_percent": 94.06174713762367
+        },
+        {
+          "frame_number": 60,
+          "timestamp": 2.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 66,
+          "timestamp": 2.2,
+          "label": "OTE",
+          "roi_area": 30574.0,
+          "reduction_percent": 89.52238325171434
+        },
+        {
+          "frame_number": 72,
+          "timestamp": 2.4,
+          "label": "OTE",
+          "roi_area": 35373.0,
+          "reduction_percent": 87.87778055743087
+        },
+        {
+          "frame_number": 78,
+          "timestamp": 2.6,
+          "label": "OTE",
+          "roi_area": 82731.0,
+          "reduction_percent": 71.64833809110942
+        },
+        {
+          "frame_number": 84,
+          "timestamp": 2.8,
+          "label": "OTE",
+          "roi_area": 103915.0,
+          "reduction_percent": 64.38864576443697
+        },
+        {
+          "frame_number": 90,
+          "timestamp": 3.0,
+          "label": "OTE",
+          "roi_area": 29652.0,
+          "reduction_percent": 89.83834984561501
+        },
+        {
+          "frame_number": 96,
+          "timestamp": 3.2,
+          "label": "OTE",
+          "roi_area": 16914.0,
+          "reduction_percent": 94.20362367761813
+        },
+        {
+          "frame_number": 102,
+          "timestamp": 3.4,
+          "label": "OTE",
+          "roi_area": 18046.0,
+          "reduction_percent": 93.81569072285069
+        },
+        {
+          "frame_number": 108,
+          "timestamp": 3.6,
+          "label": "OTE",
+          "roi_area": 24787.0,
+          "reduction_percent": 91.50557053902804
+        },
+        {
+          "frame_number": 114,
+          "timestamp": 3.8,
+          "label": "OTE",
+          "roi_area": 25681.0,
+          "reduction_percent": 91.1991994599096
+        },
+        {
+          "frame_number": 120,
+          "timestamp": 4.0,
+          "label": "OTE",
+          "roi_area": 15146.0,
+          "reduction_percent": 94.80951189672484
+        },
+        {
+          "frame_number": 126,
+          "timestamp": 4.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 132,
+          "timestamp": 4.4,
+          "label": "OTE",
+          "roi_area": 85523.0,
+          "reduction_percent": 70.69152818853816
+        },
+        {
+          "frame_number": 138,
+          "timestamp": 4.6,
+          "label": "OTE",
+          "roi_area": 126840.0,
+          "reduction_percent": 56.53231803648352
+        },
+        {
+          "frame_number": 144,
+          "timestamp": 4.8,
+          "label": "OTE",
+          "roi_area": 15244.0,
+          "reduction_percent": 94.77592759498702
+        },
+        {
+          "frame_number": 150,
+          "timestamp": 5.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 156,
+          "timestamp": 5.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 162,
+          "timestamp": 5.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 168,
+          "timestamp": 5.6,
+          "label": "OTE",
+          "roi_area": 9762.0,
+          "reduction_percent": 96.65459231056569
+        }
+      ],
+      "end_frame": 168,
+      "end_time": 5.6,
+      "duration": 5.0,
+      "max_area": 291803.0,
+      "max_area_frame": 198
+    },
+    {
+      "label": "OTE",
+      "start_frame": 198,
+      "start_time": 6.6,
+      "frames": [
+        {
+          "frame_number": 198,
+          "timestamp": 6.6,
+          "label": "OTE",
+          "roi_area": 291803.0,
+          "reduction_percent": 0.0
+        },
+        {
+          "frame_number": 204,
+          "timestamp": 6.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 210,
+          "timestamp": 7.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 216,
+          "timestamp": 7.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 222,
+          "timestamp": 7.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 228,
+          "timestamp": 7.6,
+          "label": "OTE",
+          "roi_area": 1520.0,
+          "reduction_percent": 99.47910062610734
+        },
+        {
+          "frame_number": 234,
+          "timestamp": 7.8,
+          "label": "OTE",
+          "roi_area": 6419.0,
+          "reduction_percent": 97.80022823617304
+        },
+        {
+          "frame_number": 240,
+          "timestamp": 8.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 246,
+          "timestamp": 8.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 252,
+          "timestamp": 8.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 258,
+          "timestamp": 8.6,
+          "label": "OTE",
+          "roi_area": 1137.0,
+          "reduction_percent": 99.61035356045002
+        },
+        {
+          "frame_number": 264,
+          "timestamp": 8.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 270,
+          "timestamp": 9.0,
+          "label": "OTE",
+          "roi_area": 54232.0,
+          "reduction_percent": 81.41485865464028
+        },
+        {
+          "frame_number": 276,
+          "timestamp": 9.2,
+          "label": "OTE",
+          "roi_area": 112158.0,
+          "reduction_percent": 61.56379475193881
+        },
+        {
+          "frame_number": 282,
+          "timestamp": 9.4,
+          "label": "OTE",
+          "roi_area": 526.0,
+          "reduction_percent": 99.81974140087661
+        },
+        {
+          "frame_number": 288,
+          "timestamp": 9.6,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 294,
+          "timestamp": 9.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 300,
+          "timestamp": 10.0,
+          "label": "OTE",
+          "roi_area": 966.0,
+          "reduction_percent": 99.66895474001295
+        },
+        {
+          "frame_number": 306,
+          "timestamp": 10.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 312,
+          "timestamp": 10.4,
+          "label": "OTE",
+          "roi_area": 1711.0,
+          "reduction_percent": 99.41364550741424
+        },
+        {
+          "frame_number": 318,
+          "timestamp": 10.6,
+          "label": "OTE",
+          "roi_area": 2956.0,
+          "reduction_percent": 98.98698779656138
+        },
+        {
+          "frame_number": 324,
+          "timestamp": 10.8,
+          "label": "OTE",
+          "roi_area": 1916.0,
+          "reduction_percent": 99.34339263133005
+        },
+        {
+          "frame_number": 330,
+          "timestamp": 11.0,
+          "label": "OTE",
+          "roi_area": 1654.0,
+          "reduction_percent": 99.43317923393522
+        },
+        {
+          "frame_number": 336,
+          "timestamp": 11.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 342,
+          "timestamp": 11.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 348,
+          "timestamp": 11.6,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 354,
+          "timestamp": 11.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 360,
+          "timestamp": 12.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 366,
+          "timestamp": 12.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 372,
+          "timestamp": 12.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 378,
+          "timestamp": 12.6,
+          "label": "OTE",
+          "roi_area": 289.0,
+          "reduction_percent": 99.9009605795691
+        },
+        {
+          "frame_number": 384,
+          "timestamp": 12.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 390,
+          "timestamp": 13.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 396,
+          "timestamp": 13.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 402,
+          "timestamp": 13.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 408,
+          "timestamp": 13.6,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 414,
+          "timestamp": 13.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 420,
+          "timestamp": 14.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 426,
+          "timestamp": 14.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 432,
+          "timestamp": 14.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 438,
+          "timestamp": 14.6,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 444,
+          "timestamp": 14.8,
+          "label": "OTE",
+          "roi_area": 306.0,
+          "reduction_percent": 99.89513473130846
+        },
+        {
+          "frame_number": 450,
+          "timestamp": 15.0,
+          "label": "OTE",
+          "roi_area": 10352.0,
+          "reduction_percent": 96.45240110622578
+        },
+        {
+          "frame_number": 456,
+          "timestamp": 15.2,
+          "label": "OTE",
+          "roi_area": 21321.0,
+          "reduction_percent": 92.6933581902859
+        },
+        {
+          "frame_number": 462,
+          "timestamp": 15.4,
+          "label": "OTE",
+          "roi_area": 19148.0,
+          "reduction_percent": 93.43803867677852
+        },
+        {
+          "frame_number": 468,
+          "timestamp": 15.6,
+          "label": "OTE",
+          "roi_area": 17933.0,
+          "reduction_percent": 93.85441547893613
+        },
+        {
+          "frame_number": 474,
+          "timestamp": 15.8,
+          "label": "OTE",
+          "roi_area": 23037.0,
+          "reduction_percent": 92.10529021291762
+        },
+        {
+          "frame_number": 480,
+          "timestamp": 16.0,
+          "label": "OTE",
+          "roi_area": 30851.0,
+          "reduction_percent": 89.42745619476153
+        },
+        {
+          "frame_number": 486,
+          "timestamp": 16.2,
+          "label": "OTE",
+          "roi_area": 37380.0,
+          "reduction_percent": 87.18998776571864
+        },
+        {
+          "frame_number": 492,
+          "timestamp": 16.4,
+          "label": "OTE",
+          "roi_area": 75599.0,
+          "reduction_percent": 74.09245278492682
+        },
+        {
+          "frame_number": 498,
+          "timestamp": 16.6,
+          "label": "OTE",
+          "roi_area": 99492.0,
+          "reduction_percent": 65.90439440307331
+        },
+        {
+          "frame_number": 504,
+          "timestamp": 16.8,
+          "label": "OTE",
+          "roi_area": 60500.0,
+          "reduction_percent": 79.26683413124607
+        },
+        {
+          "frame_number": 510,
+          "timestamp": 17.0,
+          "label": "OTE",
+          "roi_area": 38046.0,
+          "reduction_percent": 86.96175159268411
+        },
+        {
+          "frame_number": 516,
+          "timestamp": 17.2,
+          "label": "OTE",
+          "roi_area": 35415.0,
+          "reduction_percent": 87.86338728525752
+        },
+        {
+          "frame_number": 522,
+          "timestamp": 17.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 528,
+          "timestamp": 17.6,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 534,
+          "timestamp": 17.8,
+          "label": "OTE",
+          "roi_area": 8363.0,
+          "reduction_percent": 97.13402535272084
+        },
+        {
+          "frame_number": 540,
+          "timestamp": 18.0,
+          "label": "OTE",
+          "roi_area": 8979.0,
+          "reduction_percent": 96.92292402751171
+        },
+        {
+          "frame_number": 546,
+          "timestamp": 18.2,
+          "label": "OTE",
+          "roi_area": 12019.0,
+          "reduction_percent": 95.88112527972639
+        },
+        {
+          "frame_number": 552,
+          "timestamp": 18.4,
+          "label": "OTE",
+          "roi_area": 36009.0,
+          "reduction_percent": 87.65982529309157
+        },
+        {
+          "frame_number": 558,
+          "timestamp": 18.6,
+          "label": "OTE",
+          "roi_area": 39763.0,
+          "reduction_percent": 86.3733409183593
+        },
+        {
+          "frame_number": 564,
+          "timestamp": 18.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 570,
+          "timestamp": 19.0,
+          "label": "OTE",
+          "roi_area": 92887.0,
+          "reduction_percent": 68.16790780081082
+        },
+        {
+          "frame_number": 576,
+          "timestamp": 19.2,
+          "label": "OTE",
+          "roi_area": 6372.0,
+          "reduction_percent": 97.81633499312893
+        },
+        {
+          "frame_number": 582,
+          "timestamp": 19.4,
+          "label": "OTE",
+          "roi_area": 2307.0,
+          "reduction_percent": 99.20939812133528
+        },
+        {
+          "frame_number": 588,
+          "timestamp": 19.6,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 594,
+          "timestamp": 19.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 600,
+          "timestamp": 20.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        }
+      ],
+      "end_frame": 600,
+      "end_time": 20.0,
+      "duration": 13.4,
+      "max_area": 291803.0,
+      "max_area_frame": 198
+    },
+    {
+      "label": "OTE",
+      "start_frame": 630,
+      "start_time": 21.0,
+      "frames": [
+        {
+          "frame_number": 630,
+          "timestamp": 21.0,
+          "label": "OTE",
+          "roi_area": 104154.0,
+          "reduction_percent": 64.30674119183148
+        },
+        {
+          "frame_number": 636,
+          "timestamp": 21.2,
+          "label": "OTE",
+          "roi_area": 80601.0,
+          "reduction_percent": 72.37828260847216
+        },
+        {
+          "frame_number": 642,
+          "timestamp": 21.4,
+          "label": "OTE",
+          "roi_area": 70623.0,
+          "reduction_percent": 75.79771284051226
+        },
+        {
+          "frame_number": 648,
+          "timestamp": 21.6,
+          "label": "OTE",
+          "roi_area": 66139.0,
+          "reduction_percent": 77.33436599349561
+        },
+        {
+          "frame_number": 654,
+          "timestamp": 21.8,
+          "label": "OTE",
+          "roi_area": 46152.0,
+          "reduction_percent": 84.1838500632276
+        }
+      ],
+      "end_frame": 654,
+      "end_time": 21.8,
+      "duration": 0.8000000000000007,
+      "max_area": 291803.0,
+      "max_area_frame": 198
+    }
+  ],
+  "occlusion_events": [
+    {
+      "segment_label": "OTE",
+      "segment_max_area": 291803.0,
+      "start_frame": 48,
+      "start_time": 1.6,
+      "severity": "Critical",
+      "max_reduction": 100.0,
+      "frames": [
+        {
+          "frame_number": 48,
+          "timestamp": 1.6,
+          "label": "OTE",
+          "roi_area": 192435.0,
+          "reduction_percent": 34.05311117431966
+        },
+        {
+          "frame_number": 54,
+          "timestamp": 1.8,
+          "label": "OTE",
+          "roi_area": 17328.0,
+          "reduction_percent": 94.06174713762367
+        },
+        {
+          "frame_number": 60,
+          "timestamp": 2.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 66,
+          "timestamp": 2.2,
+          "label": "OTE",
+          "roi_area": 30574.0,
+          "reduction_percent": 89.52238325171434
+        },
+        {
+          "frame_number": 72,
+          "timestamp": 2.4,
+          "label": "OTE",
+          "roi_area": 35373.0,
+          "reduction_percent": 87.87778055743087
+        },
+        {
+          "frame_number": 78,
+          "timestamp": 2.6,
+          "label": "OTE",
+          "roi_area": 82731.0,
+          "reduction_percent": 71.64833809110942
+        },
+        {
+          "frame_number": 84,
+          "timestamp": 2.8,
+          "label": "OTE",
+          "roi_area": 103915.0,
+          "reduction_percent": 64.38864576443697
+        },
+        {
+          "frame_number": 90,
+          "timestamp": 3.0,
+          "label": "OTE",
+          "roi_area": 29652.0,
+          "reduction_percent": 89.83834984561501
+        },
+        {
+          "frame_number": 96,
+          "timestamp": 3.2,
+          "label": "OTE",
+          "roi_area": 16914.0,
+          "reduction_percent": 94.20362367761813
+        },
+        {
+          "frame_number": 102,
+          "timestamp": 3.4,
+          "label": "OTE",
+          "roi_area": 18046.0,
+          "reduction_percent": 93.81569072285069
+        },
+        {
+          "frame_number": 108,
+          "timestamp": 3.6,
+          "label": "OTE",
+          "roi_area": 24787.0,
+          "reduction_percent": 91.50557053902804
+        },
+        {
+          "frame_number": 114,
+          "timestamp": 3.8,
+          "label": "OTE",
+          "roi_area": 25681.0,
+          "reduction_percent": 91.1991994599096
+        },
+        {
+          "frame_number": 120,
+          "timestamp": 4.0,
+          "label": "OTE",
+          "roi_area": 15146.0,
+          "reduction_percent": 94.80951189672484
+        },
+        {
+          "frame_number": 126,
+          "timestamp": 4.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 132,
+          "timestamp": 4.4,
+          "label": "OTE",
+          "roi_area": 85523.0,
+          "reduction_percent": 70.69152818853816
+        },
+        {
+          "frame_number": 138,
+          "timestamp": 4.6,
+          "label": "OTE",
+          "roi_area": 126840.0,
+          "reduction_percent": 56.53231803648352
+        },
+        {
+          "frame_number": 144,
+          "timestamp": 4.8,
+          "label": "OTE",
+          "roi_area": 15244.0,
+          "reduction_percent": 94.77592759498702
+        },
+        {
+          "frame_number": 150,
+          "timestamp": 5.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 156,
+          "timestamp": 5.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 162,
+          "timestamp": 5.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 168,
+          "timestamp": 5.6,
+          "label": "OTE",
+          "roi_area": 9762.0,
+          "reduction_percent": 96.65459231056569
+        }
+      ],
+      "end_frame": 168,
+      "end_time": 5.6,
+      "duration": 3.9999999999999996,
+      "clip_path": "event_clips/event_01_OTE_Critical.mp4"
+    },
+    {
+      "segment_label": "OTE",
+      "segment_max_area": 291803.0,
+      "start_frame": 204,
+      "start_time": 6.8,
+      "severity": "Critical",
+      "max_reduction": 100.0,
+      "frames": [
+        {
+          "frame_number": 204,
+          "timestamp": 6.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 210,
+          "timestamp": 7.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 216,
+          "timestamp": 7.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 222,
+          "timestamp": 7.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 228,
+          "timestamp": 7.6,
+          "label": "OTE",
+          "roi_area": 1520.0,
+          "reduction_percent": 99.47910062610734
+        },
+        {
+          "frame_number": 234,
+          "timestamp": 7.8,
+          "label": "OTE",
+          "roi_area": 6419.0,
+          "reduction_percent": 97.80022823617304
+        },
+        {
+          "frame_number": 240,
+          "timestamp": 8.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 246,
+          "timestamp": 8.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 252,
+          "timestamp": 8.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 258,
+          "timestamp": 8.6,
+          "label": "OTE",
+          "roi_area": 1137.0,
+          "reduction_percent": 99.61035356045002
+        },
+        {
+          "frame_number": 264,
+          "timestamp": 8.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 270,
+          "timestamp": 9.0,
+          "label": "OTE",
+          "roi_area": 54232.0,
+          "reduction_percent": 81.41485865464028
+        },
+        {
+          "frame_number": 276,
+          "timestamp": 9.2,
+          "label": "OTE",
+          "roi_area": 112158.0,
+          "reduction_percent": 61.56379475193881
+        },
+        {
+          "frame_number": 282,
+          "timestamp": 9.4,
+          "label": "OTE",
+          "roi_area": 526.0,
+          "reduction_percent": 99.81974140087661
+        },
+        {
+          "frame_number": 288,
+          "timestamp": 9.6,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 294,
+          "timestamp": 9.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 300,
+          "timestamp": 10.0,
+          "label": "OTE",
+          "roi_area": 966.0,
+          "reduction_percent": 99.66895474001295
+        },
+        {
+          "frame_number": 306,
+          "timestamp": 10.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 312,
+          "timestamp": 10.4,
+          "label": "OTE",
+          "roi_area": 1711.0,
+          "reduction_percent": 99.41364550741424
+        },
+        {
+          "frame_number": 318,
+          "timestamp": 10.6,
+          "label": "OTE",
+          "roi_area": 2956.0,
+          "reduction_percent": 98.98698779656138
+        },
+        {
+          "frame_number": 324,
+          "timestamp": 10.8,
+          "label": "OTE",
+          "roi_area": 1916.0,
+          "reduction_percent": 99.34339263133005
+        },
+        {
+          "frame_number": 330,
+          "timestamp": 11.0,
+          "label": "OTE",
+          "roi_area": 1654.0,
+          "reduction_percent": 99.43317923393522
+        },
+        {
+          "frame_number": 336,
+          "timestamp": 11.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 342,
+          "timestamp": 11.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 348,
+          "timestamp": 11.6,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 354,
+          "timestamp": 11.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 360,
+          "timestamp": 12.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 366,
+          "timestamp": 12.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 372,
+          "timestamp": 12.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 378,
+          "timestamp": 12.6,
+          "label": "OTE",
+          "roi_area": 289.0,
+          "reduction_percent": 99.9009605795691
+        },
+        {
+          "frame_number": 384,
+          "timestamp": 12.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 390,
+          "timestamp": 13.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 396,
+          "timestamp": 13.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 402,
+          "timestamp": 13.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 408,
+          "timestamp": 13.6,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 414,
+          "timestamp": 13.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 420,
+          "timestamp": 14.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 426,
+          "timestamp": 14.2,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 432,
+          "timestamp": 14.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 438,
+          "timestamp": 14.6,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 444,
+          "timestamp": 14.8,
+          "label": "OTE",
+          "roi_area": 306.0,
+          "reduction_percent": 99.89513473130846
+        },
+        {
+          "frame_number": 450,
+          "timestamp": 15.0,
+          "label": "OTE",
+          "roi_area": 10352.0,
+          "reduction_percent": 96.45240110622578
+        },
+        {
+          "frame_number": 456,
+          "timestamp": 15.2,
+          "label": "OTE",
+          "roi_area": 21321.0,
+          "reduction_percent": 92.6933581902859
+        },
+        {
+          "frame_number": 462,
+          "timestamp": 15.4,
+          "label": "OTE",
+          "roi_area": 19148.0,
+          "reduction_percent": 93.43803867677852
+        },
+        {
+          "frame_number": 468,
+          "timestamp": 15.6,
+          "label": "OTE",
+          "roi_area": 17933.0,
+          "reduction_percent": 93.85441547893613
+        },
+        {
+          "frame_number": 474,
+          "timestamp": 15.8,
+          "label": "OTE",
+          "roi_area": 23037.0,
+          "reduction_percent": 92.10529021291762
+        },
+        {
+          "frame_number": 480,
+          "timestamp": 16.0,
+          "label": "OTE",
+          "roi_area": 30851.0,
+          "reduction_percent": 89.42745619476153
+        },
+        {
+          "frame_number": 486,
+          "timestamp": 16.2,
+          "label": "OTE",
+          "roi_area": 37380.0,
+          "reduction_percent": 87.18998776571864
+        },
+        {
+          "frame_number": 492,
+          "timestamp": 16.4,
+          "label": "OTE",
+          "roi_area": 75599.0,
+          "reduction_percent": 74.09245278492682
+        },
+        {
+          "frame_number": 498,
+          "timestamp": 16.6,
+          "label": "OTE",
+          "roi_area": 99492.0,
+          "reduction_percent": 65.90439440307331
+        },
+        {
+          "frame_number": 504,
+          "timestamp": 16.8,
+          "label": "OTE",
+          "roi_area": 60500.0,
+          "reduction_percent": 79.26683413124607
+        },
+        {
+          "frame_number": 510,
+          "timestamp": 17.0,
+          "label": "OTE",
+          "roi_area": 38046.0,
+          "reduction_percent": 86.96175159268411
+        },
+        {
+          "frame_number": 516,
+          "timestamp": 17.2,
+          "label": "OTE",
+          "roi_area": 35415.0,
+          "reduction_percent": 87.86338728525752
+        },
+        {
+          "frame_number": 522,
+          "timestamp": 17.4,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 528,
+          "timestamp": 17.6,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 534,
+          "timestamp": 17.8,
+          "label": "OTE",
+          "roi_area": 8363.0,
+          "reduction_percent": 97.13402535272084
+        },
+        {
+          "frame_number": 540,
+          "timestamp": 18.0,
+          "label": "OTE",
+          "roi_area": 8979.0,
+          "reduction_percent": 96.92292402751171
+        },
+        {
+          "frame_number": 546,
+          "timestamp": 18.2,
+          "label": "OTE",
+          "roi_area": 12019.0,
+          "reduction_percent": 95.88112527972639
+        },
+        {
+          "frame_number": 552,
+          "timestamp": 18.4,
+          "label": "OTE",
+          "roi_area": 36009.0,
+          "reduction_percent": 87.65982529309157
+        },
+        {
+          "frame_number": 558,
+          "timestamp": 18.6,
+          "label": "OTE",
+          "roi_area": 39763.0,
+          "reduction_percent": 86.3733409183593
+        },
+        {
+          "frame_number": 564,
+          "timestamp": 18.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 570,
+          "timestamp": 19.0,
+          "label": "OTE",
+          "roi_area": 92887.0,
+          "reduction_percent": 68.16790780081082
+        },
+        {
+          "frame_number": 576,
+          "timestamp": 19.2,
+          "label": "OTE",
+          "roi_area": 6372.0,
+          "reduction_percent": 97.81633499312893
+        },
+        {
+          "frame_number": 582,
+          "timestamp": 19.4,
+          "label": "OTE",
+          "roi_area": 2307.0,
+          "reduction_percent": 99.20939812133528
+        },
+        {
+          "frame_number": 588,
+          "timestamp": 19.6,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 594,
+          "timestamp": 19.8,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 600,
+          "timestamp": 20.0,
+          "label": "OTE",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        }
+      ],
+      "end_frame": 600,
+      "end_time": 20.0,
+      "duration": 13.2,
+      "clip_path": "event_clips/event_02_OTE_Critical.mp4"
+    }
+  ],
+  "summary": {
+    "total_segments": 3,
+    "ote_segments": 3,
+    "velum_segments": 0,
+    "total_events": 2,
+    "events_by_severity": {
+      "Critical": 2,
+      "Severe": 0,
+      "Moderate": 0,
+      "Mild": 0
+    }
+  },
+  "max_area": 291803.0,
+  "max_area_frame": 198,
+  "max_area_source": "auto",
+  "segment_references": {
+    "OTE": {
+      "max_area": 291803.0,
+      "frame_number": 198
+    }
+  },
+  "metadata": {
+    "threshold_percent": 30
+  },
+  "reference_images": {
+    "OTE": "outputs\\31571461_94_OTEclip\\overlays\\reference_OTE.jpg"
+  }
+}

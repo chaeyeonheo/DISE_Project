@@ -486,62 +486,69 @@ class IntegratedDISEAnalyzer:
         print(f"✅ 디버깅 이미지 {saved_count}개 저장 완료: {debug_dir}")
     
     def create_event_clips(self, video_path, events, output_dir):
-        """Side-by-Side 비디오: 우측에 ROI 윤곽선 + segment 정보 표시"""
+        """Side-by-Side 비디오 생성 (Resize Fix + 코덱 안전 장치 적용)"""
         output_dir = Path(output_dir)
         clips_dir = output_dir / 'event_clips'
         clips_dir.mkdir(parents=True, exist_ok=True)
         
         cap = cv2.VideoCapture(str(video_path))
         fps = cap.get(cv2.CAP_PROP_FPS)
-        w_orig = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-        h_orig = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
         
-        # H.264 코덱 사용 (브라우저 호환성 개선)
-        fourcc = cv2.VideoWriter_fourcc(*'avc1')  # H.264
-        ext = 'mp4'
-        print(f"🎥 Using H.264 codec for better browser compatibility")
-
+        # 1. 코덱 우선순위 설정 (웹 호환성: avc1/h264 -> 안전성: mp4v)
+        # Windows에 openh264 dll이 없으면 avc1은 실패하고 mp4v로 넘어갑니다.
+        fourcc_options = [
+            ('avc1', 'H.264'), 
+            ('h264', 'H.264'), 
+            ('mp4v', 'MP4V')
+        ]
+        
         segments = self.results['segments']
+        print(f"🎥 이벤트 클립 생성 시작 ({len(events)}개)")
 
         for i, event in enumerate(events):
+            # 이벤트 앞뒤로 1초씩 여유를 두고 자르기
             start_frame = max(0, event['start_frame'] - int(fps * 1.0))
             end_frame = event['end_frame'] + int(fps * 1.0)
             
-            filename = f"event_{i+1:02d}_{event['segment_label']}_{event['severity']}.{ext}"
+            filename = f"event_{i+1:02d}_{event['segment_label']}_{event['severity']}.mp4"
             filepath = clips_dir / filename
             
-            # 첫 프레임으로 크기 결정
+            # --- [핵심 수정 1] 기준 해상도 고정 ---
+            # 첫 프레임을 읽어서 이 클립의 '고정 크기'로 설정합니다.
             cap.set(cv2.CAP_PROP_POS_FRAMES, start_frame)
             ret, first_frame = cap.read()
             if not ret:
+                print(f"⚠️ Event #{i+1} 건너뜀: 시작 프레임 로드 실패")
                 continue
                 
             preprocessed_first, _ = self.preprocess_frame(first_frame)
-            h_crop, w_crop = preprocessed_first.shape[:2]
+            target_h, target_w = preprocessed_first.shape[:2] # 이 높이/너비로 고정
             
-            # Side-by-side 크기
-            out_w = w_crop * 2
-            out_h = h_crop
+            # Side-by-side 결과물 크기 (좌:원본 / 우:분석)
+            out_w = target_w * 2
+            out_h = target_h
             
-            out = cv2.VideoWriter(str(filepath), fourcc, fps, (out_w, out_h))
-            if not out.isOpened():
-                print(f"⚠️ H.264 코덱 실패, mp4v로 재시도: {filepath}")
-                fourcc_fallback = cv2.VideoWriter_fourcc(*'mp4v')
-                out = cv2.VideoWriter(str(filepath), fourcc_fallback, fps, (out_w, out_h))
-                if not out.isOpened():
-                    print(f"❌ 비디오 Writer 초기화 실패: {filepath}")
+            # --- [핵심 수정 2] 사용 가능한 코덱 찾기 ---
+            out = None
+            used_codec = ""
+            for fourcc_str, codec_name in fourcc_options:
+                fourcc = cv2.VideoWriter_fourcc(*fourcc_str)
+                try:
+                    temp_out = cv2.VideoWriter(str(filepath), fourcc, fps, (out_w, out_h))
+                    if temp_out.isOpened():
+                        out = temp_out
+                        used_codec = codec_name
+                        break
+                except:
                     continue
             
+            if out is None or not out.isOpened():
+                print(f"❌ VideoWriter 초기화 실패: {filename} (모든 코덱 실패)")
+                continue
+
+            # --- 프레임 쓰기 루프 ---
             cap.set(cv2.CAP_PROP_POS_FRAMES, start_frame)
-            frame_count = 0
-            
-            # 해당 이벤트의 segment 정보
-            event_segment = None
-            for segment in segments:
-                if segment['label'] == event['segment_label'] and \
-                   segment['start_frame'] <= event['start_frame'] <= segment['end_frame']:
-                    event_segment = segment
-                    break
+            frames_written = 0
             
             for f_idx in range(start_frame, end_frame + 1):
                 ret, frame = cap.read()
@@ -550,27 +557,39 @@ class IntegratedDISEAnalyzer:
                 # 전처리
                 preprocessed, bbox = self.preprocess_frame(frame)
                 
+                # --- [핵심 수정 3] 크기 강제 맞춤 (Resize) ---
+                # preprocess_frame은 매번 다른 크기를 반환할 수 있으므로,
+                # VideoWriter가 설정된 target 크기와 다르면 리사이즈해야 함.
+                if preprocessed.shape[:2] != (target_h, target_w):
+                    preprocessed = cv2.resize(preprocessed, (target_w, target_h))
+                
                 left = preprocessed.copy()
                 right = preprocessed.copy()
                 
-                # 현재 프레임이 속한 segment 찾기
+                # 현재 프레임의 Segment 정보 찾기
                 current_segment = None
                 for segment in segments:
                     if segment['start_frame'] <= f_idx <= segment['end_frame']:
                         current_segment = segment
                         break
                 
-                # ✅ 실시간 ROI 계산 및 reduction 계산
+                # ROI 분석 및 그리기
                 reduction = 0
+                label_text = "None"
+                
                 if current_segment and current_segment['label'] in ['OTE', 'Velum']:
-                    roi_area_current, roi_mask = self.analyze_roi_dual_track(preprocessed, current_segment['label'])
+                    label = current_segment['label']
+                    label_text = label
                     
-                    # ROI 윤곽선 표시
+                    # ROI 마스크 추출
+                    roi_area_current, roi_mask = self.analyze_roi_dual_track(preprocessed, label)
+                    
+                    # ROI 윤곽선 (우측 화면)
                     if roi_mask is not None:
                         contours, _ = cv2.findContours(roi_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-                        cv2.drawContours(right, contours, -1, (0, 255, 255), 3)
+                        cv2.drawContours(right, contours, -1, (0, 255, 255), 2)
                     
-                    # Reduction 계산 (segment의 max_area 기준)
+                    # Reduction 계산
                     segment_max_area = current_segment.get('max_area', 0)
                     if segment_max_area > 0:
                         if roi_area_current > 0:
@@ -578,49 +597,84 @@ class IntegratedDISEAnalyzer:
                         else:
                             reduction = 100.0
                 
-                # 이벤트 구간 여부
-                is_event = event['start_frame'] <= f_idx <= event['end_frame']
+                # --- [수정된 UI 오버레이] 반투명 효과 & 가독성 강화 ---
                 
-                # 상단 정보
-                info_height = 95
-                cv2.rectangle(right, (5, 5), (w_crop-5, info_height), (0, 0, 0), -1)
-                cv2.rectangle(right, (5, 5), (w_crop-5, info_height), (255, 255, 255), 2)
+                # [!!!] 이 줄이 반드시 필요합니다 (여기에 추가해주세요)
+                is_event_frame = event['start_frame'] <= f_idx <= event['end_frame']
+
+                # 1. 오버레이 레이어 생성 (투명도 합성을 위해 복사)
+                overlay = right.copy()
                 
-                text_color = (0, 0, 255) if is_event else (255, 255, 255)
-                font_scale = 1.0
-                thickness = 2
+                # [상단 정보 바] 반투명 검은색 (높이 100px)
+                # 원본 이미지를 가리지 않도록 반투명하게 처리됨
+                cv2.rectangle(overlay, (0, 0), (target_w, 100), (0, 0, 0), -1)
                 
-                if current_segment:
-                    cv2.putText(right, f"Segment: {current_segment['label']}", (15, 35), 
-                               cv2.FONT_HERSHEY_SIMPLEX, font_scale, text_color, thickness)
-                    cv2.putText(right, f"Max: {current_segment.get('max_area', 0):.0f} px²", (15, 65), 
-                               cv2.FONT_HERSHEY_SIMPLEX, font_scale, text_color, thickness)
-                    cv2.putText(right, f"Reduction: {reduction:.1f}%", (15, 90), 
-                               cv2.FONT_HERSHEY_SIMPLEX, font_scale, text_color, thickness)
-                else:
-                    cv2.putText(right, "Segment: None", (15, 35), 
-                               cv2.FONT_HERSHEY_SIMPLEX, font_scale, text_color, thickness)
+                # [이벤트 발생 시 디자인]
+                if is_event_frame:
+                    # (1) 화면 전체 테두리 강조 (빨간색, 두께 15px) - 이건 원본에 바로 그림
+                    cv2.rectangle(right, (0, 0), (target_w, target_h), (0, 0, 255), 15)
+                    
+                    # (2) 하단 경고 바 (Floating Bar)
+                    # 바닥에서 60px 위로 띄워서 플레이어 컨트롤 바와 겹치지 않게 함
+                    bar_height = 60
+                    bar_bottom = target_h - 60
+                    bar_top = bar_bottom - bar_height
+                    
+                    # 반투명 붉은색 배경
+                    cv2.rectangle(overlay, (0, bar_top), (target_w, bar_bottom), (0, 0, 180), -1)
+
+                # 2. 투명도 합성 (Alpha Blending)
+                # alpha=0.4 (오버레이) + beta=0.6 (원본) -> 배경이 뒤에 은은하게 비침
+                cv2.addWeighted(overlay, 0.4, right, 0.6, 0, right)
+
+                # --- 텍스트 그리기 헬퍼 함수 (그림자 효과) ---
+                def draw_text_with_shadow(img, text, pos, scale, color, thickness):
+                    x, y = pos
+                    # 검은색 그림자 (오른쪽 아래로 2px 이동)
+                    cv2.putText(img, text, (x+2, y+2), cv2.FONT_HERSHEY_SIMPLEX, scale, (0, 0, 0), thickness+1)
+                    # 본문 텍스트
+                    cv2.putText(img, text, (x, y), cv2.FONT_HERSHEY_SIMPLEX, scale, color, thickness)
+
+                # [상단 텍스트 출력]
+                # 1. Class 정보
+                draw_text_with_shadow(right, f"Class: {label_text}", (20, 35), 0.7, (255, 255, 255), 2)
                 
-                # 이벤트 구간 표시 (하단)
-                if is_event:
-                    event_height = 85
-                    cv2.rectangle(right, (5, h_crop-event_height), (w_crop-5, h_crop-5), (0, 0, 0), -1)
-                    cv2.rectangle(right, (5, h_crop-event_height), (w_crop-5, h_crop-5), (0, 0, 255), 4)
-                    cv2.putText(right, f"OCCLUSION EVENT: {event['severity']}", (15, h_crop-45), 
-                               cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 0, 255), 3)
-                    cv2.putText(right, f"Reduction: {reduction:.1f}%", (15, h_crop-20), 
-                               cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 255), 2)
+                # 2. Reference Max Area 정보
+                max_val = current_segment.get('max_area', 0) if current_segment else 0
+                draw_text_with_shadow(right, f"Ref Max: {max_val:.0f} px", (20, 65), 0.7, (200, 200, 200), 2)
                 
+                # 3. Reduction (감소율) - 가장 중요하므로 크게 표시
+                reduction_color = (0, 0, 255) if is_event_frame else (0, 255, 255) # 이벤트면 빨강, 아니면 노랑
+                draw_text_with_shadow(right, f"Reduction: {reduction:.1f}%", (20, 95), 0.9, reduction_color, 3)
+                
+                # [하단 이벤트 경고 텍스트]
+                if is_event_frame:
+                    msg = f"WARNING: {event['severity']} OCCLUSION"
+                    font_scale = 1.0
+                    thickness = 3
+                    
+                    # 텍스트 크기 계산하여 중앙 정렬
+                    (text_w, text_h), _ = cv2.getTextSize(msg, cv2.FONT_HERSHEY_SIMPLEX, font_scale, thickness)
+                    text_x = (target_w - text_w) // 2
+                    
+                    # 하단 바(Floating Bar)의 중앙 높이 계산
+                    # bar_bottom(target_h - 60) 과 bar_top(target_h - 120) 사이
+                    text_y = (target_h - 60) - (60 - text_h) // 2 
+                    
+                    draw_text_with_shadow(right, msg, (text_x, text_y), font_scale, (255, 255, 255), thickness)
+                
+                # 좌우 결합 및 저장
                 combined = np.hstack((left, right))
                 out.write(combined)
-                frame_count += 1
+                frames_written += 1
             
             out.release()
+            
             if filepath.exists() and filepath.stat().st_size > 0:
-                print(f"✅ 클립 생성 완료: {filename} ({frame_count} 프레임)")
+                print(f"  ✅ 저장 완료 ({used_codec}): {filename} ({frames_written} frames)")
                 event['clip_path'] = f"event_clips/{filename}"
             else:
-                print(f"❌ 클립 생성 실패: {filename}")
+                print(f"  ❌ 저장 실패 (0 byte): {filename}")
                 
         cap.release()
 

@@ -18,7 +18,7 @@ app.config['MAX_CONTENT_LENGTH'] = 500 * 1024 * 1024
 app.config['UPLOAD_FOLDER'] = Path('uploads')
 app.config['OUTPUT_FOLDER'] = Path('outputs')
 app.config['MODEL_PATH'] = Path('ote_velum_classification_final/checkpoints/best_model.pth')
-app.config['GEMINI_API_KEY'] = "AIzaSyAhO4gUaPCySjbbkkofon7ihZfcnEXlwj4" 
+app.config['GEMINI_API_KEY'] = "AIzaSyDUP__bWBGmXFw-BPTDlKl6rpKPNPi7T3k" 
 
 app.config['UPLOAD_FOLDER'].mkdir(exist_ok=True)
 app.config['OUTPUT_FOLDER'].mkdir(exist_ok=True)

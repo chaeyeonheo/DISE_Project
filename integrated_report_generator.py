@@ -29,8 +29,18 @@ class IntegratedReportGenerator:
         if not self.api_key: return "API Key Not Found."
         try:
             genai.configure(api_key=self.api_key)
-            model = genai.GenerativeModel('gemini-2.5-flash')
             
+            # [수정 1] 의료 분석을 위해 안전 필터(Safety Settings)를 'BLOCK_NONE'으로 설정
+            # 의료 텍스트가 '유해 콘텐츠'로 오분류되는 것을 방지합니다.
+            safety_settings = [
+                {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+                {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+                {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+                {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"}
+            ]
+            
+            # 모델 생성 시 설정 적용
+            model = genai.GenerativeModel('gemini-2.5-flash', safety_settings=safety_settings)
             # Segment별 기준 면적 정보 추가
             segment_info = ""
             for label, ref_data in self.segment_references.items():
