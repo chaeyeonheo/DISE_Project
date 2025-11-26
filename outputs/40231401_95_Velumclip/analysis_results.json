@@ -1,0 +1,2475 @@
+{
+  "video_info": {
+    "filename": "40231401_95_Velumclip.mp4",
+    "fps": 30.0,
+    "total_frames": 690,
+    "duration": 23.0
+  },
+  "frame_classifications": [
+    {
+      "frame_number": 0,
+      "timestamp": 0.0,
+      "label": "Velum",
+      "roi_area": 49934.0,
+      "reduction_percent": 58.91997729385536
+    },
+    {
+      "frame_number": 6,
+      "timestamp": 0.2,
+      "label": "Velum",
+      "roi_area": 40690.0,
+      "reduction_percent": 66.52489037703717
+    },
+    {
+      "frame_number": 12,
+      "timestamp": 0.4,
+      "label": "Velum",
+      "roi_area": 21313.0,
+      "reduction_percent": 82.46608475315294
+    },
+    {
+      "frame_number": 18,
+      "timestamp": 0.6,
+      "label": "Velum",
+      "roi_area": 8207.0,
+      "reduction_percent": 93.24821271379562
+    },
+    {
+      "frame_number": 24,
+      "timestamp": 0.8,
+      "label": "Velum",
+      "roi_area": 509.0,
+      "reduction_percent": 99.5812526223129
+    },
+    {
+      "frame_number": 30,
+      "timestamp": 1.0,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 36,
+      "timestamp": 1.2,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 42,
+      "timestamp": 1.4,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 48,
+      "timestamp": 1.6,
+      "label": "Velum",
+      "roi_area": 1695.0,
+      "reduction_percent": 98.60554655170995
+    },
+    {
+      "frame_number": 54,
+      "timestamp": 1.8,
+      "label": "Velum",
+      "roi_area": 11010.0,
+      "reduction_percent": 90.94222273411599
+    },
+    {
+      "frame_number": 60,
+      "timestamp": 2.0,
+      "label": "Velum",
+      "roi_area": 85783.0,
+      "reduction_percent": 29.427492534120915
+    },
+    {
+      "frame_number": 66,
+      "timestamp": 2.2,
+      "label": "Velum",
+      "roi_area": 98543.0,
+      "reduction_percent": 18.93001406793744
+    },
+    {
+      "frame_number": 72,
+      "timestamp": 2.4,
+      "label": "Velum",
+      "roi_area": 99953.0,
+      "reduction_percent": 17.77002624369617
+    },
+    {
+      "frame_number": 78,
+      "timestamp": 2.6,
+      "label": "Velum",
+      "roi_area": 100433.0,
+      "reduction_percent": 17.37513677161403
+    },
+    {
+      "frame_number": 84,
+      "timestamp": 2.8,
+      "label": "Velum",
+      "roi_area": 104612.0,
+      "reduction_percent": 13.937130305298929
+    },
+    {
+      "frame_number": 90,
+      "timestamp": 3.0,
+      "label": "Velum",
+      "roi_area": 100373.0,
+      "reduction_percent": 17.424497955624297
+    },
+    {
+      "frame_number": 96,
+      "timestamp": 3.2,
+      "label": "Velum",
+      "roi_area": 99120.0,
+      "reduction_percent": 18.45532401503871
+    },
+    {
+      "frame_number": 102,
+      "timestamp": 3.4,
+      "label": "Velum",
+      "roi_area": 30033.0,
+      "reduction_percent": 75.29225934366079
+    },
+    {
+      "frame_number": 108,
+      "timestamp": 3.6,
+      "label": "Velum",
+      "roi_area": 35551.0,
+      "reduction_percent": 70.75267578751657
+    },
+    {
+      "frame_number": 114,
+      "timestamp": 3.8,
+      "label": "Velum",
+      "roi_area": 34377.0,
+      "reduction_percent": 71.71850962131745
+    },
+    {
+      "frame_number": 120,
+      "timestamp": 4.0,
+      "label": "Velum",
+      "roi_area": 29952.0,
+      "reduction_percent": 75.35889694207465
+    },
+    {
+      "frame_number": 126,
+      "timestamp": 4.2,
+      "label": "Velum",
+      "roi_area": 14948.0,
+      "reduction_percent": 87.70248369024212
+    },
+    {
+      "frame_number": 132,
+      "timestamp": 4.4,
+      "label": "Velum",
+      "roi_area": 11263.0,
+      "reduction_percent": 90.73408307487269
+    },
+    {
+      "frame_number": 138,
+      "timestamp": 4.6,
+      "label": "Velum",
+      "roi_area": 9670.0,
+      "reduction_percent": 92.04462251034529
+    },
+    {
+      "frame_number": 144,
+      "timestamp": 4.8,
+      "label": "Velum",
+      "roi_area": 3743.0,
+      "reduction_percent": 96.9206848041595
+    },
+    {
+      "frame_number": 150,
+      "timestamp": 5.0,
+      "label": "Velum",
+      "roi_area": 1324.0,
+      "reduction_percent": 98.91076320617344
+    },
+    {
+      "frame_number": 156,
+      "timestamp": 5.2,
+      "label": "Velum",
+      "roi_area": 642.0,
+      "reduction_percent": 99.47183533109015
+    },
+    {
+      "frame_number": 162,
+      "timestamp": 5.4,
+      "label": "Velum",
+      "roi_area": 3352.0,
+      "reduction_percent": 97.24235518662641
+    },
+    {
+      "frame_number": 168,
+      "timestamp": 5.6,
+      "label": "Velum",
+      "roi_area": 35172.0,
+      "reduction_percent": 71.0644739331814
+    },
+    {
+      "frame_number": 174,
+      "timestamp": 5.8,
+      "label": "Velum",
+      "roi_area": 106146.0,
+      "reduction_percent": 12.675129367436423
+    },
+    {
+      "frame_number": 180,
+      "timestamp": 6.0,
+      "label": "Velum",
+      "roi_area": 109112.0,
+      "reduction_percent": 10.235041504528885
+    },
+    {
+      "frame_number": 186,
+      "timestamp": 6.2,
+      "label": "Velum",
+      "roi_area": 121553.0,
+      "reduction_percent": 0.0
+    },
+    {
+      "frame_number": 192,
+      "timestamp": 6.4,
+      "label": "Velum",
+      "roi_area": 119081.0,
+      "reduction_percent": 2.0336807812230018
+    },
+    {
+      "frame_number": 198,
+      "timestamp": 6.6,
+      "label": "Velum",
+      "roi_area": 117260.0,
+      "reduction_percent": 3.531792715934612
+    },
+    {
+      "frame_number": 204,
+      "timestamp": 6.8,
+      "label": "Velum",
+      "roi_area": 89732.0,
+      "reduction_percent": 26.17870393984517
+    },
+    {
+      "frame_number": 210,
+      "timestamp": 7.0,
+      "label": "Velum",
+      "roi_area": 33421.0,
+      "reduction_percent": 72.50499781988104
+    },
+    {
+      "frame_number": 216,
+      "timestamp": 7.2,
+      "label": "Velum",
+      "roi_area": 17431.0,
+      "reduction_percent": 85.65975335861722
+    },
+    {
+      "frame_number": 222,
+      "timestamp": 7.4,
+      "label": "Velum",
+      "roi_area": 13922.0,
+      "reduction_percent": 88.54655993681769
+    },
+    {
+      "frame_number": 228,
+      "timestamp": 7.6,
+      "label": "Velum",
+      "roi_area": 17490.0,
+      "reduction_percent": 85.61121486100714
+    },
+    {
+      "frame_number": 234,
+      "timestamp": 7.8,
+      "label": "Velum",
+      "roi_area": 8863.0,
+      "reduction_percent": 92.70853043528338
+    },
+    {
+      "frame_number": 240,
+      "timestamp": 8.0,
+      "label": "Velum",
+      "roi_area": 637.0,
+      "reduction_percent": 99.475948763091
+    },
+    {
+      "frame_number": 246,
+      "timestamp": 8.2,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 252,
+      "timestamp": 8.4,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 258,
+      "timestamp": 8.6,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 264,
+      "timestamp": 8.8,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 270,
+      "timestamp": 9.0,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 276,
+      "timestamp": 9.2,
+      "label": "Velum",
+      "roi_area": 4654.0,
+      "reduction_percent": 96.1712174936036
+    },
+    {
+      "frame_number": 282,
+      "timestamp": 9.4,
+      "label": "Velum",
+      "roi_area": 48017.0,
+      "reduction_percent": 60.497067122983395
+    },
+    {
+      "frame_number": 288,
+      "timestamp": 9.6,
+      "label": "Velum",
+      "roi_area": 68965.0,
+      "reduction_percent": 43.263432412198796
+    },
+    {
+      "frame_number": 294,
+      "timestamp": 9.8,
+      "label": "Velum",
+      "roi_area": 69997.0,
+      "reduction_percent": 42.4144200472222
+    },
+    {
+      "frame_number": 300,
+      "timestamp": 10.0,
+      "label": "Velum",
+      "roi_area": 72955.0,
+      "reduction_percent": 39.98091367551603
+    },
+    {
+      "frame_number": 306,
+      "timestamp": 10.2,
+      "label": "Velum",
+      "roi_area": 69468.0,
+      "reduction_percent": 42.84962115291272
+    },
+    {
+      "frame_number": 312,
+      "timestamp": 10.4,
+      "label": "Velum",
+      "roi_area": 67256.0,
+      "reduction_percent": 44.66940347009124
+    },
+    {
+      "frame_number": 318,
+      "timestamp": 10.6,
+      "label": "Velum",
+      "roi_area": 60252.0,
+      "reduction_percent": 50.431499016889745
+    },
+    {
+      "frame_number": 324,
+      "timestamp": 10.8,
+      "label": "Velum",
+      "roi_area": 13026.0,
+      "reduction_percent": 89.28368695137101
+    },
+    {
+      "frame_number": 330,
+      "timestamp": 11.0,
+      "label": "Velum",
+      "roi_area": 3141.0,
+      "reduction_percent": 97.41594201706252
+    },
+    {
+      "frame_number": 336,
+      "timestamp": 11.2,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 342,
+      "timestamp": 11.4,
+      "label": "Velum",
+      "roi_area": 148.0,
+      "reduction_percent": 99.87824241277468
+    },
+    {
+      "frame_number": 348,
+      "timestamp": 11.6,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 354,
+      "timestamp": 11.8,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 360,
+      "timestamp": 12.0,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 366,
+      "timestamp": 12.2,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 372,
+      "timestamp": 12.4,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 378,
+      "timestamp": 12.6,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 384,
+      "timestamp": 12.8,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 390,
+      "timestamp": 13.0,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 396,
+      "timestamp": 13.2,
+      "label": "Velum",
+      "roi_area": 16776.0,
+      "reduction_percent": 86.19861295072931
+    },
+    {
+      "frame_number": 402,
+      "timestamp": 13.4,
+      "label": "Velum",
+      "roi_area": 68268.0,
+      "reduction_percent": 43.83684483311806
+    },
+    {
+      "frame_number": 408,
+      "timestamp": 13.6,
+      "label": "Velum",
+      "roi_area": 78073.0,
+      "reduction_percent": 35.77040467944025
+    },
+    {
+      "frame_number": 414,
+      "timestamp": 13.8,
+      "label": "Velum",
+      "roi_area": 84896.0,
+      "reduction_percent": 30.1572153710727
+    },
+    {
+      "frame_number": 420,
+      "timestamp": 14.0,
+      "label": "Velum",
+      "roi_area": 83955.0,
+      "reduction_percent": 30.93136327363373
+    },
+    {
+      "frame_number": 426,
+      "timestamp": 14.2,
+      "label": "Velum",
+      "roi_area": 77186.0,
+      "reduction_percent": 36.50012751639202
+    },
+    {
+      "frame_number": 432,
+      "timestamp": 14.4,
+      "label": "Velum",
+      "roi_area": 73541.0,
+      "reduction_percent": 39.498819445015755
+    },
+    {
+      "frame_number": 438,
+      "timestamp": 14.6,
+      "label": "Velum",
+      "roi_area": 45873.0,
+      "reduction_percent": 62.26090676495026
+    },
+    {
+      "frame_number": 444,
+      "timestamp": 14.8,
+      "label": "Velum",
+      "roi_area": 665.0,
+      "reduction_percent": 99.4529135438862
+    },
+    {
+      "frame_number": 450,
+      "timestamp": 15.0,
+      "label": "Velum",
+      "roi_area": 325.0,
+      "reduction_percent": 99.7326269199444
+    },
+    {
+      "frame_number": 456,
+      "timestamp": 15.2,
+      "label": "Velum",
+      "roi_area": 17232.0,
+      "reduction_percent": 85.82346795225129
+    },
+    {
+      "frame_number": 462,
+      "timestamp": 15.4,
+      "label": "Velum",
+      "roi_area": 29774.0,
+      "reduction_percent": 75.50533512130511
+    },
+    {
+      "frame_number": 468,
+      "timestamp": 15.6,
+      "label": "Velum",
+      "roi_area": 33734.0,
+      "reduction_percent": 72.24749697662747
+    },
+    {
+      "frame_number": 474,
+      "timestamp": 15.8,
+      "label": "Velum",
+      "roi_area": 30007.0,
+      "reduction_percent": 75.31364919006523
+    },
+    {
+      "frame_number": 480,
+      "timestamp": 16.0,
+      "label": "Velum",
+      "roi_area": 11557.0,
+      "reduction_percent": 90.49221327322238
+    },
+    {
+      "frame_number": 486,
+      "timestamp": 16.2,
+      "label": "Velum",
+      "roi_area": 2690.0,
+      "reduction_percent": 97.78697358353969
+    },
+    {
+      "frame_number": 492,
+      "timestamp": 16.4,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 498,
+      "timestamp": 16.6,
+      "label": "Velum",
+      "roi_area": 1437.0,
+      "reduction_percent": 98.81779964295411
+    },
+    {
+      "frame_number": 504,
+      "timestamp": 16.8,
+      "label": "Velum",
+      "roi_area": 7275.0,
+      "reduction_percent": 94.01495643875512
+    },
+    {
+      "frame_number": 510,
+      "timestamp": 17.0,
+      "label": "Velum",
+      "roi_area": 52130.0,
+      "reduction_percent": 57.11335795907958
+    },
+    {
+      "frame_number": 516,
+      "timestamp": 17.2,
+      "label": "Velum",
+      "roi_area": 79448.0,
+      "reduction_percent": 34.63921087920495
+    },
+    {
+      "frame_number": 522,
+      "timestamp": 17.4,
+      "label": "Velum",
+      "roi_area": 89861.0,
+      "reduction_percent": 26.072577394223096
+    },
+    {
+      "frame_number": 528,
+      "timestamp": 17.6,
+      "label": "Velum",
+      "roi_area": 86050.0,
+      "reduction_percent": 29.20783526527523
+    },
+    {
+      "frame_number": 534,
+      "timestamp": 17.8,
+      "label": "Velum",
+      "roi_area": 78357.0,
+      "reduction_percent": 35.53676174179164
+    },
+    {
+      "frame_number": 540,
+      "timestamp": 18.0,
+      "label": "Velum",
+      "roi_area": 73623.0,
+      "reduction_percent": 39.431359160201715
+    },
+    {
+      "frame_number": 546,
+      "timestamp": 18.2,
+      "label": "Velum",
+      "roi_area": 78928.0,
+      "reduction_percent": 35.06700780729394
+    },
+    {
+      "frame_number": 552,
+      "timestamp": 18.4,
+      "label": "Velum",
+      "roi_area": 20059.0,
+      "reduction_percent": 83.49773349896753
+    },
+    {
+      "frame_number": 558,
+      "timestamp": 18.6,
+      "label": "Velum",
+      "roi_area": 22531.0,
+      "reduction_percent": 81.46405271774452
+    },
+    {
+      "frame_number": 564,
+      "timestamp": 18.8,
+      "label": "Velum",
+      "roi_area": 38635.0,
+      "reduction_percent": 68.21551092938883
+    },
+    {
+      "frame_number": 570,
+      "timestamp": 19.0,
+      "label": "Velum",
+      "roi_area": 33404.0,
+      "reduction_percent": 72.51898348868396
+    },
+    {
+      "frame_number": 576,
+      "timestamp": 19.2,
+      "label": "Velum",
+      "roi_area": 13024.0,
+      "reduction_percent": 89.28533232417135
+    },
+    {
+      "frame_number": 582,
+      "timestamp": 19.4,
+      "label": "Velum",
+      "roi_area": 11459.0,
+      "reduction_percent": 90.57283654043916
+    },
+    {
+      "frame_number": 588,
+      "timestamp": 19.6,
+      "label": "Velum",
+      "roi_area": 8653.0,
+      "reduction_percent": 92.8812945793193
+    },
+    {
+      "frame_number": 594,
+      "timestamp": 19.8,
+      "label": "Velum",
+      "roi_area": 1732.0,
+      "reduction_percent": 98.57510715490362
+    },
+    {
+      "frame_number": 600,
+      "timestamp": 20.0,
+      "label": "Velum",
+      "roi_area": 0,
+      "reduction_percent": 100.0
+    },
+    {
+      "frame_number": 606,
+      "timestamp": 20.2,
+      "label": "Velum",
+      "roi_area": 1526.0,
+      "reduction_percent": 98.74458055333886
+    },
+    {
+      "frame_number": 612,
+      "timestamp": 20.4,
+      "label": "Velum",
+      "roi_area": 46368.0,
+      "reduction_percent": 61.85367699686557
+    },
+    {
+      "frame_number": 618,
+      "timestamp": 20.6,
+      "label": "Velum",
+      "roi_area": 80435.0,
+      "reduction_percent": 33.82721940223606
+    },
+    {
+      "frame_number": 624,
+      "timestamp": 20.8,
+      "label": "Velum",
+      "roi_area": 83820.0,
+      "reduction_percent": 31.042425937656827
+    },
+    {
+      "frame_number": 630,
+      "timestamp": 21.0,
+      "label": "Velum",
+      "roi_area": 87934.0,
+      "reduction_percent": 27.65789408735284
+    },
+    {
+      "frame_number": 636,
+      "timestamp": 21.2,
+      "label": "Velum",
+      "roi_area": 87703.0,
+      "reduction_percent": 27.84793464579237
+    },
+    {
+      "frame_number": 642,
+      "timestamp": 21.4,
+      "label": "Velum",
+      "roi_area": 86271.0,
+      "reduction_percent": 29.02602157083741
+    },
+    {
+      "frame_number": 648,
+      "timestamp": 21.6,
+      "label": "Velum",
+      "roi_area": 81260.0,
+      "reduction_percent": 33.14850312209489
+    },
+    {
+      "frame_number": 654,
+      "timestamp": 21.8,
+      "label": "Velum",
+      "roi_area": 79218.0,
+      "reduction_percent": 34.82842875124431
+    },
+    {
+      "frame_number": 660,
+      "timestamp": 22.0,
+      "label": "Velum",
+      "roi_area": 12262.0,
+      "reduction_percent": 89.91221936110175
+    },
+    {
+      "frame_number": 666,
+      "timestamp": 22.2,
+      "label": "Velum",
+      "roi_area": 17335.0,
+      "reduction_percent": 85.73873125303366
+    },
+    {
+      "frame_number": 672,
+      "timestamp": 22.4,
+      "label": "Velum",
+      "roi_area": 42514.0,
+      "reduction_percent": 65.02431038312506
+    },
+    {
+      "frame_number": 678,
+      "timestamp": 22.6,
+      "label": "Velum",
+      "roi_area": 58955.0,
+      "reduction_percent": 51.49852327791169
+    },
+    {
+      "frame_number": 684,
+      "timestamp": 22.8,
+      "label": "Velum",
+      "roi_area": 52913.0,
+      "reduction_percent": 56.46919450774559
+    }
+  ],
+  "segments": [
+    {
+      "label": "Velum",
+      "start_frame": 0,
+      "start_time": 0.0,
+      "frames": [
+        {
+          "frame_number": 0,
+          "timestamp": 0.0,
+          "label": "Velum",
+          "roi_area": 49934.0,
+          "reduction_percent": 58.91997729385536
+        },
+        {
+          "frame_number": 6,
+          "timestamp": 0.2,
+          "label": "Velum",
+          "roi_area": 40690.0,
+          "reduction_percent": 66.52489037703717
+        },
+        {
+          "frame_number": 12,
+          "timestamp": 0.4,
+          "label": "Velum",
+          "roi_area": 21313.0,
+          "reduction_percent": 82.46608475315294
+        },
+        {
+          "frame_number": 18,
+          "timestamp": 0.6,
+          "label": "Velum",
+          "roi_area": 8207.0,
+          "reduction_percent": 93.24821271379562
+        },
+        {
+          "frame_number": 24,
+          "timestamp": 0.8,
+          "label": "Velum",
+          "roi_area": 509.0,
+          "reduction_percent": 99.5812526223129
+        },
+        {
+          "frame_number": 30,
+          "timestamp": 1.0,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 36,
+          "timestamp": 1.2,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 42,
+          "timestamp": 1.4,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 48,
+          "timestamp": 1.6,
+          "label": "Velum",
+          "roi_area": 1695.0,
+          "reduction_percent": 98.60554655170995
+        },
+        {
+          "frame_number": 54,
+          "timestamp": 1.8,
+          "label": "Velum",
+          "roi_area": 11010.0,
+          "reduction_percent": 90.94222273411599
+        },
+        {
+          "frame_number": 60,
+          "timestamp": 2.0,
+          "label": "Velum",
+          "roi_area": 85783.0,
+          "reduction_percent": 29.427492534120915
+        },
+        {
+          "frame_number": 66,
+          "timestamp": 2.2,
+          "label": "Velum",
+          "roi_area": 98543.0,
+          "reduction_percent": 18.93001406793744
+        },
+        {
+          "frame_number": 72,
+          "timestamp": 2.4,
+          "label": "Velum",
+          "roi_area": 99953.0,
+          "reduction_percent": 17.77002624369617
+        },
+        {
+          "frame_number": 78,
+          "timestamp": 2.6,
+          "label": "Velum",
+          "roi_area": 100433.0,
+          "reduction_percent": 17.37513677161403
+        },
+        {
+          "frame_number": 84,
+          "timestamp": 2.8,
+          "label": "Velum",
+          "roi_area": 104612.0,
+          "reduction_percent": 13.937130305298929
+        },
+        {
+          "frame_number": 90,
+          "timestamp": 3.0,
+          "label": "Velum",
+          "roi_area": 100373.0,
+          "reduction_percent": 17.424497955624297
+        },
+        {
+          "frame_number": 96,
+          "timestamp": 3.2,
+          "label": "Velum",
+          "roi_area": 99120.0,
+          "reduction_percent": 18.45532401503871
+        },
+        {
+          "frame_number": 102,
+          "timestamp": 3.4,
+          "label": "Velum",
+          "roi_area": 30033.0,
+          "reduction_percent": 75.29225934366079
+        },
+        {
+          "frame_number": 108,
+          "timestamp": 3.6,
+          "label": "Velum",
+          "roi_area": 35551.0,
+          "reduction_percent": 70.75267578751657
+        },
+        {
+          "frame_number": 114,
+          "timestamp": 3.8,
+          "label": "Velum",
+          "roi_area": 34377.0,
+          "reduction_percent": 71.71850962131745
+        },
+        {
+          "frame_number": 120,
+          "timestamp": 4.0,
+          "label": "Velum",
+          "roi_area": 29952.0,
+          "reduction_percent": 75.35889694207465
+        },
+        {
+          "frame_number": 126,
+          "timestamp": 4.2,
+          "label": "Velum",
+          "roi_area": 14948.0,
+          "reduction_percent": 87.70248369024212
+        },
+        {
+          "frame_number": 132,
+          "timestamp": 4.4,
+          "label": "Velum",
+          "roi_area": 11263.0,
+          "reduction_percent": 90.73408307487269
+        },
+        {
+          "frame_number": 138,
+          "timestamp": 4.6,
+          "label": "Velum",
+          "roi_area": 9670.0,
+          "reduction_percent": 92.04462251034529
+        },
+        {
+          "frame_number": 144,
+          "timestamp": 4.8,
+          "label": "Velum",
+          "roi_area": 3743.0,
+          "reduction_percent": 96.9206848041595
+        },
+        {
+          "frame_number": 150,
+          "timestamp": 5.0,
+          "label": "Velum",
+          "roi_area": 1324.0,
+          "reduction_percent": 98.91076320617344
+        },
+        {
+          "frame_number": 156,
+          "timestamp": 5.2,
+          "label": "Velum",
+          "roi_area": 642.0,
+          "reduction_percent": 99.47183533109015
+        },
+        {
+          "frame_number": 162,
+          "timestamp": 5.4,
+          "label": "Velum",
+          "roi_area": 3352.0,
+          "reduction_percent": 97.24235518662641
+        },
+        {
+          "frame_number": 168,
+          "timestamp": 5.6,
+          "label": "Velum",
+          "roi_area": 35172.0,
+          "reduction_percent": 71.0644739331814
+        },
+        {
+          "frame_number": 174,
+          "timestamp": 5.8,
+          "label": "Velum",
+          "roi_area": 106146.0,
+          "reduction_percent": 12.675129367436423
+        },
+        {
+          "frame_number": 180,
+          "timestamp": 6.0,
+          "label": "Velum",
+          "roi_area": 109112.0,
+          "reduction_percent": 10.235041504528885
+        },
+        {
+          "frame_number": 186,
+          "timestamp": 6.2,
+          "label": "Velum",
+          "roi_area": 121553.0,
+          "reduction_percent": 0.0
+        },
+        {
+          "frame_number": 192,
+          "timestamp": 6.4,
+          "label": "Velum",
+          "roi_area": 119081.0,
+          "reduction_percent": 2.0336807812230018
+        },
+        {
+          "frame_number": 198,
+          "timestamp": 6.6,
+          "label": "Velum",
+          "roi_area": 117260.0,
+          "reduction_percent": 3.531792715934612
+        },
+        {
+          "frame_number": 204,
+          "timestamp": 6.8,
+          "label": "Velum",
+          "roi_area": 89732.0,
+          "reduction_percent": 26.17870393984517
+        },
+        {
+          "frame_number": 210,
+          "timestamp": 7.0,
+          "label": "Velum",
+          "roi_area": 33421.0,
+          "reduction_percent": 72.50499781988104
+        },
+        {
+          "frame_number": 216,
+          "timestamp": 7.2,
+          "label": "Velum",
+          "roi_area": 17431.0,
+          "reduction_percent": 85.65975335861722
+        },
+        {
+          "frame_number": 222,
+          "timestamp": 7.4,
+          "label": "Velum",
+          "roi_area": 13922.0,
+          "reduction_percent": 88.54655993681769
+        },
+        {
+          "frame_number": 228,
+          "timestamp": 7.6,
+          "label": "Velum",
+          "roi_area": 17490.0,
+          "reduction_percent": 85.61121486100714
+        },
+        {
+          "frame_number": 234,
+          "timestamp": 7.8,
+          "label": "Velum",
+          "roi_area": 8863.0,
+          "reduction_percent": 92.70853043528338
+        },
+        {
+          "frame_number": 240,
+          "timestamp": 8.0,
+          "label": "Velum",
+          "roi_area": 637.0,
+          "reduction_percent": 99.475948763091
+        },
+        {
+          "frame_number": 246,
+          "timestamp": 8.2,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 252,
+          "timestamp": 8.4,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 258,
+          "timestamp": 8.6,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 264,
+          "timestamp": 8.8,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 270,
+          "timestamp": 9.0,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 276,
+          "timestamp": 9.2,
+          "label": "Velum",
+          "roi_area": 4654.0,
+          "reduction_percent": 96.1712174936036
+        },
+        {
+          "frame_number": 282,
+          "timestamp": 9.4,
+          "label": "Velum",
+          "roi_area": 48017.0,
+          "reduction_percent": 60.497067122983395
+        },
+        {
+          "frame_number": 288,
+          "timestamp": 9.6,
+          "label": "Velum",
+          "roi_area": 68965.0,
+          "reduction_percent": 43.263432412198796
+        },
+        {
+          "frame_number": 294,
+          "timestamp": 9.8,
+          "label": "Velum",
+          "roi_area": 69997.0,
+          "reduction_percent": 42.4144200472222
+        },
+        {
+          "frame_number": 300,
+          "timestamp": 10.0,
+          "label": "Velum",
+          "roi_area": 72955.0,
+          "reduction_percent": 39.98091367551603
+        },
+        {
+          "frame_number": 306,
+          "timestamp": 10.2,
+          "label": "Velum",
+          "roi_area": 69468.0,
+          "reduction_percent": 42.84962115291272
+        },
+        {
+          "frame_number": 312,
+          "timestamp": 10.4,
+          "label": "Velum",
+          "roi_area": 67256.0,
+          "reduction_percent": 44.66940347009124
+        },
+        {
+          "frame_number": 318,
+          "timestamp": 10.6,
+          "label": "Velum",
+          "roi_area": 60252.0,
+          "reduction_percent": 50.431499016889745
+        },
+        {
+          "frame_number": 324,
+          "timestamp": 10.8,
+          "label": "Velum",
+          "roi_area": 13026.0,
+          "reduction_percent": 89.28368695137101
+        },
+        {
+          "frame_number": 330,
+          "timestamp": 11.0,
+          "label": "Velum",
+          "roi_area": 3141.0,
+          "reduction_percent": 97.41594201706252
+        },
+        {
+          "frame_number": 336,
+          "timestamp": 11.2,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 342,
+          "timestamp": 11.4,
+          "label": "Velum",
+          "roi_area": 148.0,
+          "reduction_percent": 99.87824241277468
+        },
+        {
+          "frame_number": 348,
+          "timestamp": 11.6,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 354,
+          "timestamp": 11.8,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 360,
+          "timestamp": 12.0,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 366,
+          "timestamp": 12.2,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 372,
+          "timestamp": 12.4,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 378,
+          "timestamp": 12.6,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 384,
+          "timestamp": 12.8,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 390,
+          "timestamp": 13.0,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 396,
+          "timestamp": 13.2,
+          "label": "Velum",
+          "roi_area": 16776.0,
+          "reduction_percent": 86.19861295072931
+        },
+        {
+          "frame_number": 402,
+          "timestamp": 13.4,
+          "label": "Velum",
+          "roi_area": 68268.0,
+          "reduction_percent": 43.83684483311806
+        },
+        {
+          "frame_number": 408,
+          "timestamp": 13.6,
+          "label": "Velum",
+          "roi_area": 78073.0,
+          "reduction_percent": 35.77040467944025
+        },
+        {
+          "frame_number": 414,
+          "timestamp": 13.8,
+          "label": "Velum",
+          "roi_area": 84896.0,
+          "reduction_percent": 30.1572153710727
+        },
+        {
+          "frame_number": 420,
+          "timestamp": 14.0,
+          "label": "Velum",
+          "roi_area": 83955.0,
+          "reduction_percent": 30.93136327363373
+        },
+        {
+          "frame_number": 426,
+          "timestamp": 14.2,
+          "label": "Velum",
+          "roi_area": 77186.0,
+          "reduction_percent": 36.50012751639202
+        },
+        {
+          "frame_number": 432,
+          "timestamp": 14.4,
+          "label": "Velum",
+          "roi_area": 73541.0,
+          "reduction_percent": 39.498819445015755
+        },
+        {
+          "frame_number": 438,
+          "timestamp": 14.6,
+          "label": "Velum",
+          "roi_area": 45873.0,
+          "reduction_percent": 62.26090676495026
+        },
+        {
+          "frame_number": 444,
+          "timestamp": 14.8,
+          "label": "Velum",
+          "roi_area": 665.0,
+          "reduction_percent": 99.4529135438862
+        },
+        {
+          "frame_number": 450,
+          "timestamp": 15.0,
+          "label": "Velum",
+          "roi_area": 325.0,
+          "reduction_percent": 99.7326269199444
+        },
+        {
+          "frame_number": 456,
+          "timestamp": 15.2,
+          "label": "Velum",
+          "roi_area": 17232.0,
+          "reduction_percent": 85.82346795225129
+        },
+        {
+          "frame_number": 462,
+          "timestamp": 15.4,
+          "label": "Velum",
+          "roi_area": 29774.0,
+          "reduction_percent": 75.50533512130511
+        },
+        {
+          "frame_number": 468,
+          "timestamp": 15.6,
+          "label": "Velum",
+          "roi_area": 33734.0,
+          "reduction_percent": 72.24749697662747
+        },
+        {
+          "frame_number": 474,
+          "timestamp": 15.8,
+          "label": "Velum",
+          "roi_area": 30007.0,
+          "reduction_percent": 75.31364919006523
+        },
+        {
+          "frame_number": 480,
+          "timestamp": 16.0,
+          "label": "Velum",
+          "roi_area": 11557.0,
+          "reduction_percent": 90.49221327322238
+        },
+        {
+          "frame_number": 486,
+          "timestamp": 16.2,
+          "label": "Velum",
+          "roi_area": 2690.0,
+          "reduction_percent": 97.78697358353969
+        },
+        {
+          "frame_number": 492,
+          "timestamp": 16.4,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 498,
+          "timestamp": 16.6,
+          "label": "Velum",
+          "roi_area": 1437.0,
+          "reduction_percent": 98.81779964295411
+        },
+        {
+          "frame_number": 504,
+          "timestamp": 16.8,
+          "label": "Velum",
+          "roi_area": 7275.0,
+          "reduction_percent": 94.01495643875512
+        },
+        {
+          "frame_number": 510,
+          "timestamp": 17.0,
+          "label": "Velum",
+          "roi_area": 52130.0,
+          "reduction_percent": 57.11335795907958
+        },
+        {
+          "frame_number": 516,
+          "timestamp": 17.2,
+          "label": "Velum",
+          "roi_area": 79448.0,
+          "reduction_percent": 34.63921087920495
+        },
+        {
+          "frame_number": 522,
+          "timestamp": 17.4,
+          "label": "Velum",
+          "roi_area": 89861.0,
+          "reduction_percent": 26.072577394223096
+        },
+        {
+          "frame_number": 528,
+          "timestamp": 17.6,
+          "label": "Velum",
+          "roi_area": 86050.0,
+          "reduction_percent": 29.20783526527523
+        },
+        {
+          "frame_number": 534,
+          "timestamp": 17.8,
+          "label": "Velum",
+          "roi_area": 78357.0,
+          "reduction_percent": 35.53676174179164
+        },
+        {
+          "frame_number": 540,
+          "timestamp": 18.0,
+          "label": "Velum",
+          "roi_area": 73623.0,
+          "reduction_percent": 39.431359160201715
+        },
+        {
+          "frame_number": 546,
+          "timestamp": 18.2,
+          "label": "Velum",
+          "roi_area": 78928.0,
+          "reduction_percent": 35.06700780729394
+        },
+        {
+          "frame_number": 552,
+          "timestamp": 18.4,
+          "label": "Velum",
+          "roi_area": 20059.0,
+          "reduction_percent": 83.49773349896753
+        },
+        {
+          "frame_number": 558,
+          "timestamp": 18.6,
+          "label": "Velum",
+          "roi_area": 22531.0,
+          "reduction_percent": 81.46405271774452
+        },
+        {
+          "frame_number": 564,
+          "timestamp": 18.8,
+          "label": "Velum",
+          "roi_area": 38635.0,
+          "reduction_percent": 68.21551092938883
+        },
+        {
+          "frame_number": 570,
+          "timestamp": 19.0,
+          "label": "Velum",
+          "roi_area": 33404.0,
+          "reduction_percent": 72.51898348868396
+        },
+        {
+          "frame_number": 576,
+          "timestamp": 19.2,
+          "label": "Velum",
+          "roi_area": 13024.0,
+          "reduction_percent": 89.28533232417135
+        },
+        {
+          "frame_number": 582,
+          "timestamp": 19.4,
+          "label": "Velum",
+          "roi_area": 11459.0,
+          "reduction_percent": 90.57283654043916
+        },
+        {
+          "frame_number": 588,
+          "timestamp": 19.6,
+          "label": "Velum",
+          "roi_area": 8653.0,
+          "reduction_percent": 92.8812945793193
+        },
+        {
+          "frame_number": 594,
+          "timestamp": 19.8,
+          "label": "Velum",
+          "roi_area": 1732.0,
+          "reduction_percent": 98.57510715490362
+        },
+        {
+          "frame_number": 600,
+          "timestamp": 20.0,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 606,
+          "timestamp": 20.2,
+          "label": "Velum",
+          "roi_area": 1526.0,
+          "reduction_percent": 98.74458055333886
+        },
+        {
+          "frame_number": 612,
+          "timestamp": 20.4,
+          "label": "Velum",
+          "roi_area": 46368.0,
+          "reduction_percent": 61.85367699686557
+        },
+        {
+          "frame_number": 618,
+          "timestamp": 20.6,
+          "label": "Velum",
+          "roi_area": 80435.0,
+          "reduction_percent": 33.82721940223606
+        },
+        {
+          "frame_number": 624,
+          "timestamp": 20.8,
+          "label": "Velum",
+          "roi_area": 83820.0,
+          "reduction_percent": 31.042425937656827
+        },
+        {
+          "frame_number": 630,
+          "timestamp": 21.0,
+          "label": "Velum",
+          "roi_area": 87934.0,
+          "reduction_percent": 27.65789408735284
+        },
+        {
+          "frame_number": 636,
+          "timestamp": 21.2,
+          "label": "Velum",
+          "roi_area": 87703.0,
+          "reduction_percent": 27.84793464579237
+        },
+        {
+          "frame_number": 642,
+          "timestamp": 21.4,
+          "label": "Velum",
+          "roi_area": 86271.0,
+          "reduction_percent": 29.02602157083741
+        },
+        {
+          "frame_number": 648,
+          "timestamp": 21.6,
+          "label": "Velum",
+          "roi_area": 81260.0,
+          "reduction_percent": 33.14850312209489
+        },
+        {
+          "frame_number": 654,
+          "timestamp": 21.8,
+          "label": "Velum",
+          "roi_area": 79218.0,
+          "reduction_percent": 34.82842875124431
+        },
+        {
+          "frame_number": 660,
+          "timestamp": 22.0,
+          "label": "Velum",
+          "roi_area": 12262.0,
+          "reduction_percent": 89.91221936110175
+        },
+        {
+          "frame_number": 666,
+          "timestamp": 22.2,
+          "label": "Velum",
+          "roi_area": 17335.0,
+          "reduction_percent": 85.73873125303366
+        },
+        {
+          "frame_number": 672,
+          "timestamp": 22.4,
+          "label": "Velum",
+          "roi_area": 42514.0,
+          "reduction_percent": 65.02431038312506
+        },
+        {
+          "frame_number": 678,
+          "timestamp": 22.6,
+          "label": "Velum",
+          "roi_area": 58955.0,
+          "reduction_percent": 51.49852327791169
+        },
+        {
+          "frame_number": 684,
+          "timestamp": 22.8,
+          "label": "Velum",
+          "roi_area": 52913.0,
+          "reduction_percent": 56.46919450774559
+        }
+      ],
+      "end_frame": 684,
+      "end_time": 22.8,
+      "duration": 22.8,
+      "max_area": 121553.0,
+      "max_area_frame": 186
+    }
+  ],
+  "occlusion_events": [
+    {
+      "segment_label": "Velum",
+      "segment_max_area": 121553.0,
+      "start_frame": 0,
+      "start_time": 0.0,
+      "severity": "Critical",
+      "max_reduction": 99.5812526223129,
+      "frames": [
+        {
+          "frame_number": 0,
+          "timestamp": 0.0,
+          "label": "Velum",
+          "roi_area": 49934.0,
+          "reduction_percent": 58.91997729385536
+        },
+        {
+          "frame_number": 6,
+          "timestamp": 0.2,
+          "label": "Velum",
+          "roi_area": 40690.0,
+          "reduction_percent": 66.52489037703717
+        },
+        {
+          "frame_number": 12,
+          "timestamp": 0.4,
+          "label": "Velum",
+          "roi_area": 21313.0,
+          "reduction_percent": 82.46608475315294
+        },
+        {
+          "frame_number": 18,
+          "timestamp": 0.6,
+          "label": "Velum",
+          "roi_area": 8207.0,
+          "reduction_percent": 93.24821271379562
+        },
+        {
+          "frame_number": 24,
+          "timestamp": 0.8,
+          "label": "Velum",
+          "roi_area": 509.0,
+          "reduction_percent": 99.5812526223129
+        },
+        {
+          "frame_number": 30,
+          "timestamp": 1.0,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 36,
+          "timestamp": 1.2,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 42,
+          "timestamp": 1.4,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 48,
+          "timestamp": 1.6,
+          "label": "Velum",
+          "roi_area": 1695.0,
+          "reduction_percent": 98.60554655170995
+        },
+        {
+          "frame_number": 54,
+          "timestamp": 1.8,
+          "label": "Velum",
+          "roi_area": 11010.0,
+          "reduction_percent": 90.94222273411599
+        },
+        {
+          "frame_number": 60,
+          "timestamp": 2.0,
+          "label": "Velum",
+          "roi_area": 85783.0,
+          "reduction_percent": 29.427492534120915
+        },
+        {
+          "frame_number": 66,
+          "timestamp": 2.2,
+          "label": "Velum",
+          "roi_area": 98543.0,
+          "reduction_percent": 18.93001406793744
+        },
+        {
+          "frame_number": 72,
+          "timestamp": 2.4,
+          "label": "Velum",
+          "roi_area": 99953.0,
+          "reduction_percent": 17.77002624369617
+        },
+        {
+          "frame_number": 78,
+          "timestamp": 2.6,
+          "label": "Velum",
+          "roi_area": 100433.0,
+          "reduction_percent": 17.37513677161403
+        },
+        {
+          "frame_number": 84,
+          "timestamp": 2.8,
+          "label": "Velum",
+          "roi_area": 104612.0,
+          "reduction_percent": 13.937130305298929
+        },
+        {
+          "frame_number": 90,
+          "timestamp": 3.0,
+          "label": "Velum",
+          "roi_area": 100373.0,
+          "reduction_percent": 17.424497955624297
+        },
+        {
+          "frame_number": 96,
+          "timestamp": 3.2,
+          "label": "Velum",
+          "roi_area": 99120.0,
+          "reduction_percent": 18.45532401503871
+        },
+        {
+          "frame_number": 102,
+          "timestamp": 3.4,
+          "label": "Velum",
+          "roi_area": 30033.0,
+          "reduction_percent": 75.29225934366079
+        },
+        {
+          "frame_number": 108,
+          "timestamp": 3.6,
+          "label": "Velum",
+          "roi_area": 35551.0,
+          "reduction_percent": 70.75267578751657
+        },
+        {
+          "frame_number": 114,
+          "timestamp": 3.8,
+          "label": "Velum",
+          "roi_area": 34377.0,
+          "reduction_percent": 71.71850962131745
+        },
+        {
+          "frame_number": 120,
+          "timestamp": 4.0,
+          "label": "Velum",
+          "roi_area": 29952.0,
+          "reduction_percent": 75.35889694207465
+        },
+        {
+          "frame_number": 126,
+          "timestamp": 4.2,
+          "label": "Velum",
+          "roi_area": 14948.0,
+          "reduction_percent": 87.70248369024212
+        },
+        {
+          "frame_number": 132,
+          "timestamp": 4.4,
+          "label": "Velum",
+          "roi_area": 11263.0,
+          "reduction_percent": 90.73408307487269
+        },
+        {
+          "frame_number": 138,
+          "timestamp": 4.6,
+          "label": "Velum",
+          "roi_area": 9670.0,
+          "reduction_percent": 92.04462251034529
+        },
+        {
+          "frame_number": 144,
+          "timestamp": 4.8,
+          "label": "Velum",
+          "roi_area": 3743.0,
+          "reduction_percent": 96.9206848041595
+        },
+        {
+          "frame_number": 150,
+          "timestamp": 5.0,
+          "label": "Velum",
+          "roi_area": 1324.0,
+          "reduction_percent": 98.91076320617344
+        },
+        {
+          "frame_number": 156,
+          "timestamp": 5.2,
+          "label": "Velum",
+          "roi_area": 642.0,
+          "reduction_percent": 99.47183533109015
+        },
+        {
+          "frame_number": 162,
+          "timestamp": 5.4,
+          "label": "Velum",
+          "roi_area": 3352.0,
+          "reduction_percent": 97.24235518662641
+        },
+        {
+          "frame_number": 168,
+          "timestamp": 5.6,
+          "label": "Velum",
+          "roi_area": 35172.0,
+          "reduction_percent": 71.0644739331814
+        },
+        {
+          "frame_number": 174,
+          "timestamp": 5.8,
+          "label": "Velum",
+          "roi_area": 106146.0,
+          "reduction_percent": 12.675129367436423
+        },
+        {
+          "frame_number": 180,
+          "timestamp": 6.0,
+          "label": "Velum",
+          "roi_area": 109112.0,
+          "reduction_percent": 10.235041504528885
+        }
+      ],
+      "end_frame": 180,
+      "end_time": 6.0,
+      "duration": 6.0,
+      "clip_path": "event_clips/event_01_Velum_Critical.mp4"
+    },
+    {
+      "segment_label": "Velum",
+      "segment_max_area": 121553.0,
+      "start_frame": 204,
+      "start_time": 6.8,
+      "severity": "Critical",
+      "max_reduction": 99.87824241277468,
+      "frames": [
+        {
+          "frame_number": 204,
+          "timestamp": 6.8,
+          "label": "Velum",
+          "roi_area": 89732.0,
+          "reduction_percent": 26.17870393984517
+        },
+        {
+          "frame_number": 210,
+          "timestamp": 7.0,
+          "label": "Velum",
+          "roi_area": 33421.0,
+          "reduction_percent": 72.50499781988104
+        },
+        {
+          "frame_number": 216,
+          "timestamp": 7.2,
+          "label": "Velum",
+          "roi_area": 17431.0,
+          "reduction_percent": 85.65975335861722
+        },
+        {
+          "frame_number": 222,
+          "timestamp": 7.4,
+          "label": "Velum",
+          "roi_area": 13922.0,
+          "reduction_percent": 88.54655993681769
+        },
+        {
+          "frame_number": 228,
+          "timestamp": 7.6,
+          "label": "Velum",
+          "roi_area": 17490.0,
+          "reduction_percent": 85.61121486100714
+        },
+        {
+          "frame_number": 234,
+          "timestamp": 7.8,
+          "label": "Velum",
+          "roi_area": 8863.0,
+          "reduction_percent": 92.70853043528338
+        },
+        {
+          "frame_number": 240,
+          "timestamp": 8.0,
+          "label": "Velum",
+          "roi_area": 637.0,
+          "reduction_percent": 99.475948763091
+        },
+        {
+          "frame_number": 246,
+          "timestamp": 8.2,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 252,
+          "timestamp": 8.4,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 258,
+          "timestamp": 8.6,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 264,
+          "timestamp": 8.8,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 270,
+          "timestamp": 9.0,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 276,
+          "timestamp": 9.2,
+          "label": "Velum",
+          "roi_area": 4654.0,
+          "reduction_percent": 96.1712174936036
+        },
+        {
+          "frame_number": 282,
+          "timestamp": 9.4,
+          "label": "Velum",
+          "roi_area": 48017.0,
+          "reduction_percent": 60.497067122983395
+        },
+        {
+          "frame_number": 288,
+          "timestamp": 9.6,
+          "label": "Velum",
+          "roi_area": 68965.0,
+          "reduction_percent": 43.263432412198796
+        },
+        {
+          "frame_number": 294,
+          "timestamp": 9.8,
+          "label": "Velum",
+          "roi_area": 69997.0,
+          "reduction_percent": 42.4144200472222
+        },
+        {
+          "frame_number": 300,
+          "timestamp": 10.0,
+          "label": "Velum",
+          "roi_area": 72955.0,
+          "reduction_percent": 39.98091367551603
+        },
+        {
+          "frame_number": 306,
+          "timestamp": 10.2,
+          "label": "Velum",
+          "roi_area": 69468.0,
+          "reduction_percent": 42.84962115291272
+        },
+        {
+          "frame_number": 312,
+          "timestamp": 10.4,
+          "label": "Velum",
+          "roi_area": 67256.0,
+          "reduction_percent": 44.66940347009124
+        },
+        {
+          "frame_number": 318,
+          "timestamp": 10.6,
+          "label": "Velum",
+          "roi_area": 60252.0,
+          "reduction_percent": 50.431499016889745
+        },
+        {
+          "frame_number": 324,
+          "timestamp": 10.8,
+          "label": "Velum",
+          "roi_area": 13026.0,
+          "reduction_percent": 89.28368695137101
+        },
+        {
+          "frame_number": 330,
+          "timestamp": 11.0,
+          "label": "Velum",
+          "roi_area": 3141.0,
+          "reduction_percent": 97.41594201706252
+        },
+        {
+          "frame_number": 336,
+          "timestamp": 11.2,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 342,
+          "timestamp": 11.4,
+          "label": "Velum",
+          "roi_area": 148.0,
+          "reduction_percent": 99.87824241277468
+        },
+        {
+          "frame_number": 348,
+          "timestamp": 11.6,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 354,
+          "timestamp": 11.8,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 360,
+          "timestamp": 12.0,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 366,
+          "timestamp": 12.2,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 372,
+          "timestamp": 12.4,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 378,
+          "timestamp": 12.6,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 384,
+          "timestamp": 12.8,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 390,
+          "timestamp": 13.0,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 396,
+          "timestamp": 13.2,
+          "label": "Velum",
+          "roi_area": 16776.0,
+          "reduction_percent": 86.19861295072931
+        },
+        {
+          "frame_number": 402,
+          "timestamp": 13.4,
+          "label": "Velum",
+          "roi_area": 68268.0,
+          "reduction_percent": 43.83684483311806
+        },
+        {
+          "frame_number": 408,
+          "timestamp": 13.6,
+          "label": "Velum",
+          "roi_area": 78073.0,
+          "reduction_percent": 35.77040467944025
+        },
+        {
+          "frame_number": 414,
+          "timestamp": 13.8,
+          "label": "Velum",
+          "roi_area": 84896.0,
+          "reduction_percent": 30.1572153710727
+        },
+        {
+          "frame_number": 420,
+          "timestamp": 14.0,
+          "label": "Velum",
+          "roi_area": 83955.0,
+          "reduction_percent": 30.93136327363373
+        },
+        {
+          "frame_number": 426,
+          "timestamp": 14.2,
+          "label": "Velum",
+          "roi_area": 77186.0,
+          "reduction_percent": 36.50012751639202
+        },
+        {
+          "frame_number": 432,
+          "timestamp": 14.4,
+          "label": "Velum",
+          "roi_area": 73541.0,
+          "reduction_percent": 39.498819445015755
+        },
+        {
+          "frame_number": 438,
+          "timestamp": 14.6,
+          "label": "Velum",
+          "roi_area": 45873.0,
+          "reduction_percent": 62.26090676495026
+        },
+        {
+          "frame_number": 444,
+          "timestamp": 14.8,
+          "label": "Velum",
+          "roi_area": 665.0,
+          "reduction_percent": 99.4529135438862
+        },
+        {
+          "frame_number": 450,
+          "timestamp": 15.0,
+          "label": "Velum",
+          "roi_area": 325.0,
+          "reduction_percent": 99.7326269199444
+        },
+        {
+          "frame_number": 456,
+          "timestamp": 15.2,
+          "label": "Velum",
+          "roi_area": 17232.0,
+          "reduction_percent": 85.82346795225129
+        },
+        {
+          "frame_number": 462,
+          "timestamp": 15.4,
+          "label": "Velum",
+          "roi_area": 29774.0,
+          "reduction_percent": 75.50533512130511
+        },
+        {
+          "frame_number": 468,
+          "timestamp": 15.6,
+          "label": "Velum",
+          "roi_area": 33734.0,
+          "reduction_percent": 72.24749697662747
+        },
+        {
+          "frame_number": 474,
+          "timestamp": 15.8,
+          "label": "Velum",
+          "roi_area": 30007.0,
+          "reduction_percent": 75.31364919006523
+        },
+        {
+          "frame_number": 480,
+          "timestamp": 16.0,
+          "label": "Velum",
+          "roi_area": 11557.0,
+          "reduction_percent": 90.49221327322238
+        },
+        {
+          "frame_number": 486,
+          "timestamp": 16.2,
+          "label": "Velum",
+          "roi_area": 2690.0,
+          "reduction_percent": 97.78697358353969
+        },
+        {
+          "frame_number": 492,
+          "timestamp": 16.4,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 498,
+          "timestamp": 16.6,
+          "label": "Velum",
+          "roi_area": 1437.0,
+          "reduction_percent": 98.81779964295411
+        },
+        {
+          "frame_number": 504,
+          "timestamp": 16.8,
+          "label": "Velum",
+          "roi_area": 7275.0,
+          "reduction_percent": 94.01495643875512
+        },
+        {
+          "frame_number": 510,
+          "timestamp": 17.0,
+          "label": "Velum",
+          "roi_area": 52130.0,
+          "reduction_percent": 57.11335795907958
+        },
+        {
+          "frame_number": 516,
+          "timestamp": 17.2,
+          "label": "Velum",
+          "roi_area": 79448.0,
+          "reduction_percent": 34.63921087920495
+        },
+        {
+          "frame_number": 522,
+          "timestamp": 17.4,
+          "label": "Velum",
+          "roi_area": 89861.0,
+          "reduction_percent": 26.072577394223096
+        },
+        {
+          "frame_number": 528,
+          "timestamp": 17.6,
+          "label": "Velum",
+          "roi_area": 86050.0,
+          "reduction_percent": 29.20783526527523
+        },
+        {
+          "frame_number": 534,
+          "timestamp": 17.8,
+          "label": "Velum",
+          "roi_area": 78357.0,
+          "reduction_percent": 35.53676174179164
+        },
+        {
+          "frame_number": 540,
+          "timestamp": 18.0,
+          "label": "Velum",
+          "roi_area": 73623.0,
+          "reduction_percent": 39.431359160201715
+        },
+        {
+          "frame_number": 546,
+          "timestamp": 18.2,
+          "label": "Velum",
+          "roi_area": 78928.0,
+          "reduction_percent": 35.06700780729394
+        },
+        {
+          "frame_number": 552,
+          "timestamp": 18.4,
+          "label": "Velum",
+          "roi_area": 20059.0,
+          "reduction_percent": 83.49773349896753
+        },
+        {
+          "frame_number": 558,
+          "timestamp": 18.6,
+          "label": "Velum",
+          "roi_area": 22531.0,
+          "reduction_percent": 81.46405271774452
+        },
+        {
+          "frame_number": 564,
+          "timestamp": 18.8,
+          "label": "Velum",
+          "roi_area": 38635.0,
+          "reduction_percent": 68.21551092938883
+        },
+        {
+          "frame_number": 570,
+          "timestamp": 19.0,
+          "label": "Velum",
+          "roi_area": 33404.0,
+          "reduction_percent": 72.51898348868396
+        },
+        {
+          "frame_number": 576,
+          "timestamp": 19.2,
+          "label": "Velum",
+          "roi_area": 13024.0,
+          "reduction_percent": 89.28533232417135
+        },
+        {
+          "frame_number": 582,
+          "timestamp": 19.4,
+          "label": "Velum",
+          "roi_area": 11459.0,
+          "reduction_percent": 90.57283654043916
+        },
+        {
+          "frame_number": 588,
+          "timestamp": 19.6,
+          "label": "Velum",
+          "roi_area": 8653.0,
+          "reduction_percent": 92.8812945793193
+        },
+        {
+          "frame_number": 594,
+          "timestamp": 19.8,
+          "label": "Velum",
+          "roi_area": 1732.0,
+          "reduction_percent": 98.57510715490362
+        },
+        {
+          "frame_number": 600,
+          "timestamp": 20.0,
+          "label": "Velum",
+          "roi_area": 0,
+          "reduction_percent": 100.0
+        },
+        {
+          "frame_number": 606,
+          "timestamp": 20.2,
+          "label": "Velum",
+          "roi_area": 1526.0,
+          "reduction_percent": 98.74458055333886
+        },
+        {
+          "frame_number": 612,
+          "timestamp": 20.4,
+          "label": "Velum",
+          "roi_area": 46368.0,
+          "reduction_percent": 61.85367699686557
+        },
+        {
+          "frame_number": 618,
+          "timestamp": 20.6,
+          "label": "Velum",
+          "roi_area": 80435.0,
+          "reduction_percent": 33.82721940223606
+        },
+        {
+          "frame_number": 624,
+          "timestamp": 20.8,
+          "label": "Velum",
+          "roi_area": 83820.0,
+          "reduction_percent": 31.042425937656827
+        },
+        {
+          "frame_number": 630,
+          "timestamp": 21.0,
+          "label": "Velum",
+          "roi_area": 87934.0,
+          "reduction_percent": 27.65789408735284
+        },
+        {
+          "frame_number": 636,
+          "timestamp": 21.2,
+          "label": "Velum",
+          "roi_area": 87703.0,
+          "reduction_percent": 27.84793464579237
+        },
+        {
+          "frame_number": 642,
+          "timestamp": 21.4,
+          "label": "Velum",
+          "roi_area": 86271.0,
+          "reduction_percent": 29.02602157083741
+        },
+        {
+          "frame_number": 648,
+          "timestamp": 21.6,
+          "label": "Velum",
+          "roi_area": 81260.0,
+          "reduction_percent": 33.14850312209489
+        },
+        {
+          "frame_number": 654,
+          "timestamp": 21.8,
+          "label": "Velum",
+          "roi_area": 79218.0,
+          "reduction_percent": 34.82842875124431
+        },
+        {
+          "frame_number": 660,
+          "timestamp": 22.0,
+          "label": "Velum",
+          "roi_area": 12262.0,
+          "reduction_percent": 89.91221936110175
+        },
+        {
+          "frame_number": 666,
+          "timestamp": 22.2,
+          "label": "Velum",
+          "roi_area": 17335.0,
+          "reduction_percent": 85.73873125303366
+        },
+        {
+          "frame_number": 672,
+          "timestamp": 22.4,
+          "label": "Velum",
+          "roi_area": 42514.0,
+          "reduction_percent": 65.02431038312506
+        },
+        {
+          "frame_number": 678,
+          "timestamp": 22.6,
+          "label": "Velum",
+          "roi_area": 58955.0,
+          "reduction_percent": 51.49852327791169
+        },
+        {
+          "frame_number": 684,
+          "timestamp": 22.8,
+          "label": "Velum",
+          "roi_area": 52913.0,
+          "reduction_percent": 56.46919450774559
+        }
+      ],
+      "end_frame": 684,
+      "end_time": 22.8,
+      "duration": 16.0,
+      "clip_path": "event_clips/event_02_Velum_Critical.mp4"
+    }
+  ],
+  "summary": {
+    "total_segments": 1,
+    "ote_segments": 0,
+    "velum_segments": 1,
+    "total_events": 2,
+    "events_by_severity": {
+      "Critical": 2,
+      "Severe": 0,
+      "Moderate": 0,
+      "Mild": 0
+    }
+  },
+  "max_area": 121553.0,
+  "max_area_frame": 186,
+  "max_area_source": "auto",
+  "segment_references": {
+    "Velum": {
+      "max_area": 121553.0,
+      "frame_number": 186
+    }
+  },
+  "metadata": {
+    "threshold_percent": 10
+  },
+  "reference_images": {
+    "Velum": "outputs\\40231401_95_Velumclip\\overlays\\reference_Velum.jpg"
+  }
+}

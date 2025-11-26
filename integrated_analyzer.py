@@ -240,8 +240,9 @@ class IntegratedDISEAnalyzer:
             
         return valid_segments
     
+
     def detect_occlusion_events(self, segments):
-        """Segment별 max_area 기준으로 폐쇄 이벤트 감지"""
+        """Segment별 max_area 기준으로 폐쇄 이벤트 감지 (100% 탐지실패 필터링 적용)"""
         events = []
         
         for segment in segments:
@@ -266,12 +267,12 @@ class IntegratedDISEAnalyzer:
                 else:
                     frame_data['reduction_percent'] = 100.0
                 
-                # ✅ 수정: roi_area가 threshold보다 작거나 0인 경우 모두 이벤트로 간주
-                is_occlusion = (roi_area < threshold_area)  # 0도 포함
+                # roi_area가 threshold보다 작으면 이벤트로 간주
+                is_occlusion = (roi_area < threshold_area)
                 
                 if is_occlusion:
-                    area_reduction = (1 - roi_area / segment_max_area) * 100 if roi_area > 0 else 100.0
-                    severity = self._classify_severity(area_reduction)
+                    severity = self._classify_severity(frame_data['reduction_percent'])
+                    
                     if current_event is None:
                         current_event = {
                             'segment_label': segment['label'], 
@@ -279,38 +280,65 @@ class IntegratedDISEAnalyzer:
                             'start_frame': frame_data['frame_number'], 
                             'start_time': frame_data['timestamp'], 
                             'severity': severity, 
-                            'max_reduction': area_reduction,
+                            'max_reduction': frame_data['reduction_percent'], # 임시 저장
                             'frames': [frame_data]
                         }
                     else:
                         current_event['frames'].append(frame_data)
-                        current_event['max_reduction'] = max(current_event['max_reduction'], area_reduction)
                         if self._severity_level(severity) > self._severity_level(current_event['severity']):
                             current_event['severity'] = severity
                 else:
+                    # 이벤트가 끊김 (종료)
                     if current_event is not None:
                         current_event['end_frame'] = current_event['frames'][-1]['frame_number']
                         current_event['end_time'] = current_event['frames'][-1]['timestamp']
                         current_event['duration'] = current_event['end_time'] - current_event['start_time']
+                        
                         if current_event['duration'] >= self.min_event_duration: 
+                            # --- [수정] 100%(탐지실패) 제외하고 Max Reduction 재계산 ---
+                            all_reductions = [f['reduction_percent'] for f in current_event['frames']]
+                            # 99.9% 미만인 유효한 감소율만 추출
+                            valid_reductions = [r for r in all_reductions if r < 99.9]
+                            
+                            if valid_reductions:
+                                # 유효값 중 최대치 사용
+                                current_event['max_reduction'] = max(valid_reductions)
+                            else:
+                                # 유효값이 하나도 없으면(전부 100%) 어쩔 수 없이 100% 사용
+                                current_event['max_reduction'] = 100.0
+                            # -----------------------------------------------------
+
                             events.append(current_event)
-                            print(f"    ✓ Event detected: {current_event['severity']} at {current_event['start_time']:.1f}s-{current_event['end_time']:.1f}s ({current_event['max_reduction']:.1f}% reduction)")
+                            print(f"    ✓ Event detected: {current_event['severity']} at {current_event['start_time']:.1f}s (Red: {current_event['max_reduction']:.1f}%)")
                         else:
                             print(f"    ✗ Event too short: {current_event['duration']:.2f}s < {self.min_event_duration}s")
                         current_event = None
             
+            # 루프 종료 후 남은 이벤트 처리 (at end)
             if current_event is not None:
                 current_event['end_frame'] = current_event['frames'][-1]['frame_number']
                 current_event['end_time'] = current_event['frames'][-1]['timestamp']
                 current_event['duration'] = current_event['end_time'] - current_event['start_time']
+                
                 if current_event['duration'] >= self.min_event_duration: 
+                    # --- [수정] 100%(탐지실패) 제외하고 Max Reduction 재계산 (동일 로직) ---
+                    all_reductions = [f['reduction_percent'] for f in current_event['frames']]
+                    valid_reductions = [r for r in all_reductions if r < 99.9]
+                    
+                    if valid_reductions:
+                        current_event['max_reduction'] = max(valid_reductions)
+                    else:
+                        current_event['max_reduction'] = 100.0
+                    # -----------------------------------------------------
+                    
                     events.append(current_event)
-                    print(f"    ✓ Event detected (at end): {current_event['severity']} at {current_event['start_time']:.1f}s-{current_event['end_time']:.1f}s ({current_event['max_reduction']:.1f}% reduction)")
+                    print(f"    ✓ Event detected (at end): {current_event['severity']} (Red: {current_event['max_reduction']:.1f}%)")
                 else:
-                    print(f"    ✗ Event too short (at end): {current_event['duration']:.2f}s < {self.min_event_duration}s")
+                    print(f"    ✗ Event too short (at end)")
         
         return events
-    
+
+
     def _classify_severity(self, reduction_percent):
         if reduction_percent >= 70: return 'Critical'
         if reduction_percent >= 50: return 'Severe'

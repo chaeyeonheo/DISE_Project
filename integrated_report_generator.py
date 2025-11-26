@@ -229,9 +229,29 @@ class IntegratedReportGenerator:
         timeline_ai = self.generate_chart_interpretation('timeline')
         severity_ai = self.generate_chart_interpretation('severity')
         
-        # Reference 이미지들 HTML 생성
+        # --- [수정] Reference 이미지 표시 로직 (Manual 우선) ---
         ref_images_html = ""
-        if self.reference_images:
+        
+        # 1. 수동 업로드 이미지가 존재하는 경우 (최우선 표시)
+        if self.results.get('manual_ref_image'):
+            # 파일명만 추출하여 웹 경로(overlays 폴더)로 변환
+            manual_path = Path(self.results['manual_ref_image'])
+            web_path = f"overlays/{manual_path.name}"
+            
+            ref_images_html = f"""
+            <div class="space-y-3">
+                <div class="relative group">
+                    <div class="text-xs font-bold mb-1 text-indigo-600">📸 Manual Reference Used</div>
+                    <img src="{web_path}" class="w-full rounded-lg border-4 border-indigo-500 shadow-md">
+                    <div class="text-xs text-right mt-1 text-slate-400">
+                        Max Area: {self.results.get('max_area', 0):.0f} px²
+                    </div>
+                </div>
+            </div>
+            """
+            
+        # 2. 수동 이미지가 없고, Auto 이미지가 있는 경우 (기존 로직)
+        elif self.reference_images:
             ref_images_html = "<div class='space-y-3'>"
             for label in ['OTE', 'Velum']:
                 if label in self.reference_images:
@@ -242,13 +262,17 @@ class IntegratedReportGenerator:
                     
                     ref_images_html += f"""
                     <div class="relative group">
-                        <div class="text-xs font-bold mb-1" style="color: {color}">{label} Reference (Max: {ref_data.get('max_area', 0):.0f} px²)</div>
+                        <div class="text-xs font-bold mb-1" style="color: {color}">{label} Reference (Auto)</div>
                         <img src="{web_path}" class="w-full rounded-lg border-4 shadow-md transition-transform group-hover:scale-[1.02]" style="border-color: {color}">
+                        <div class="text-xs text-right mt-1 text-slate-400">Max: {ref_data.get('max_area', 0):.0f} px²</div>
                     </div>
                     """
             ref_images_html += "</div>"
+        
+        # 3. 아무것도 없는 경우
         else:
             ref_images_html = "<div class='bg-gray-100 p-4 rounded text-center text-gray-500'>No Reference Images</div>"
+        # -----------------------------------------------------------
 
         p_info = self.patient_info
         
@@ -272,7 +296,7 @@ class IntegratedReportGenerator:
 </head>
 <body class="text-slate-800">
     <nav class="bg-slate-900 text-white h-16 flex items-center px-8 fixed w-full z-50 shadow-lg">
-        <div class="flex items-center gap-3 font-bold text-xl"><i class="fas fa-heartbeat text-rose-500"></i> DISE AI Analytics (Segment-based)</div>
+        <div class="flex items-center gap-3 font-bold text-xl"><i class="fas fa-heartbeat text-rose-500"></i> DISE AI Analytics</div>
     </nav>
 
     <div class="pt-24 pb-12 px-8 max-w-7xl mx-auto space-y-8">
@@ -289,7 +313,7 @@ class IntegratedReportGenerator:
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-sm font-bold text-slate-400 uppercase mb-2">Reference Frames</h3>
+                    <h3 class="text-sm font-bold text-slate-400 uppercase mb-2">Reference Image</h3>
                     {ref_images_html}
                 </div>
             </div>
@@ -331,7 +355,7 @@ class IntegratedReportGenerator:
                         <th class="px-6 py-3">Severity</th>
                         <th class="px-6 py-3">Region</th>
                         <th class="px-6 py-3">Time</th>
-                        <th class="px-6 py-3">Reduction</th>
+                        <th class="px-6 py-3">Max Reduction</th>
                         <th class="px-6 py-3">Ref Area</th>
                         <th class="px-6 py-3 text-center">Play</th>
                     </tr>
@@ -346,12 +370,15 @@ class IntegratedReportGenerator:
                 clip_file = Path(event.get('clip_path', '')).name
                 video_path = f"event_clips/{clip_file}"
                 ref_area = event.get('segment_max_area', 0)
+                # Max Reduction 표시 (소수점 1자리)
+                reduction_val = event.get('max_reduction', 0)
+                
                 html += f"""
                     <tr onclick="playVideo('{video_path}', 'Event #{i+1}')" class="hover:bg-slate-50 cursor-pointer transition">
                         <td class="px-6 py-4"><span class="severity-badge s-{event['severity']}">{event['severity']}</span></td>
                         <td class="px-6 py-4 font-bold text-slate-700">{event['segment_label']}</td>
                         <td class="px-6 py-4 text-slate-500">{event['start_time']:.1f}s ~ {event['end_time']:.1f}s</td>
-                        <td class="px-6 py-4 font-bold text-red-600">{event['max_reduction']:.1f}%</td>
+                        <td class="px-6 py-4 font-bold text-red-600">{reduction_val:.1f}%</td>
                         <td class="px-6 py-4 text-slate-600">{ref_area:.0f} px²</td>
                         <td class="px-6 py-4 text-center">
                             <button class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">
@@ -372,7 +399,7 @@ class IntegratedReportGenerator:
         <div class="fixed inset-0 flex items-center justify-center p-4">
             <div class="bg-black rounded-2xl shadow-2xl overflow-hidden max-w-7xl w-full relative" onclick="event.stopPropagation()">
                 <div class="bg-slate-800 px-4 py-3 flex justify-between items-center">
-                    <h3 class="text-white font-bold" id="modalTitle">Event Video (좌측: 원본, 우측: 분석 결과)</h3>
+                    <h3 class="text-white font-bold" id="modalTitle">Event Video</h3>
                     <button onclick="closeModal()" class="text-slate-400 hover:text-white"><i class="fas fa-times text-xl"></i></button>
                 </div>
                 <div class="bg-black flex items-center justify-center" style="min-height: 400px;">
@@ -387,7 +414,6 @@ class IntegratedReportGenerator:
             const player = document.getElementById('player');
             player.innerHTML = '';
             player.onerror = null;
-            player.onloadeddata = null;
             
             const source = document.createElement('source');
             source.src = src;
@@ -395,7 +421,6 @@ class IntegratedReportGenerator:
             player.appendChild(source);
             
             player.onerror = function(e) {{
-                console.error('비디오 로드 실패:', src, e);
                 alert('비디오 파일을 재생할 수 없습니다.\\n경로: ' + src);
             }};
             
@@ -403,10 +428,7 @@ class IntegratedReportGenerator:
             document.getElementById('videoModal').classList.remove('hidden');
             
             player.load();
-            const playPromise = player.play();
-            if (playPromise !== undefined) {{
-                playPromise.catch(err => console.log('자동 재생 실패:', err));
-            }}
+            player.play().catch(console.log);
         }}
         function closeModal() {{
             document.getElementById('videoModal').classList.add('hidden');
