@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medical Analysis Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #f3f4f6; }
+        .card { background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); border: 1px solid #e5e7eb; }
+        .severity-badge { padding: 0.25rem 0.75rem; border-radius: 99px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+        .s-Critical { background: #fee2e2; color: #991b1b; } .s-Severe { background: #ffedd5; color: #9a3412; }
+        .s-Moderate { background: #fef3c7; color: #92400e; } .s-Mild { background: #dcfce7; color: #166534; }
+        .ai-box { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 1rem; border-radius: 0.5rem; font-size: 0.9rem; color: #0369a1; margin-top: 1rem; }
+    </style>
+</head>
+<body class="text-slate-800">
+    <nav class="bg-slate-900 text-white h-16 flex items-center px-8 fixed w-full z-50 shadow-lg">
+        <div class="flex items-center gap-3 font-bold text-xl"><i class="fas fa-heartbeat text-rose-500"></i> DISE AI Analytics (Segment-based)</div>
+    </nav>
+
+    <div class="pt-24 pb-12 px-8 max-w-7xl mx-auto space-y-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="card lg:col-span-1 flex flex-col gap-6">
+                <div>
+                    <h3 class="text-sm font-bold text-slate-400 uppercase mb-4"><i class="fas fa-user"></i> Patient Info</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between border-b pb-1"><span>ID</span><span class="font-bold">40301551_79_Velumclip</span></div>
+                        <div class="flex justify-between border-b pb-1"><span>Age/Sex</span><span class="font-bold">55 / M</span></div>
+                        <div class="flex justify-between border-b pb-1"><span>Diagnosis</span><span class="font-bold text-indigo-600">sleepapnea</span></div>
+                        <div class="flex justify-between border-b pb-1"><span>Threshold</span><span class="font-bold text-red-600">30%</span></div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-slate-400 uppercase mb-2">Reference Frames</h3>
+                    <div class='space-y-3'>
+                    <div class="relative group">
+                        <div class="text-xs font-bold mb-1" style="color: #9b59b6">Velum Reference (Max: 76969 px²)</div>
+                        <img src="overlays/reference_Velum.jpg" class="w-full rounded-lg border-4 shadow-md transition-transform group-hover:scale-[1.02]" style="border-color: #9b59b6">
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card lg:col-span-2 border-t-4 border-t-indigo-500">
+                <h3 class="text-lg font-bold text-indigo-700 mb-4 flex items-center gap-2">
+                    <i class="fas fa-user-md"></i> AI Doctor's Note
+                </h3>
+                <div class="prose prose-sm max-w-none text-slate-700 leading-relaxed">
+                    **의료진용 판독 소견서**<br><br>**1. 환자 개요:**<br>M/55세 환자는 기저 질환으로 수면 무호흡증이 진단되었으며, 수면다원검사 결과 AHI 11.8로 경증 수면 무호흡증에 해당합니다.<br><br>**2. 영상 소견:**<br>이번 DISE 영상(22.0초) 분석 결과, 총 3회의 폐색 이벤트가 감지되었으며, 모든 이벤트가 'Critical' 등급의 심각도로 분류되었습니다. 폐색은 다음 부위에서 관찰되었습니다.<br><br>*   **OTE (Orabase Tongue Epiglottis) 영역:** 해당 부위에서 1회의 폐색 이벤트가 관찰되었습니다. 이는 최대 기도 면적 대비 30% 이상의 심각한 감소가 발생했음을 의미합니다.<br>*   **Velum (연구개) 영역:** 해당 부위에서 2회의 폐색 이벤트가 관찰되었습니다. Velum 영역의 최대 기도 면적 대비 30% 이상의 감소가 발생하여 폐색이 감지되었습니다. (Velum 영역 기준 면적: 76969 px², Frame 120)<br><br>**3. 종합 평가:**<br>본 환자는 AHI 수치상 경증 수면 무호흡증으로 분류되나, DISE 영상 분석 결과 수면 중 기도가 'Critical' 수준으로 완전히 또는 거의 완전히 폐쇄되는 이벤트가 OTE 및 Velum 영역에서 총 3회 확인되었습니다. 이는 특정 해부학적 부위에서 심각한 기도 폐쇄가 발생할 수 있음을 시사하며, 비록 AHI가 경증이더라도 이러한 폐쇄 양상은 환자의 증상과 수면의 질에 상당한 영향을 미칠 수 있습니다.<br><br>따라서 폐쇄 부위에 대한 추가적인 정밀 평가 및 맞춤형 치료 방안(예: 양압기 치료, 구강 내 장치, 또는 해당 부위의 해부학적 구조를 개선하는 외과적 치료 등)의 고려가 필요할 것으로 사료됩니다.
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="card lg:col-span-2">
+                <h3 class="text-lg font-bold text-slate-700 mb-4">Timeline Analysis</h3>
+                <img src="timeline.png" class="w-full rounded-lg border">
+                <div class="ai-box">
+                    <i class="fas fa-info-circle mr-2"></i> <strong>Chart Insight:</strong><br>
+                    22초의 관찰 시간 동안, 벨룸의 기준 면적 대비 30% 미만으로 폐쇄되는 패턴이 총 3회 관찰되었습니다.
+                </div>
+            </div>
+            <div class="card lg:col-span-1">
+                <h3 class="text-lg font-bold text-slate-700 mb-4">Severity Stats</h3>
+                <img src="severity_chart.png" class="w-full rounded-lg border">
+                <div class="ai-box">
+                    <i class="fas fa-chart-bar mr-2"></i> <strong>Analysis:</strong><br>
+                    전체 중증도 수준은 모든 사례가 'Critical'에 해당하여 매우 심각한 상황입니다.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="text-lg font-bold text-slate-700 mb-6">Detected Events (3)</h3>
+            <table class="w-full text-sm text-left">
+                <thead class="bg-slate-50 text-slate-500 font-medium border-b">
+                    <tr>
+                        <th class="px-6 py-3">Severity</th>
+                        <th class="px-6 py-3">Region</th>
+                        <th class="px-6 py-3">Time</th>
+                        <th class="px-6 py-3">Reduction</th>
+                        <th class="px-6 py-3">Ref Area</th>
+                        <th class="px-6 py-3 text-center">Play</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y">
+        
+                    <tr onclick="playVideo('event_clips/event_01_Velum_Critical.mp4', 'Event #1')" class="hover:bg-slate-50 cursor-pointer transition">
+                        <td class="px-6 py-4"><span class="severity-badge s-Critical">Critical</span></td>
+                        <td class="px-6 py-4 font-bold text-slate-700">Velum</td>
+                        <td class="px-6 py-4 text-slate-500">0.0s ~ 2.0s</td>
+                        <td class="px-6 py-4 font-bold text-red-600">100.0%</td>
+                        <td class="px-6 py-4 text-slate-600">76969 px²</td>
+                        <td class="px-6 py-4 text-center">
+                            <button class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">
+                                <i class="fas fa-play text-xs"></i>
+                            </button>
+                        </td>
+                    </tr>
+                
+                    <tr onclick="playVideo('event_clips/event_02_Velum_Critical.mp4', 'Event #2')" class="hover:bg-slate-50 cursor-pointer transition">
+                        <td class="px-6 py-4"><span class="severity-badge s-Critical">Critical</span></td>
+                        <td class="px-6 py-4 font-bold text-slate-700">Velum</td>
+                        <td class="px-6 py-4 text-slate-500">6.0s ~ 7.0s</td>
+                        <td class="px-6 py-4 font-bold text-red-600">100.0%</td>
+                        <td class="px-6 py-4 text-slate-600">76969 px²</td>
+                        <td class="px-6 py-4 text-center">
+                            <button class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">
+                                <i class="fas fa-play text-xs"></i>
+                            </button>
+                        </td>
+                    </tr>
+                
+                    <tr onclick="playVideo('event_clips/event_03_Velum_Critical.mp4', 'Event #3')" class="hover:bg-slate-50 cursor-pointer transition">
+                        <td class="px-6 py-4"><span class="severity-badge s-Critical">Critical</span></td>
+                        <td class="px-6 py-4 font-bold text-slate-700">Velum</td>
+                        <td class="px-6 py-4 text-slate-500">15.0s ~ 21.0s</td>
+                        <td class="px-6 py-4 font-bold text-red-600">100.0%</td>
+                        <td class="px-6 py-4 text-slate-600">76969 px²</td>
+                        <td class="px-6 py-4 text-center">
+                            <button class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">
+                                <i class="fas fa-play text-xs"></i>
+                            </button>
+                        </td>
+                    </tr>
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="videoModal" class="fixed inset-0 z-[100] hidden" onclick="closeModal()">
+        <div class="fixed inset-0 bg-slate-900/90 backdrop-blur-sm"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="bg-black rounded-2xl shadow-2xl overflow-hidden max-w-7xl w-full relative" onclick="event.stopPropagation()">
+                <div class="bg-slate-800 px-4 py-3 flex justify-between items-center">
+                    <h3 class="text-white font-bold" id="modalTitle">Event Video (좌측: 원본, 우측: 분석 결과)</h3>
+                    <button onclick="closeModal()" class="text-slate-400 hover:text-white"><i class="fas fa-times text-xl"></i></button>
+                </div>
+                <div class="bg-black flex items-center justify-center" style="min-height: 400px;">
+                    <video id="player" controls class="w-full h-auto max-h-[80vh]" style="object-fit: contain;"></video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function playVideo(src, title) {{
+            const player = document.getElementById('player');
+            player.innerHTML = '';
+            player.onerror = null;
+            player.onloadeddata = null;
+            
+            const source = document.createElement('source');
+            source.src = src;
+            source.type = 'video/mp4';
+            player.appendChild(source);
+            
+            player.onerror = function(e) {{
+                console.error('비디오 로드 실패:', src, e);
+                alert('비디오 파일을 재생할 수 없습니다.\n경로: ' + src);
+            }};
+            
+            document.getElementById('modalTitle').innerText = title + ' (좌측: 원본, 우측: 분석 결과)';
+            document.getElementById('videoModal').classList.remove('hidden');
+            
+            player.load();
+            const playPromise = player.play();
+            if (playPromise !== undefined) {{
+                playPromise.catch(err => console.log('자동 재생 실패:', err));
+            }}
+        }}
+        function closeModal() {{
+            document.getElementById('videoModal').classList.add('hidden');
+            const player = document.getElementById('player');
+            player.pause();
+            player.currentTime = 0;
+            player.innerHTML = '';
+        }}
+        document.addEventListener('keydown', (e) => {{ if(e.key === 'Escape') closeModal(); }});
+    </script>
+</body>
+</html>
+        

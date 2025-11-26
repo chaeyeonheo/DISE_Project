@@ -32,9 +32,9 @@ venv.bak/
 .venv/
 
 # PyTorch / ML Models
-*.pth
-*.pt
-*.ckpt
+#*.pth
+#*.pt
+#*.ckpt
 *.h5
 *.pb
 *.onnx
