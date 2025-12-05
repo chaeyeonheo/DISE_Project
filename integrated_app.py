@@ -6,6 +6,10 @@ import sys
 import json
 import cv2
 import numpy as np
+from dotenv import load_dotenv
+
+# .env 파일 로드
+load_dotenv()
 
 # 통합 분석기 import
 sys.path.append(str(Path(__file__).parent))
@@ -17,7 +21,7 @@ app.config['MAX_CONTENT_LENGTH'] = 500 * 1024 * 1024
 app.config['UPLOAD_FOLDER'] = Path('uploads')
 app.config['OUTPUT_FOLDER'] = Path('outputs')
 app.config['MODEL_PATH'] = Path('ote_velum_classification_final/checkpoints/best_model.pth')
-app.config['GEMINI_API_KEY'] = "AIzaSyCNtQzta2v9stW17EZtiT6ICKAIZawORY8" 
+app.config['GEMINI_API_KEY'] = os.getenv('GEMINI_API_KEY', '') 
 
 app.config['UPLOAD_FOLDER'].mkdir(exist_ok=True)
 app.config['OUTPUT_FOLDER'].mkdir(exist_ok=True)
@@ -160,12 +164,17 @@ def analyze_video():
 @app.route('/api/vqa', methods=['POST', 'OPTIONS'])
 def vqa():
     """
-    VQA 엔드포인트: 분석 결과 기반 질의응답
+    VQA 엔드포인트: 분석 결과 기반 질의응답 (Multi-turn 지원)
     
     Request JSON:
         {
             "question": "...",
-            "video_stem": "30042181_89_OTEclip"
+            "video_stem": "30042181_89_OTEclip",
+            "conversation_history": [
+                {"role": "user", "content": "질문1"},
+                {"role": "assistant", "content": "답변1"},
+                ...
+            ]  # optional, 대화 이어가기용
         }
     """
     # CORS preflight 처리
@@ -178,16 +187,18 @@ def vqa():
     
     try:
         print("=" * 50)
-        print("🔍 VQA 요청 수신")
+        print("🔍 VQA 요청 수신 (Multi-turn)")
         
         data = request.get_json()
         print(f"📥 요청 데이터: {data}")
         
         question = (data.get('question') or '').strip()
         video_stem = (data.get('video_stem') or '').strip()
+        conversation_history = data.get('conversation_history', [])  # 대화 히스토리
 
         print(f"❓ 질문: {question}")
         print(f"📁 video_stem: {video_stem}")
+        print(f"💬 대화 히스토리 길이: {len(conversation_history)}")
 
         if not question:
             return jsonify({'success': False, 'error': '질문을 입력해주세요.'}), 400
@@ -224,9 +235,9 @@ def vqa():
             results = json.load(f)
 
         print("🤖 VQA 수행 시작...")
-        # VQA 수행
+        # VQA 수행 (대화 히스토리 포함)
         gen = IntegratedReportGenerator(results, api_key=app.config['GEMINI_API_KEY'])
-        response = gen.answer_question(question)
+        response = gen.answer_question(question, conversation_history=conversation_history)
         print(f"💬 VQA 응답: {response.get('success', False)}")
         print("=" * 50)
         return jsonify(response)

@@ -75,8 +75,8 @@ class IntegratedReportGenerator:
 """
         return context
 
-    def answer_question(self, question: str):
-        """VQA: 분석 결과 기반 자연어 질의응답"""
+    def answer_question(self, question: str, conversation_history=None):
+        """VQA: 분석 결과 기반 자연어 질의응답 (Multi-turn 지원)"""
         if not self.api_key:
             return {"success": False, "error": "Gemini API Key가 설정되지 않았습니다."}
 
@@ -90,19 +90,15 @@ class IntegratedReportGenerator:
                 {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"},
             ]
 
-            model = genai.GenerativeModel("gemini-2.0-flash-exp", safety_settings=safety_settings)
-
             context = self.build_analysis_context()
 
-            prompt = f"""
+            # 시스템 프롬프트
+            system_prompt = f"""
 [역할]
 당신은 수면 무호흡증(OSA) 및 수면 내시경(DISE) 해석에 특화된 이비인후과 전문의입니다.
 
 [분석 데이터]
 {context}
-
-[질문]
-{question}
 
 [답변 지침]
 1. 반드시 한국어로 답변하세요.
@@ -110,9 +106,40 @@ class IntegratedReportGenerator:
 3. 가능하면 수치(시간, 감소율, 이벤트 개수)를 인용하여 구체적으로 설명하세요.
 4. 임상적 의미(경증/중등도/중증, 추적 필요 여부, 치료 권고)를 간단히 덧붙이세요.
 5. 너무 장황하지 않게, 3~6문장 정도로 요약해서 답변하세요.
+6. 이전 대화 맥락을 고려하여 자연스럽게 답변하세요.
 """
 
-            resp = model.generate_content(prompt)
+            # 대화 히스토리가 있으면 채팅 세션 사용
+            if conversation_history and len(conversation_history) > 0:
+                # Gemini 채팅 히스토리 형식으로 변환
+                history = []
+                for msg in conversation_history:
+                    role = msg.get('role', 'user')
+                    content = msg.get('content', '')
+                    if role == 'user':
+                        history.append({"role": "user", "parts": [content]})
+                    elif role == 'assistant':
+                        history.append({"role": "model", "parts": [content]})
+                
+                # 채팅 세션 시작
+                model = genai.GenerativeModel(
+                    "gemini-2.0-flash-exp", 
+                    safety_settings=safety_settings,
+                    system_instruction=system_prompt
+                )
+                chat = model.start_chat(history=history)
+                
+                # 현재 질문 전송
+                resp = chat.send_message(question)
+            else:
+                # 첫 대화: 시스템 프롬프트와 질문을 함께 전송
+                model = genai.GenerativeModel(
+                    "gemini-2.0-flash-exp", 
+                    safety_settings=safety_settings,
+                    system_instruction=system_prompt
+                )
+                resp = model.generate_content(question)
+            
             return {"success": True, "answer": resp.text}
         except Exception as e:
             import traceback
@@ -370,54 +397,67 @@ class IntegratedReportGenerator:
         video_filename = self.video_info.get('filename', '')
         video_stem = Path(video_filename).stem if video_filename else ''
 
-        # ========== VQA 섹션 HTML (질문 입력 + 답변 영역) ==========
+        # ========== VQA 섹션 HTML (채팅 인터페이스) ==========
         vqa_section = """
-        <div class="card border-t-4 border-t-emerald-500">
-            <h3 class="text-lg font-bold text-emerald-700 mb-4 flex items-center gap-2">
-                <i class="fas fa-comment-medical"></i> AI 질의응답 (VQA)
-            </h3>
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-slate-700 mb-2">분석 결과에 대해 질문하세요</label>
-                    <div class="flex gap-3">
-                        <input type="text" id="vqaQuestion"
-                               class="flex-1 px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none"
-                               placeholder="예: 가장 심각한 폐색 이벤트는 언제 발생했나요?">
-                        <button onclick="askAI()"
-                                class="px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition flex items-center gap-2">
-                            <i class="fas fa-paper-plane"></i> 질문하기
-                        </button>
-                    </div>
-                </div>
-
-                <div id="vqaLoading" class="hidden text-center py-4">
-                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600"></div>
-                    <p class="text-sm text-slate-500 mt-2">AI가 분석 중입니다...</p>
-                </div>
-
-                <div id="vqaAnswer" class="hidden bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-lg">
+        <div class="card border-t-4 border-t-emerald-500 overflow-hidden">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-emerald-700 flex items-center gap-2">
+                    <i class="fas fa-comments"></i> AI 대화형 질의응답
+                </h3>
+                <button onclick="clearChat()" class="text-xs px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg transition flex items-center gap-1">
+                    <i class="fas fa-trash-alt"></i> 대화 초기화
+                </button>
+            </div>
+            
+            <!-- 채팅 영역 -->
+            <div id="chatContainer" class="bg-slate-50 rounded-lg border border-slate-200 mb-4" style="height: 500px; overflow-y: auto;">
+                <div id="chatMessages" class="p-4 space-y-4">
+                    <!-- 환영 메시지 -->
                     <div class="flex items-start gap-3">
-                        <i class="fas fa-robot text-emerald-600 text-xl mt-1"></i>
-                        <div class="flex-1">
-                            <h4 class="font-bold text-emerald-900 mb-2">AI 답변</h4>
-                            <div id="vqaAnswerText" class="text-slate-700 prose prose-sm max-w-none"></div>
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-emerald-600 text-sm"></i>
+                        </div>
+                        <div class="flex-1 bg-white rounded-lg p-3 shadow-sm border border-slate-200">
+                            <p class="text-sm text-slate-700">
+                                안녕하세요! 분석 결과에 대해 궁금한 점을 물어보세요. 
+                                <span class="text-emerald-600 font-medium">대화를 이어가며</span> 더 자세한 정보를 얻을 수 있습니다.
+                            </p>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="bg-slate-50 p-4 rounded-lg">
-                    <h4 class="text-sm font-bold text-slate-700 mb-2">💡 질문 예시</h4>
-                    <div class="space-y-2">
-                        <button onclick="setQuestion(this.textContent)" class="block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-white hover:text-emerald-600 rounded transition">
-                            가장 심각한 폐색 이벤트는 언제 발생했나요?
-                        </button>
-                        <button onclick="setQuestion(this.textContent)" class="block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-white hover:text-emerald-600 rounded transition">
-                            OTE와 Velum 중 어느 부위에서 폐색이 더 많이 발생했나요?
-                        </button>
-                        <button onclick="setQuestion(this.textContent)" class="block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-white hover:text-emerald-600 rounded transition">
-                            전체 폐색 이벤트의 평균 지속 시간은 얼마나 되나요?
-                        </button>
-                    </div>
+            <!-- 입력 영역 -->
+            <div class="space-y-3">
+                <div class="flex gap-2">
+                    <input type="text" id="vqaQuestion"
+                           class="flex-1 px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                           placeholder="질문을 입력하세요... (Enter로 전송)"
+                           onkeypress="if(event.key === 'Enter') askAI()">
+                    <button onclick="askAI()" id="sendButton"
+                            class="px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <i class="fas fa-paper-plane"></i> 전송
+                    </button>
+                </div>
+
+                <!-- 빠른 질문 버튼 -->
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="setQuestion('가장 심각한 폐색 이벤트는 언제 발생했나요?')" 
+                            class="text-xs px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded-full transition border border-emerald-200">
+                        가장 심각한 이벤트는?
+                    </button>
+                    <button onclick="setQuestion('OTE와 Velum 중 어느 부위에서 폐색이 더 많이 발생했나요?')" 
+                            class="text-xs px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded-full transition border border-emerald-200">
+                        어느 부위가 더 심각한가요?
+                    </button>
+                    <button onclick="setQuestion('전체 폐색 이벤트의 평균 지속 시간은 얼마나 되나요?')" 
+                            class="text-xs px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded-full transition border border-emerald-200">
+                        평균 지속 시간은?
+                    </button>
+                    <button onclick="setQuestion('치료 권고사항이 있나요?')" 
+                            class="text-xs px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded-full transition border border-emerald-200">
+                        치료 권고사항
+                    </button>
                 </div>
             </div>
         </div>
@@ -562,7 +602,9 @@ class IntegratedReportGenerator:
         const currentVideoStem = "{video_stem}";
         console.log("Current video_stem:", currentVideoStem);
 
-        // ===== VQA JS =====
+        // ===== Multi-turn VQA 채팅 인터페이스 =====
+        let conversationHistory = [];
+
         function setQuestion(text) {{
             const input = document.getElementById('vqaQuestion');
             if (input) {{
@@ -571,8 +613,80 @@ class IntegratedReportGenerator:
             }}
         }}
 
+        function addMessage(role, content) {{
+            const chatMessages = document.getElementById('chatMessages');
+            if (!chatMessages) return;
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex items-start gap-3 animate-fadeIn';
+            
+            if (role === 'user') {{
+                messageDiv.innerHTML = `
+                    <div class="flex-1"></div>
+                    <div class="flex items-start gap-3 flex-row-reverse max-w-[80%]">
+                        <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user text-white text-xs"></i>
+                        </div>
+                        <div class="bg-emerald-500 text-white rounded-lg p-3 shadow-sm">
+                            <p class="text-sm whitespace-pre-wrap">${{content}}</p>
+                        </div>
+                    </div>
+                `;
+            }} else {{
+                messageDiv.innerHTML = `
+                    <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-robot text-emerald-600 text-sm"></i>
+                    </div>
+                    <div class="flex-1 bg-white rounded-lg p-3 shadow-sm border border-slate-200 max-w-[80%]">
+                        <p class="text-sm text-slate-700 whitespace-pre-wrap">${{content}}</p>
+                    </div>
+                `;
+            }}
+            
+            chatMessages.appendChild(messageDiv);
+            scrollToBottom();
+        }}
+
+        function addLoadingMessage() {{
+            const chatMessages = document.getElementById('chatMessages');
+            if (!chatMessages) return;
+
+            const loadingDiv = document.createElement('div');
+            loadingDiv.id = 'loadingMessage';
+            loadingDiv.className = 'flex items-start gap-3';
+            loadingDiv.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-robot text-emerald-600 text-sm"></i>
+                </div>
+                <div class="flex-1 bg-white rounded-lg p-3 shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-2">
+                        <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-emerald-600"></div>
+                        <p class="text-sm text-slate-500">AI가 답변을 생성하고 있습니다...</p>
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(loadingDiv);
+            scrollToBottom();
+        }}
+
+        function removeLoadingMessage() {{
+            const loadingMsg = document.getElementById('loadingMessage');
+            if (loadingMsg) {{
+                loadingMsg.remove();
+            }}
+        }}
+
+        function scrollToBottom() {{
+            const container = document.getElementById('chatContainer');
+            if (container) {{
+                container.scrollTop = container.scrollHeight;
+            }}
+        }}
+
         async function askAI() {{
             const input = document.getElementById('vqaQuestion');
+            const sendButton = document.getElementById('sendButton');
+            
             if (!input) return;
             const question = input.value.trim();
             if (!question) {{
@@ -580,55 +694,117 @@ class IntegratedReportGenerator:
                 return;
             }}
 
-            const loadingEl = document.getElementById('vqaLoading');
-            const answerEl = document.getElementById('vqaAnswer');
-            const answerText = document.getElementById('vqaAnswerText');
+            // 입력 비활성화
+            input.disabled = true;
+            sendButton.disabled = true;
 
-            if (loadingEl) loadingEl.classList.remove('hidden');
-            if (answerEl) answerEl.classList.add('hidden');
+            // 사용자 메시지 추가
+            addMessage('user', question);
+            conversationHistory.push({{'role': 'user', 'content': question}});
+
+            // 입력창 초기화
+            input.value = '';
+
+            // 로딩 메시지 추가
+            addLoadingMessage();
 
             try {{
-                console.log("Sending VQA request:", {{question, video_stem: currentVideoStem}});
+                console.log("Sending VQA request:", {{question, video_stem: currentVideoStem, history_length: conversationHistory.length}});
                 
                 const res = await fetch('/api/vqa', {{
                     method: 'POST',
                     headers: {{ 'Content-Type': 'application/json' }},
                     body: JSON.stringify({{
                         question: question,
-                        video_stem: currentVideoStem
+                        video_stem: currentVideoStem,
+                        conversation_history: conversationHistory.slice(0, -1)  // 현재 질문 제외한 히스토리
                     }})
                 }});
 
                 const data = await res.json();
                 console.log("VQA response:", data);
                 
-                if (loadingEl) loadingEl.classList.add('hidden');
+                removeLoadingMessage();
 
                 if (data.success) {{
-                    if (answerText) {{
-                        const txt = data.answer || '';
-                        answerText.innerHTML = txt.replace(/\\n/g, '<br>');
-                    }}
-                    if (answerEl) answerEl.classList.remove('hidden');
+                    const answer = data.answer || '';
+                    addMessage('assistant', answer);
+                    conversationHistory.push({{'role': 'assistant', 'content': answer}});
                 }} else {{
-                    alert('오류: ' + (data.error || '알 수 없는 오류'));
+                    addMessage('assistant', '죄송합니다. 오류가 발생했습니다: ' + (data.error || '알 수 없는 오류'));
                 }}
             }} catch (err) {{
-                if (loadingEl) loadingEl.classList.add('hidden');
+                removeLoadingMessage();
                 console.error(err);
-                alert('서버 오류가 발생했습니다.');
+                addMessage('assistant', '서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+            }} finally {{
+                // 입력 활성화
+                input.disabled = false;
+                sendButton.disabled = false;
+                input.focus();
             }}
         }}
 
+        function clearChat() {{
+            if (!confirm('대화 기록을 모두 삭제하시겠습니까?')) return;
+            
+            conversationHistory = [];
+            const chatMessages = document.getElementById('chatMessages');
+            if (chatMessages) {{
+                chatMessages.innerHTML = `
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-emerald-600 text-sm"></i>
+                        </div>
+                        <div class="flex-1 bg-white rounded-lg p-3 shadow-sm border border-slate-200">
+                            <p class="text-sm text-slate-700">
+                                대화가 초기화되었습니다. 새로운 질문을 해주세요.
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }}
+        }}
+
+        // Enter 키 이벤트
         const vqaInputEl = document.getElementById('vqaQuestion');
         if (vqaInputEl) {{
             vqaInputEl.addEventListener('keypress', (e) => {{
-                if (e.key === 'Enter') {{
+                if (e.key === 'Enter' && !e.shiftKey) {{
                     e.preventDefault();
-                    askAI();
+                    if (!vqaInputEl.disabled) {{
+                        askAI();
+                    }}
                 }}
             }});
         }}
+
+        // 스타일 추가
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {{
+                from {{ opacity: 0; transform: translateY(10px); }}
+                to {{ opacity: 1; transform: translateY(0); }}
+            }}
+            .animate-fadeIn {{
+                animation: fadeIn 0.3s ease-out;
+            }}
+            #chatContainer::-webkit-scrollbar {{
+                width: 8px;
+            }}
+            #chatContainer::-webkit-scrollbar-track {{
+                background: #f1f5f9;
+                border-radius: 4px;
+            }}
+            #chatContainer::-webkit-scrollbar-thumb {{
+                background: #cbd5e1;
+                border-radius: 4px;
+            }}
+            #chatContainer::-webkit-scrollbar-thumb:hover {{
+                background: #94a3b8;
+            }}
+        `;
+        document.head.appendChild(style);
         // ===================
 
         function playVideo(src, title) {{
