@@ -795,8 +795,9 @@ class IntegratedDISEAnalyzer:
                 print("📸 Segment별 Reference 이미지 생성 중...")
                 self._create_segment_reference_images(video_path, output_dir)
             
-            print("🔍 디버깅용 프레임별 이미지 생성 중...")
-            self._create_debug_frames(video_path, output_dir)
+            # 🔍 디버깅용 프레임별 이미지 생성 (현재 비활성화)
+            # print("🔍 디버깅용 프레임별 이미지 생성 중...")
+            # self._create_debug_frames(video_path, output_dir)
             
             if self.results['occlusion_events']:
                 print("🎥 이벤트 클립 생성 중...")

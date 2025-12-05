@@ -353,6 +353,51 @@ class Trainer:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
         print(f"Training history plot saved to {save_path}")
         plt.close()
+    
+    def plot_accuracy(self):
+        """Accuracy 전용 상세 그래프"""
+        plt.figure(figsize=(12, 8))
+        
+        epochs = range(1, len(self.history['train_acc']) + 1)
+        
+        # Train/Val Accuracy 플롯
+        plt.plot(epochs, self.history['train_acc'], 'o-', label='Train Accuracy', 
+                linewidth=2.5, markersize=6, color='#3b82f6')
+        plt.plot(epochs, self.history['val_acc'], 's-', label='Validation Accuracy', 
+                linewidth=2.5, markersize=6, color='#10b981')
+        
+        # Best validation accuracy 표시
+        best_epoch = np.argmax(self.history['val_acc']) + 1
+        best_acc = self.history['val_acc'][best_epoch - 1]
+        plt.axvline(x=best_epoch, color='red', linestyle='--', linewidth=1.5, alpha=0.7)
+        plt.plot(best_epoch, best_acc, 'ro', markersize=12, label=f'Best Val Acc: {best_acc:.2f}%')
+        
+        # 최종 accuracy 표시
+        final_train_acc = self.history['train_acc'][-1]
+        final_val_acc = self.history['val_acc'][-1]
+        plt.plot(len(epochs), final_train_acc, 'bo', markersize=10, alpha=0.7)
+        plt.plot(len(epochs), final_val_acc, 'go', markersize=10, alpha=0.7)
+        
+        plt.xlabel('Epoch', fontsize=14, fontweight='bold')
+        plt.ylabel('Accuracy (%)', fontsize=14, fontweight='bold')
+        plt.title('Model Accuracy Over Training', fontsize=16, fontweight='bold', pad=20)
+        plt.legend(loc='lower right', fontsize=12, framealpha=0.9)
+        plt.grid(True, alpha=0.3, linestyle='--')
+        plt.ylim([0, 100])
+        
+        # 통계 정보 텍스트 박스
+        stats_text = f'Best Val Acc: {best_acc:.2f}% (Epoch {best_epoch})\n'
+        stats_text += f'Final Train Acc: {final_train_acc:.2f}%\n'
+        stats_text += f'Final Val Acc: {final_val_acc:.2f}%'
+        plt.text(0.02, 0.98, stats_text, transform=plt.gca().transAxes,
+                fontsize=11, verticalalignment='top',
+                bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
+        
+        plt.tight_layout()
+        save_path = self.save_dir / 'accuracy_plot.png'
+        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+        print(f"Accuracy plot saved to {save_path}")
+        plt.close()
 
 
 def main():
@@ -412,6 +457,9 @@ def main():
     
     # 학습 히스토리 플롯
     trainer.plot_training_history()
+    
+    # Accuracy 전용 그래프
+    trainer.plot_accuracy()
     
     # 테스트
     trainer.test(model_path=trainer.best_model_path)

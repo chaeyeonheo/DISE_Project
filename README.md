@@ -1,5 +1,5 @@
-# 수면 내시경 기도 폐색 자동 분석 시스템
-## Sleep Endoscopy Airway Occlusion Analysis System
+# 수면 내시경 기도 폐색 자동 분석 + VQA 시스템
+## Sleep Endoscopy Airway Occlusion & VQA Analysis System
 
 **버전**: 2.0  
 **최종 업데이트**: 2025-11-05
@@ -8,16 +8,18 @@
 
 ## 📋 시스템 개요
 
-수면 내시경(DISE) 비디오에서 기도 폐색을 자동으로 감지하고 분석하는 웹 기반 시스템입니다.
+수면 내시경(DISE) 비디오에서 기도 폐색을 자동으로 감지·분석하고,  
+분석 결과를 기반으로 **자연어 질의응답(VQA, Vision Question Answering)**까지 지원하는 웹 기반 시스템입니다.
 
 ### 주요 기능
 
-✅ **OTE/Velum 자동 분류**: 딥러닝 기반 프레임별 영역 분류  
-✅ **자동 전처리**: 검정 배경 제거 및 ROI 추출  
-✅ **Color-based 폐색 검출**: HSV 색공간 기반 기도 개방 영역 자동 추출  
-✅ **시계열 분석**: 프레임별 면적 변화 추적 및 폐색 이벤트 감지  
-✅ **보고서 생성**: HTML/JSON 형식의 상세 분석 보고서  
-✅ **웹 UI**: 직관적인 업로드 및 분석 인터페이스
+- ✅ **OTE/Velum 자동 분류**: 딥러닝 기반 프레임별 OTE / Velum / None 분류  
+- ✅ **자동 전처리**: 검정 배경 제거 및 ROI 추출  
+- ✅ **Color-based 폐색 검출**: HSV 색공간 기반 기도 개방 영역 자동 추출  
+- ✅ **시계열 분석**: 프레임별 면적 변화 추적 및 폐색 이벤트 감지  
+- ✅ **보고서 생성**: HTML/JSON 형식의 상세 분석 보고서  
+- ✅ **웹 UI**: 직관적인 업로드 및 분석 인터페이스  
+- ✅ **VQA(질의응답)**: 분석 결과에 대해 의사가 자연어로 질문하면, LLM이 의료 전문가 관점에서 답변  
 
 ---
 
@@ -37,31 +39,31 @@
 # 1. 필요한 패키지 설치
 pip install -r requirements.txt
 
-# 2. 서버 실행 (통합 시스템)
+# 2. 통합 웹 서버 실행
 python integrated_app.py
 
-# 또는 기존 시스템
+# (선택) 기존 단일 앱
 python app.py
 ```
 
-### 3. 사용법
+### 3. 기본 사용법
 
-1. 웹 브라우저에서 `http://localhost:5000` 접속
-2. 수면 내시경 비디오 업로드 (.mp4, .avi, .mov, .mkv)
-3. 분석 설정 조정
-4. "분석 시작" 클릭
-5. 완료 후 상세 보고서 확인
+1. 웹 브라우저에서 `http://localhost:5000` 접속  
+2. 수면 내시경 비디오 업로드 (.mp4, .avi, .mov, .mkv)  
+3. 분석 옵션 설정 (FPS, Threshold 등)  
+4. "Start AI Analysis" 클릭  
+5. 완료 후 상세 HTML 보고서에서 결과 확인  
 
 ---
 
 ## 📂 프로젝트 구조
 
-```
+```text
 DISE_Project/
 │
 ├── integrated_app.py              # 통합 웹 애플리케이션 (권장)
 ├── integrated_analyzer.py         # 통합 분석 엔진
-├── integrated_report_generator.py # 통합 보고서 생성
+├── integrated_report_generator.py # 통합 보고서 + VQA 생성
 │
 ├── app.py                         # 기존 웹 애플리케이션
 ├── video_analyzer.py              # ROI 검출 & 폐색 분석
@@ -70,7 +72,7 @@ DISE_Project/
 ├── ote_velum_classification_final/  # Classification 모델
 │   ├── train.py                   # 모델 학습
 │   ├── inference.py               # 추론
-│   └── checkpoints/               # 학습된 모델
+│   └── checkpoints/               # 학습된 모델(best_model.pth 등)
 │
 ├── docs/                          # 📚 문서
 │   ├── INTEGRATED_GUIDE.md       # 통합 시스템 가이드
@@ -78,103 +80,218 @@ DISE_Project/
 │   └── archive/                   # 아카이브 문서
 │
 ├── templates/                     # 웹 UI 템플릿
-├── uploads/                      # 업로드된 비디오
-└── outputs/                       # 분석 결과
+├── uploads/                       # 업로드된 비디오
+└── outputs/                       # 분석 결과 (report.html, analysis_results.json 등)
 ```
-
----
-
-## 📚 문서
-
-### 현재 사용 중인 문서
-
-- **[통합 시스템 가이드](docs/INTEGRATED_GUIDE.md)** - 통합 분석 시스템 사용법
-- **[업데이트 내역 v2.0](docs/UPDATE_NOTES_v2.0.md)** - 최신 기능 및 변경사항
-
-### 아카이브 문서
-
-- [시연 가이드](docs/archive/DEMO_GUIDE.md) - 초기 시연용 가이드
-- [프로젝트 전체 정리](docs/archive/Project_A_to_Z.md) - 상세 프로젝트 문서
 
 ---
 
 ## 🔬 핵심 기술
 
 ### 1. Classification 모델
-- ResNet-50 기반 OTE/Velum/None 분류
-- 프레임별 자동 영역 분류
 
-### 2. ROI 검출
-- HSV 색공간 기반 어두운 영역 검출
-- 기도 내부 자동 추출
+- ResNet-50 기반 OTE / Velum / None 프레임 분류  
+- `ote_velum_classification_final/` 하위에서 학습 및 추론 수행  
 
-### 3. 폐색 분석
-- 기준 대비 면적 감소율 계산
-- 심각도 분류 (Mild/Moderate/Severe/Critical)
+### 2. ROI 검출 & 폐색 분석
+
+- `video_analyzer.py`의 HSV 색공간 기반 ROI 검출  
+- 기준 대비 기도 면적 감소율로 폐색 이벤트 감지  
+- 이벤트별 심각도(Mild / Moderate / Severe / Critical) 분류  
+
+### 3. 통합 분석 파이프라인
+
+- `integrated_analyzer.py`  
+  - 프레임 추출, OTE/Velum 분류, ROI 분석, 이벤트 감지  
+  - 최종 결과를 `analysis_results.json`으로 저장  
+
+### 4. LLM 기반 보고서 & VQA
+
+- `integrated_report_generator.py`  
+  - `build_analysis_context()`  
+    - `analysis_results.json`을 LLM이 이해할 수 있는 텍스트 컨텍스트로 변환  
+  - `generate_report()`  
+    - 분석 요약, 차트, 이벤트 목록 등을 포함한 HTML 보고서 생성  
+  - `answer_question(question)`  
+    - `[데이터 컨텍스트 + 사용자 질문]`을 LLM에 전달하여 자연어 답변 생성  
 
 ---
 
 ## 📊 출력 결과
 
-각 분석마다 별도 디렉토리에 다음 파일들이 생성됩니다:
+각 분석마다 `outputs/{video_stem}/` 디렉토리에 다음 파일들이 생성됩니다:
 
-- **report.html**: 상세 분석 보고서 (웹 브라우저에서 열기)
-- **analysis_results.json**: 원본 분석 데이터 (JSON 형식)
-- **timeline.png**: 구간별 타임라인 차트
-- **severity_chart.png**: 심각도 분포 차트
-- **event_clips/**: 위험 구간 비디오 클립
+- `report.html`  
+  - 환자 정보, 타임라인, 심각도 차트, 이벤트 목록, **VQA UI** 포함
+- `analysis_results.json`  
+  - 프레임별 분류, Segment 정보, 폐색 이벤트 등 원본 분석 데이터
+- `timeline.png` / `severity_chart.png` 등 시각화 결과
+- `event_clips/`  
+  - 위험 구간 비디오 클립
 
 ---
 
-## ⚙️ 설정 파라미터
+## ⚙️ 주요 설정 파라미터
 
 ### 프레임 추출 빈도 (FPS)
-- **기본값**: 5
-- **권장 범위**: 1-10
+
+- **기본값**: 5  
+- **권장 범위**: 1–10  
 - 높을수록 정밀하지만 처리 시간 증가
 
 ### 폐색 기준 (Threshold %)
-- **기본값**: 30%
-- **권장 범위**: 20-50%
+
+- **기본값**: 30%  
+- **권장 범위**: 20–50%  
 - 낮을수록 민감하게 감지
 
 ---
 
-## 🐛 문제 해결
+## 🧠 VQA(Vision Question Answering) 기능
 
-### 비디오가 업로드되지 않아요
-- 파일 크기 제한: 500MB
-- 지원 형식: .mp4, .avi, .mov, .mkv
+### 1. 개념
 
-### 분석이 너무 오래 걸려요
-- 프레임 추출 빈도를 낮춰보세요 (예: 2-3 FPS)
-- 비디오 해상도를 낮춰보세요
+**Vision Question Answering**:  
+의료 영상 분석 결과에 대해 **자연어로 질문**하면,  
+AI가 **데이터를 기반으로 임상적 해석**을 포함해 답변하는 기능입니다.
 
-### ROI가 제대로 검출되지 않아요
-- 전처리 설정 조정 필요
-- Color-based 마스킹 파라미터 조정
+#### 예시
 
-자세한 내용은 [통합 시스템 가이드](docs/INTEGRATED_GUIDE.md)를 참고하세요.
+```text
+👨‍⚕️ 질문: "가장 심각한 폐색 이벤트는 언제 발생했나요?"
+
+🤖 AI 답변: "가장 심각한 폐색 이벤트는 12.5초에서 15.2초 사이에
+OTE 부위에서 발생했습니다. 이 이벤트는 Severe 등급으로 분류되었으며,
+최대 기도 면적 대비 65.3%의 감소를 보였습니다.
+이는 상기도 폐쇄의 명확한 증거로, 수술적 치료를 고려해야 할 수준입니다."
+```
+
+---
+
+### 2. VQA 흐름 요약
+
+1. `/api/analyze`  
+   - 비디오 업로드 → `IntegratedDISEAnalyzer`가 분석 → `analysis_results.json` 생성  
+   - `IntegratedReportGenerator.generate_report()`가 HTML 보고서 생성 (VQA UI 포함)
+2. 사용자가 보고서 페이지 하단 VQA 섹션에서 질문 입력
+3. `/api/vqa` (POST)  
+   - `{ "question": "...", "video_stem": "..." }`  
+   - 서버에서 `analysis_results.json` 로드 → `build_analysis_context()` → LLM 호출
+4. LLM(Gemini 등)이 데이터 기반 답변 생성
+5. 브라우저 UI에 답변 표시 (Markdown 스타일)
+
+---
+
+### 3. 핵심 코드 개념 (요약)
+
+```python
+# integrated_report_generator.py
+
+def build_analysis_context(self):
+    """분석 결과 → LLM이 이해하는 텍스트"""
+    # 환자 정보, 영상 정보, 부위별 최대 면적, 이벤트 리스트 등을 텍스트로 요약
+    ...
+
+def answer_question(self, question: str) -> str:
+    context = self.build_analysis_context()
+    prompt = f"""
+    [역할] 수면 무호흡증 진단 전문의
+
+    [데이터]
+    {context}
+
+    [질문]
+    {question}
+
+    [답변 지침]
+    1. 의료 전문가 관점
+    2. 데이터에 근거
+    3. 임상적 의미 포함
+    4. 한국어 답변
+    """
+    # Gemini 등 LLM API 호출
+    ...
+    return answer
+```
+
+```python
+# integrated_app.py (예시)
+
+@app.route('/api/vqa', methods=['POST'])
+def vqa():
+    data = request.get_json()
+    question = data['question']
+    video_stem = data['video_stem']
+
+    # outputs/{video_stem}/analysis_results.json 로드
+    results_path = app.config['OUTPUT_FOLDER'] / video_stem / 'analysis_results.json'
+    results = json.load(open(results_path, 'r', encoding='utf-8'))
+
+    # VQA 호출
+    gen = IntegratedReportGenerator(results, api_key=app.config['GEMINI_API_KEY'])
+    answer = gen.answer_question(question)
+
+    return jsonify({'success': True, 'answer': answer})
+```
+
+---
+
+### 4. VQA UI 개요
+
+보고서 HTML(`report.html`) 하단에 다음과 같은 VQA 섹션이 포함됩니다:
+
+- 질문 입력창
+- "질문하기" 버튼
+- 로딩 인디케이터
+- AI 답변 영역
+- 자주 쓰는 질문 예시 버튼 (클릭 시 자동 입력)
+
+UI 예시는 `README_vqa.md`의 ASCII 다이어그램을 참고하여 구현되어 있습니다.
+
+---
+
+## 🐛 문제 해결 (공통)
+
+### 비디오가 업로드되지 않을 때
+
+- 파일 크기 제한: 500MB  
+- 지원 형식: `.mp4`, `.avi`, `.mov`, `.mkv`
+
+### 분석이 너무 오래 걸릴 때
+
+- 프레임 추출 FPS를 낮추기 (예: 5 → 2–3)  
+- 비디오 해상도/길이 축소  
+
+### ROI가 잘 검출되지 않을 때
+
+- `video_analyzer.py`의 색상 마스킹 파라미터 조정  
+- 통합 가이드 문서 참고: `docs/INTEGRATED_GUIDE.md`
+
+### VQA 관련 오류
+
+- `"API Key Not Found"` → `integrated_app.py`에서 `GEMINI_API_KEY` 환경 변수 설정 확인  
+- `"분석 결과를 찾을 수 없습니다"` → `outputs/{video_stem}/analysis_results.json` 존재 여부 확인  
+- `"AI 답변 생성 실패"` → LLM API 상태 및 네트워크 확인  
 
 ---
 
 ## 📝 폐색 심각도 분류
 
-| 심각도 | 감소율 | 색상 | 설명 |
-|--------|--------|------|------|
-| Mild | 30-50% | 🟡 노랑 | 경미한 폐색 |
-| Moderate | 50-70% | 🟠 주황 | 중등도 폐색 |
-| Severe | 70-90% | 🔴 빨강 | 심각한 폐색 |
-| Critical | 90% 이상 | ⚫ 진한 빨강 | 완전 폐색 |
+| 심각도   | 감소율     | 색상        | 설명           |
+|----------|------------|------------|----------------|
+| Mild     | 30–50%     | 🟡 노랑     | 경미한 폐색    |
+| Moderate | 50–70%     | 🟠 주황     | 중등도 폐색    |
+| Severe   | 70–90%     | 🔴 빨강     | 심각한 폐색    |
+| Critical | 90% 이상   | ⚫ 진한 빨강 | 거의/완전 폐색 |
 
 ---
 
 ## 👨‍💻 개발자 정보
 
-**프로젝트**: 수면 내시경 기도 폐색 분석 시스템  
-**버전**: 2.0  
-**라이센스**: MIT  
-**개발**: 2025년 11월
+- **프로젝트**: 수면 내시경 기도 폐색 분석 + VQA 시스템  
+- **버전**: 2.0  
+- **라이센스**: MIT  
+- **개발**: 2025년 11월  
 
 ---
 
@@ -184,4 +301,4 @@ DISE_Project/
 
 ---
 
-**Happy Analyzing! 🚀**
+**Happy Analyzing & Asking! 🚀**

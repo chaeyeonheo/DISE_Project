@@ -25,13 +25,106 @@ class IntegratedReportGenerator:
         self.reference_images = results.get('reference_images', {})
         self.threshold_percent = results.get('metadata', {}).get('threshold_percent', 30)
 
+    # ===================== VQA: 컨텍스트 & 질의응답 =====================
+    def build_analysis_context(self):
+        """VQA용 분석 컨텍스트 텍스트 생성"""
+        segment_info = ""
+        for label, ref_data in self.segment_references.items():
+            segment_info += f"- {label} 영역 기준 면적: {ref_data['max_area']:.0f} px² (Frame {ref_data['frame_number']})\n"
+
+        events_detail = ""
+        for i, event in enumerate(self.events, 1):
+            events_detail += f"""
+이벤트 #{i}:
+  - 부위: {event['segment_label']}
+  - 심각도: {event['severity']}
+  - 시간: {event['start_time']:.1f}s ~ {event['end_time']:.1f}s (지속시간: {event['duration']:.1f}s)
+  - 최대 감소율: {event.get('max_reduction', 0):.1f}%
+  - 기준 면적: {event.get('segment_max_area', 0):.0f} px²
+"""
+
+        context = f"""
+[환자 기본 정보]
+- 성별/나이: {self.patient_info.get('gender','미상')} / {self.patient_info.get('age','미상')}세
+- 기저 질환: {self.patient_info.get('diag','미상')}
+- AHI: {self.patient_info.get('AHI','미상')}
+
+[영상 정보]
+- 파일명: {self.video_info.get('filename', '미상')}
+- 영상 길이: {self.video_info.get('duration', 0):.1f}초
+- FPS: {self.video_info.get('fps', 0):.1f}
+
+[해부학적 부위별 기준 면적]
+{segment_info or '정보 없음'}
+
+[분석 요약]
+- 감지된 구간: OTE {self.summary.get('ote_segments',0)}개, Velum {self.summary.get('velum_segments',0)}개
+- 전체 폐색 이벤트: {self.summary.get('total_events',0)}개
+- 심각도 분포:
+  * Critical: {self.summary.get('events_by_severity',{}).get('Critical',0)}개
+  * Severe: {self.summary.get('events_by_severity',{}).get('Severe',0)}개
+  * Moderate: {self.summary.get('events_by_severity',{}).get('Moderate',0)}개
+  * Mild: {self.summary.get('events_by_severity',{}).get('Mild',0)}개
+
+[폐색 감지 방법]
+각 해부학적 부위(OTE/Velum)별로 해당 부위의 최대 기도 면적을 기준으로,
+기준 대비 {self.threshold_percent}% 이상 감소한 경우를 폐쇄 이벤트로 감지.
+
+[감지된 폐색 이벤트 상세]
+{events_detail or '폐색 이벤트가 감지되지 않았습니다.'}
+"""
+        return context
+
+    def answer_question(self, question: str):
+        """VQA: 분석 결과 기반 자연어 질의응답"""
+        if not self.api_key:
+            return {"success": False, "error": "Gemini API Key가 설정되지 않았습니다."}
+
+        try:
+            genai.configure(api_key=self.api_key)
+
+            safety_settings = [
+                {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+                {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+                {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+                {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"},
+            ]
+
+            model = genai.GenerativeModel("gemini-2.0-flash-exp", safety_settings=safety_settings)
+
+            context = self.build_analysis_context()
+
+            prompt = f"""
+[역할]
+당신은 수면 무호흡증(OSA) 및 수면 내시경(DISE) 해석에 특화된 이비인후과 전문의입니다.
+
+[분석 데이터]
+{context}
+
+[질문]
+{question}
+
+[답변 지침]
+1. 반드시 한국어로 답변하세요.
+2. 위 데이터에 근거해서만 답변하고, 데이터가 없으면 "데이터 부족"을 분명히 언급하세요.
+3. 가능하면 수치(시간, 감소율, 이벤트 개수)를 인용하여 구체적으로 설명하세요.
+4. 임상적 의미(경증/중등도/중증, 추적 필요 여부, 치료 권고)를 간단히 덧붙이세요.
+5. 너무 장황하지 않게, 3~6문장 정도로 요약해서 답변하세요.
+"""
+
+            resp = model.generate_content(prompt)
+            return {"success": True, "answer": resp.text}
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            return {"success": False, "error": f"AI 답변 생성 실패: {str(e)}"}
+    # ============================================================
+
     def generate_ai_summary(self):
         if not self.api_key: return "API Key Not Found."
         try:
             genai.configure(api_key=self.api_key)
             
-            # [수정 1] 의료 분석을 위해 안전 필터(Safety Settings)를 'BLOCK_NONE'으로 설정
-            # 의료 텍스트가 '유해 콘텐츠'로 오분류되는 것을 방지합니다.
             safety_settings = [
                 {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
                 {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
@@ -39,9 +132,7 @@ class IntegratedReportGenerator:
                 {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"}
             ]
             
-            # 모델 생성 시 설정 적용
-            model = genai.GenerativeModel('gemini-2.5-flash', safety_settings=safety_settings)
-            # Segment별 기준 면적 정보 추가
+            model = genai.GenerativeModel('gemini-2.0-flash-exp', safety_settings=safety_settings)
             segment_info = ""
             for label, ref_data in self.segment_references.items():
                 segment_info += f"- {label} 영역 기준 면적: {ref_data['max_area']:.0f} px² (Frame {ref_data['frame_number']})\n"
@@ -83,7 +174,7 @@ class IntegratedReportGenerator:
         if not self.api_key: return "AI 해석을 사용할 수 없습니다."
         try:
             genai.configure(api_key=self.api_key)
-            model = genai.GenerativeModel('gemini-2.5-flash')
+            model = genai.GenerativeModel('gemini-2.0-flash-exp')
             if chart_type == 'timeline':
                 prompt = f"""
                 [작업] 의사에게 이 타임라인 차트 데이터를 설명해주세요.
@@ -275,7 +366,63 @@ class IntegratedReportGenerator:
         # -----------------------------------------------------------
 
         p_info = self.patient_info
-        
+        # ✅ 핵심 수정: video_stem을 실제 값으로 설정
+        video_filename = self.video_info.get('filename', '')
+        video_stem = Path(video_filename).stem if video_filename else ''
+
+        # ========== VQA 섹션 HTML (질문 입력 + 답변 영역) ==========
+        vqa_section = """
+        <div class="card border-t-4 border-t-emerald-500">
+            <h3 class="text-lg font-bold text-emerald-700 mb-4 flex items-center gap-2">
+                <i class="fas fa-comment-medical"></i> AI 질의응답 (VQA)
+            </h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">분석 결과에 대해 질문하세요</label>
+                    <div class="flex gap-3">
+                        <input type="text" id="vqaQuestion"
+                               class="flex-1 px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none"
+                               placeholder="예: 가장 심각한 폐색 이벤트는 언제 발생했나요?">
+                        <button onclick="askAI()"
+                                class="px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition flex items-center gap-2">
+                            <i class="fas fa-paper-plane"></i> 질문하기
+                        </button>
+                    </div>
+                </div>
+
+                <div id="vqaLoading" class="hidden text-center py-4">
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600"></div>
+                    <p class="text-sm text-slate-500 mt-2">AI가 분석 중입니다...</p>
+                </div>
+
+                <div id="vqaAnswer" class="hidden bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-lg">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-robot text-emerald-600 text-xl mt-1"></i>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-emerald-900 mb-2">AI 답변</h4>
+                            <div id="vqaAnswerText" class="text-slate-700 prose prose-sm max-w-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-lg">
+                    <h4 class="text-sm font-bold text-slate-700 mb-2">💡 질문 예시</h4>
+                    <div class="space-y-2">
+                        <button onclick="setQuestion(this.textContent)" class="block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-white hover:text-emerald-600 rounded transition">
+                            가장 심각한 폐색 이벤트는 언제 발생했나요?
+                        </button>
+                        <button onclick="setQuestion(this.textContent)" class="block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-white hover:text-emerald-600 rounded transition">
+                            OTE와 Velum 중 어느 부위에서 폐색이 더 많이 발생했나요?
+                        </button>
+                        <button onclick="setQuestion(this.textContent)" class="block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-white hover:text-emerald-600 rounded transition">
+                            전체 폐색 이벤트의 평균 지속 시간은 얼마나 되나요?
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        """
+
         html = f"""
 <!DOCTYPE html>
 <html lang="en">
@@ -328,6 +475,8 @@ class IntegratedReportGenerator:
             </div>
         </div>
 
+        {vqa_section}
+
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div class="card lg:col-span-2">
                 <h3 class="text-lg font-bold text-slate-700 mb-4">Timeline Analysis</h3>
@@ -370,7 +519,6 @@ class IntegratedReportGenerator:
                 clip_file = Path(event.get('clip_path', '')).name
                 video_path = f"event_clips/{clip_file}"
                 ref_area = event.get('segment_max_area', 0)
-                # Max Reduction 표시 (소수점 1자리)
                 reduction_val = event.get('max_reduction', 0)
                 
                 html += f"""
@@ -388,7 +536,7 @@ class IntegratedReportGenerator:
                     </tr>
                 """
 
-        html += """
+        html += f"""
                 </tbody>
             </table>
         </div>
@@ -410,6 +558,79 @@ class IntegratedReportGenerator:
     </div>
 
     <script>
+        // ✅ 핵심 수정: Python에서 실제 값을 주입
+        const currentVideoStem = "{video_stem}";
+        console.log("Current video_stem:", currentVideoStem);
+
+        // ===== VQA JS =====
+        function setQuestion(text) {{
+            const input = document.getElementById('vqaQuestion');
+            if (input) {{
+                input.value = text.trim();
+                input.focus();
+            }}
+        }}
+
+        async function askAI() {{
+            const input = document.getElementById('vqaQuestion');
+            if (!input) return;
+            const question = input.value.trim();
+            if (!question) {{
+                alert('질문을 입력해주세요.');
+                return;
+            }}
+
+            const loadingEl = document.getElementById('vqaLoading');
+            const answerEl = document.getElementById('vqaAnswer');
+            const answerText = document.getElementById('vqaAnswerText');
+
+            if (loadingEl) loadingEl.classList.remove('hidden');
+            if (answerEl) answerEl.classList.add('hidden');
+
+            try {{
+                console.log("Sending VQA request:", {{question, video_stem: currentVideoStem}});
+                
+                const res = await fetch('/api/vqa', {{
+                    method: 'POST',
+                    headers: {{ 'Content-Type': 'application/json' }},
+                    body: JSON.stringify({{
+                        question: question,
+                        video_stem: currentVideoStem
+                    }})
+                }});
+
+                const data = await res.json();
+                console.log("VQA response:", data);
+                
+                if (loadingEl) loadingEl.classList.add('hidden');
+
+                if (data.success) {{
+                    if (answerText) {{
+                        const txt = data.answer || '';
+                        answerText.innerHTML = txt.replace(/\\n/g, '<br>');
+                    }}
+                    if (answerEl) answerEl.classList.remove('hidden');
+                }} else {{
+                    alert('오류: ' + (data.error || '알 수 없는 오류'));
+                }}
+            }} catch (err) {{
+                if (loadingEl) loadingEl.classList.add('hidden');
+                console.error(err);
+                alert('서버 오류가 발생했습니다.');
+            }}
+        }}
+
+        const vqaInputEl = document.getElementById('vqaQuestion');
+        if (vqaInputEl) {{
+            vqaInputEl.addEventListener('keypress', (e) => {{
+                if (e.key === 'Enter') {{
+                    e.preventDefault();
+                    askAI();
+                }}
+            }});
+        }}
+        // ===================
+
         function playVideo(src, title) {{
             const player = document.getElementById('player');
             player.innerHTML = '';

@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medical Analysis Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #f3f4f6; }
+        .card { background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); border: 1px solid #e5e7eb; }
+        .severity-badge { padding: 0.25rem 0.75rem; border-radius: 99px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+        .s-Critical { background: #fee2e2; color: #991b1b; } .s-Severe { background: #ffedd5; color: #9a3412; }
+        .s-Moderate { background: #fef3c7; color: #92400e; } .s-Mild { background: #dcfce7; color: #166534; }
+        .ai-box { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 1rem; border-radius: 0.5rem; font-size: 0.9rem; color: #0369a1; margin-top: 1rem; }
+    </style>
+</head>
+<body class="text-slate-800">
+    <nav class="bg-slate-900 text-white h-16 flex items-center px-8 fixed w-full z-50 shadow-lg">
+        <div class="flex items-center gap-3 font-bold text-xl"><i class="fas fa-heartbeat text-rose-500"></i> DISE AI Analytics</div>
+    </nav>
+
+    <div class="pt-24 pb-12 px-8 max-w-7xl mx-auto space-y-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="card lg:col-span-1 flex flex-col gap-6">
+                <div>
+                    <h3 class="text-sm font-bold text-slate-400 uppercase mb-4"><i class="fas fa-user"></i> Patient Info</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between border-b pb-1"><span>ID</span><span class="font-bold">30091300_97_OTEclip</span></div>
+                        <div class="flex justify-between border-b pb-1"><span>Age/Sex</span><span class="font-bold">30 / M</span></div>
+                        <div class="flex justify-between border-b pb-1"><span>Diagnosis</span><span class="font-bold text-indigo-600">sleepapnea</span></div>
+                        <div class="flex justify-between border-b pb-1"><span>Threshold</span><span class="font-bold text-red-600">30%</span></div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-slate-400 uppercase mb-2">Reference Image</h3>
+                    <div class='space-y-3'>
+                    <div class="relative group">
+                        <div class="text-xs font-bold mb-1" style="color: #3498db">OTE Reference (Auto)</div>
+                        <img src="overlays/reference_OTE.jpg" class="w-full rounded-lg border-4 shadow-md transition-transform group-hover:scale-[1.02]" style="border-color: #3498db">
+                        <div class="text-xs text-right mt-1 text-slate-400">Max: 263578 px²</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card lg:col-span-2 border-t-4 border-t-indigo-500">
+                <h3 class="text-lg font-bold text-indigo-700 mb-4 flex items-center gap-2">
+                    <i class="fas fa-user-md"></i> AI Doctor's Note
+                </h3>
+                <div class="prose prose-sm max-w-none text-slate-700 leading-relaxed">
+                    ## 의료진용 판독 소견서<br><br>**환자:** M / 30세<br><br>**1. 환자 개요:**<br><br>본 환자는 기저 질환으로 수면 무호흡증을 진단받았으며, 수면다원검사 결과 AHI 118.4로 매우 심각한 중증도의 수면 무호흡증 환자로 판단됩니다.<br><br>**2. 영상 소견:**<br><br>23초 길이의 DISE 영상 분석 결과, 총 3회의 폐색 이벤트가 감지되었습니다.<br><br>*   **OTE (Orotrachea Epiglottis) 영역:** 1회의 폐색 이벤트가 감지되었으며, 기준 면적 (263578 px², Frame 90) 대비 30% 이상 감소하는 심각한 폐색 (Critical 2회, Severe 1회)이 관찰되었습니다.<br>*   **Velum (연구개) 영역:** 해당 threshold 기준으로 특이적인 폐색이 관찰되지 않았습니다.<br><br>**3. 종합 평가:**<br><br>본 환자는 DISE 검사 결과 OTE 영역에서 심각한 폐색이 반복적으로 관찰되는 양상을 보입니다. 특히 폐색의 심각도가 높아 기도 폐쇄로 인한 산소 포화도 저하 및 수면 질 저하에 미치는 영향이 클 것으로 예상됩니다.<br><br>따라서, 현재의 수면 무호흡증 치료 계획을 재검토하고 OTE 영역의 폐쇄를 효과적으로 해결할 수 있는 치료법 (예: 설근 견인술, 설골 고정술 등)을 고려해 볼 필요가 있습니다. 또한, 치료 경과 관찰을 위해 주기적인 DISE 검사를 시행하여 기도 변화를 모니터링하는 것이 중요합니다. 필요에 따라 이비인후과 전문의와의 협진을 통해 더욱 정확한 진단 및 맞춤형 치료 계획을 수립하는 것을 권고합니다.<br>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="card border-t-4 border-t-emerald-500">
+            <h3 class="text-lg font-bold text-emerald-700 mb-4 flex items-center gap-2">
+                <i class="fas fa-comment-medical"></i> AI 질의응답 (VQA)
+            </h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">분석 결과에 대해 질문하세요</label>
+                    <div class="flex gap-3">
+                        <input type="text" id="vqaQuestion"
+                               class="flex-1 px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none"
+                               placeholder="예: 가장 심각한 폐색 이벤트는 언제 발생했나요?">
+                        <button onclick="askAI()"
+                                class="px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition flex items-center gap-2">
+                            <i class="fas fa-paper-plane"></i> 질문하기
+                        </button>
+                    </div>
+                </div>
+
+                <div id="vqaLoading" class="hidden text-center py-4">
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600"></div>
+                    <p class="text-sm text-slate-500 mt-2">AI가 분석 중입니다...</p>
+                </div>
+
+                <div id="vqaAnswer" class="hidden bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-lg">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-robot text-emerald-600 text-xl mt-1"></i>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-emerald-900 mb-2">AI 답변</h4>
+                            <div id="vqaAnswerText" class="text-slate-700 prose prose-sm max-w-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-lg">
+                    <h4 class="text-sm font-bold text-slate-700 mb-2">💡 질문 예시</h4>
+                    <div class="space-y-2">
+                        <button onclick="setQuestion(this.textContent)" class="block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-white hover:text-emerald-600 rounded transition">
+                            가장 심각한 폐색 이벤트는 언제 발생했나요?
+                        </button>
+                        <button onclick="setQuestion(this.textContent)" class="block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-white hover:text-emerald-600 rounded transition">
+                            OTE와 Velum 중 어느 부위에서 폐색이 더 많이 발생했나요?
+                        </button>
+                        <button onclick="setQuestion(this.textContent)" class="block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-white hover:text-emerald-600 rounded transition">
+                            전체 폐색 이벤트의 평균 지속 시간은 얼마나 되나요?
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="card lg:col-span-2">
+                <h3 class="text-lg font-bold text-slate-700 mb-4">Timeline Analysis</h3>
+                <img src="timeline.png" class="w-full rounded-lg border">
+                <div class="ai-box">
+                    <i class="fas fa-info-circle mr-2"></i> <strong>Chart Insight:</strong><br>
+                    환자는 23초 동안 촬영된 비디오에서 OTE (oropharyngeal transit event) 와 연구개(Velum) 부위의 폐쇄를 관찰했을 때, 한 구간에서 총 3개의 이벤트가 발생했으며, OTE 부위의 최대 폐쇄 면적은 90번째 프레임에서 263578.0에 도달했고, 폐쇄 판단 기준은 기준 면적의 30%를 넘는 경우로 설정되었습니다.<br>
+                </div>
+            </div>
+            <div class="card lg:col-span-1">
+                <h3 class="text-lg font-bold text-slate-700 mb-4">Severity Stats</h3>
+                <img src="severity_chart.png" class="w-full rounded-lg border">
+                <div class="ai-box">
+                    <i class="fas fa-chart-bar mr-2"></i> <strong>Analysis:</strong><br>
+                    전반적으로 심각한 수준이며, 위독한 사례가 가장 높은 비중을 차지합니다.<br>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="text-lg font-bold text-slate-700 mb-6">Detected Events (3)</h3>
+            <table class="w-full text-sm text-left">
+                <thead class="bg-slate-50 text-slate-500 font-medium border-b">
+                    <tr>
+                        <th class="px-6 py-3">Severity</th>
+                        <th class="px-6 py-3">Region</th>
+                        <th class="px-6 py-3">Time</th>
+                        <th class="px-6 py-3">Max Reduction</th>
+                        <th class="px-6 py-3">Ref Area</th>
+                        <th class="px-6 py-3 text-center">Play</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y">
+        
+                    <tr onclick="playVideo('event_clips/event_01_OTE_Severe.mp4', 'Event #1')" class="hover:bg-slate-50 cursor-pointer transition">
+                        <td class="px-6 py-4"><span class="severity-badge s-Severe">Severe</span></td>
+                        <td class="px-6 py-4 font-bold text-slate-700">OTE</td>
+                        <td class="px-6 py-4 text-slate-500">0.0s ~ 2.0s</td>
+                        <td class="px-6 py-4 font-bold text-red-600">64.5%</td>
+                        <td class="px-6 py-4 text-slate-600">263578 px²</td>
+                        <td class="px-6 py-4 text-center">
+                            <button class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">
+                                <i class="fas fa-play text-xs"></i>
+                            </button>
+                        </td>
+                    </tr>
+                
+                    <tr onclick="playVideo('event_clips/event_02_OTE_Critical.mp4', 'Event #2')" class="hover:bg-slate-50 cursor-pointer transition">
+                        <td class="px-6 py-4"><span class="severity-badge s-Critical">Critical</span></td>
+                        <td class="px-6 py-4 font-bold text-slate-700">OTE</td>
+                        <td class="px-6 py-4 text-slate-500">4.0s ~ 9.0s</td>
+                        <td class="px-6 py-4 font-bold text-red-600">88.8%</td>
+                        <td class="px-6 py-4 text-slate-600">263578 px²</td>
+                        <td class="px-6 py-4 text-center">
+                            <button class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">
+                                <i class="fas fa-play text-xs"></i>
+                            </button>
+                        </td>
+                    </tr>
+                
+                    <tr onclick="playVideo('event_clips/event_03_OTE_Critical.mp4', 'Event #3')" class="hover:bg-slate-50 cursor-pointer transition">
+                        <td class="px-6 py-4"><span class="severity-badge s-Critical">Critical</span></td>
+                        <td class="px-6 py-4 font-bold text-slate-700">OTE</td>
+                        <td class="px-6 py-4 text-slate-500">11.0s ~ 22.0s</td>
+                        <td class="px-6 py-4 font-bold text-red-600">92.9%</td>
+                        <td class="px-6 py-4 text-slate-600">263578 px²</td>
+                        <td class="px-6 py-4 text-center">
+                            <button class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-600 hover:text-white transition">
+                                <i class="fas fa-play text-xs"></i>
+                            </button>
+                        </td>
+                    </tr>
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="videoModal" class="fixed inset-0 z-[100] hidden" onclick="closeModal()">
+        <div class="fixed inset-0 bg-slate-900/90 backdrop-blur-sm"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="bg-black rounded-2xl shadow-2xl overflow-hidden max-w-7xl w-full relative" onclick="event.stopPropagation()">
+                <div class="bg-slate-800 px-4 py-3 flex justify-between items-center">
+                    <h3 class="text-white font-bold" id="modalTitle">Event Video</h3>
+                    <button onclick="closeModal()" class="text-slate-400 hover:text-white"><i class="fas fa-times text-xl"></i></button>
+                </div>
+                <div class="bg-black flex items-center justify-center" style="min-height: 400px;">
+                    <video id="player" controls class="w-full h-auto max-h-[80vh]" style="object-fit: contain;"></video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ✅ 핵심 수정: Python에서 실제 값을 주입
+        const currentVideoStem = "30091300_97_OTEclip";
+        console.log("Current video_stem:", currentVideoStem);
+
+        // ===== VQA JS =====
+        function setQuestion(text) {
+            const input = document.getElementById('vqaQuestion');
+            if (input) {
+                input.value = text.trim();
+                input.focus();
+            }
+        }
+
+        async function askAI() {
+            const input = document.getElementById('vqaQuestion');
+            if (!input) return;
+            const question = input.value.trim();
+            if (!question) {
+                alert('질문을 입력해주세요.');
+                return;
+            }
+
+            const loadingEl = document.getElementById('vqaLoading');
+            const answerEl = document.getElementById('vqaAnswer');
+            const answerText = document.getElementById('vqaAnswerText');
+
+            if (loadingEl) loadingEl.classList.remove('hidden');
+            if (answerEl) answerEl.classList.add('hidden');
+
+            try {
+                console.log("Sending VQA request:", {question, video_stem: currentVideoStem});
+                
+                const res = await fetch('/api/vqa', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        question: question,
+                        video_stem: currentVideoStem
+                    })
+                });
+
+                const data = await res.json();
+                console.log("VQA response:", data);
+                
+                if (loadingEl) loadingEl.classList.add('hidden');
+
+                if (data.success) {
+                    if (answerText) {
+                        const txt = data.answer || '';
+                        answerText.innerHTML = txt.replace(/\n/g, '<br>');
+                    }
+                    if (answerEl) answerEl.classList.remove('hidden');
+                } else {
+                    alert('오류: ' + (data.error || '알 수 없는 오류'));
+                }
+            } catch (err) {
+                if (loadingEl) loadingEl.classList.add('hidden');
+                console.error(err);
+                alert('서버 오류가 발생했습니다.');
+            }
+        }
+
+        const vqaInputEl = document.getElementById('vqaQuestion');
+        if (vqaInputEl) {
+            vqaInputEl.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    askAI();
+                }
+            });
+        }
+        // ===================
+
+        function playVideo(src, title) {
+            const player = document.getElementById('player');
+            player.innerHTML = '';
+            player.onerror = null;
+            
+            const source = document.createElement('source');
+            source.src = src;
+            source.type = 'video/mp4';
+            player.appendChild(source);
+            
+            player.onerror = function(e) {
+                alert('비디오 파일을 재생할 수 없습니다.\n경로: ' + src);
+            };
+            
+            document.getElementById('modalTitle').innerText = title + ' (좌측: 원본, 우측: 분석 결과)';
+            document.getElementById('videoModal').classList.remove('hidden');
+            
+            player.load();
+            player.play().catch(console.log);
+        }
+        function closeModal() {
+            document.getElementById('videoModal').classList.add('hidden');
+            const player = document.getElementById('player');
+            player.pause();
+            player.currentTime = 0;
+            player.innerHTML = '';
+        }
+        document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+</html>
+        

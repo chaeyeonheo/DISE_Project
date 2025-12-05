@@ -1,4 +1,3 @@
-# integrated_app.py
 from flask import Flask, render_template, request, jsonify, send_file, send_from_directory
 from werkzeug.utils import secure_filename
 from pathlib import Path
@@ -18,7 +17,7 @@ app.config['MAX_CONTENT_LENGTH'] = 500 * 1024 * 1024
 app.config['UPLOAD_FOLDER'] = Path('uploads')
 app.config['OUTPUT_FOLDER'] = Path('outputs')
 app.config['MODEL_PATH'] = Path('ote_velum_classification_final/checkpoints/best_model.pth')
-app.config['GEMINI_API_KEY'] = "AIzaSyDUP__bWBGmXFw-BPTDlKl6rpKPNPi7T3k" 
+app.config['GEMINI_API_KEY'] = "AIzaSyCNtQzta2v9stW17EZtiT6ICKAIZawORY8" 
 
 app.config['UPLOAD_FOLDER'].mkdir(exist_ok=True)
 app.config['OUTPUT_FOLDER'].mkdir(exist_ok=True)
@@ -158,10 +157,114 @@ def analyze_video():
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/api/vqa', methods=['POST', 'OPTIONS'])
+def vqa():
+    """
+    VQA 엔드포인트: 분석 결과 기반 질의응답
+    
+    Request JSON:
+        {
+            "question": "...",
+            "video_stem": "30042181_89_OTEclip"
+        }
+    """
+    # CORS preflight 처리
+    if request.method == 'OPTIONS':
+        response = jsonify({'status': 'ok'})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+        response.headers.add('Access-Control-Allow-Methods', 'POST')
+        return response
+    
+    try:
+        print("=" * 50)
+        print("🔍 VQA 요청 수신")
+        
+        data = request.get_json()
+        print(f"📥 요청 데이터: {data}")
+        
+        question = (data.get('question') or '').strip()
+        video_stem = (data.get('video_stem') or '').strip()
+
+        print(f"❓ 질문: {question}")
+        print(f"📁 video_stem: {video_stem}")
+
+        if not question:
+            return jsonify({'success': False, 'error': '질문을 입력해주세요.'}), 400
+        if not video_stem:
+            return jsonify({'success': False, 'error': 'video_stem이 필요합니다.'}), 400
+
+        # 분석 결과 JSON 로드
+        result_path = app.config['OUTPUT_FOLDER'] / video_stem / 'analysis_results.json'
+        print(f"🔍 결과 파일 경로: {result_path}")
+        print(f"✅ 파일 존재 여부: {result_path.exists()}")
+        
+        # outputs 폴더 내용 확인 (디버깅)
+        outputs_dir = app.config['OUTPUT_FOLDER']
+        if outputs_dir.exists():
+            subdirs = [d.name for d in outputs_dir.iterdir() if d.is_dir()]
+            print(f"📂 outputs 폴더 내 디렉토리: {subdirs}")
+        else:
+            print(f"⚠️ outputs 폴더가 존재하지 않음: {outputs_dir}")
+        
+        if not result_path.exists():
+            error_msg = f'분석 결과를 찾을 수 없습니다: {video_stem}'
+            print(f"❌ {error_msg}")
+            print("=" * 50)
+            return jsonify({
+                'success': False,
+                'error': error_msg,
+                'debug_info': {
+                    'searched_path': str(result_path),
+                    'available_dirs': subdirs if outputs_dir.exists() else []
+                }
+            }), 404
+
+        with open(result_path, 'r', encoding='utf-8') as f:
+            results = json.load(f)
+
+        print("🤖 VQA 수행 시작...")
+        # VQA 수행
+        gen = IntegratedReportGenerator(results, api_key=app.config['GEMINI_API_KEY'])
+        response = gen.answer_question(question)
+        print(f"💬 VQA 응답: {response.get('success', False)}")
+        print("=" * 50)
+        return jsonify(response)
+
+    except Exception as e:
+        import traceback
+        error_trace = traceback.format_exc()
+        print(f"❌ 서버 오류:\n{error_trace}")
+        print("=" * 50)
+        return jsonify({
+            'success': False, 
+            'error': f'서버 오류: {str(e)}',
+            'traceback': error_trace
+        }), 500
+
+
 @app.route('/outputs/<path:filename>')
 def serve_output(filename):
     return send_from_directory(app.config['OUTPUT_FOLDER'], filename)
 
 
+def print_routes():
+    """등록된 라우트 출력"""
+    print("\n" + "=" * 50)
+    print("📋 등록된 라우트:")
+    for rule in app.url_map.iter_rules():
+        methods = ','.join(sorted(rule.methods - {'HEAD', 'OPTIONS'}))
+        print(f"  {rule.rule:30s} [{methods}]")
+    print("=" * 50 + "\n")
+
+
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    print("\n🚀 Flask 서버 시작")
+    print(f"📂 Upload 폴더: {app.config['UPLOAD_FOLDER']}")
+    print(f"📂 Output 폴더: {app.config['OUTPUT_FOLDER']}")
+    
+    print_routes()
+    
+    # ✅ use_reloader=False로 설정하여 자동 재시작 방지
+    # 개발 중에는 debug=False로 설정
+    app.run(debug=False, host='0.0.0.0', port=5000, use_reloader=False)
