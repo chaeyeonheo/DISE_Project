@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DISE Clinical Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Manrope', sans-serif; background: #f8fafc; color: #1e293b; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Modern Card Utility */
+        .card { background: white; border-radius: 1.5rem; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02); transition: transform 0.2s; }
+        .card:hover { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025); }
+        
+        /* Grade Badges */
+        .badge { padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+        .badge-g2 { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
+        .badge-g1 { background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; }
+        .badge-g0 { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
+        
+        /* Row Hover Colors for Table */
+        .hover-row-g2:hover { background-color: #fef2f2; }
+        .hover-row-g1:hover { background-color: #fff7ed; }
+        .hover-row-g0:hover { background-color: #f0fdf4; }
+
+        /* Layout Utilities */
+        .glass-header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e2e8f0; }
+        
+        /* Chat Animation */
+        .chat-slide-enter { animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .chat-slide-exit { animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes slideDown { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(20px) scale(0.96); } }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="selection:bg-indigo-100 selection:text-indigo-900">
+
+    <nav class="fixed top-0 w-full z-40 glass-header h-16 flex items-center px-6 lg:px-12 justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center text-white shadow-md">
+                <i class="fas fa-wave-square text-xs"></i>
+            </div>
+            <span class="font-bold text-lg tracking-tight text-slate-800">DISE <span class="text-indigo-600">Analytics</span></span>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="text-right">
+                <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Exam Date</p>
+                <p class="text-sm font-bold text-slate-900">2025-12-06</p>
+            </div>
+            <div class="h-8 w-px bg-slate-200"></div>
+            <div class="text-right">
+                <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Patient ID</p>
+                <p class="text-sm font-bold text-slate-900">30192461_78_OTEclip</p>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20 px-6 lg:px-12 max-w-[1600px] mx-auto space-y-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="card p-6 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute right-0 top-0 p-4 opacity-10 group-hover:scale-110 transition-transform"><i class="fas fa-user-circle text-6xl text-indigo-500"></i></div>
+                <div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Patient</p>
+                    <h3 class="text-xl font-bold text-slate-800 mt-1">46 <span class="text-sm font-normal text-slate-500">Years</span> / F</h3>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-100">
+                    <p class="text-xs text-slate-500">Diagnosis</p>
+                    <p class="text-sm font-bold text-indigo-600 truncate">sleepapnea</p>
+                </div>
+            </div>
+
+            <div class="card p-6 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute right-0 top-0 p-4 opacity-10 group-hover:scale-110 transition-transform"><i class="fas fa-exclamation-triangle text-6xl text-rose-500"></i></div>
+                <div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Events</p>
+                    <h3 class="text-4xl font-extrabold text-slate-900 mt-1 font-mono">1</h3>
+                </div>
+                <div class="mt-4 flex gap-2">
+                    <span class="px-2 py-1 rounded bg-red-50 text-red-700 text-xs font-bold border border-red-100">1 Complete</span>
+                    <span class="px-2 py-1 rounded bg-orange-50 text-orange-700 text-xs font-bold border border-orange-100">0 Partial</span>
+                    <span class="px-2 py-1 rounded bg-green-50 text-green-700 text-xs font-bold border border-green-100">0 Open</span>
+                </div>
+            </div>
+
+             <div class="card p-6 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute right-0 top-0 p-4 opacity-10 group-hover:scale-110 transition-transform"><i class="fas fa-lungs text-6xl text-emerald-500"></i></div>
+                <div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">AHI Score</p>
+                    <h3 class="text-4xl font-extrabold text-slate-900 mt-1 font-mono">8.2</h3>
+                </div>
+                 <div class="mt-4 pt-4 border-t border-slate-100">
+                    <p class="text-xs text-slate-500">Reference Max Area</p>
+                    <p class="text-sm font-bold text-slate-700">55521 px²</p>
+                </div>
+            </div>
+            
+            <div class="card p-6 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute right-0 top-0 p-4 opacity-10 group-hover:scale-110 transition-transform"><i class="fas fa-chart-area text-6xl text-purple-500"></i></div>
+                <div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Dominant Region</p>
+                    <h3 class="text-3xl font-bold text-slate-900 mt-1">OTE</h3>
+                </div>
+                 <div class="mt-4 pt-4 border-t border-slate-100">
+                    <p class="text-xs text-slate-500">Video Duration</p>
+                    <p class="text-sm font-bold text-slate-700">18.0 sec</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 card p-8 border-l-4 border-l-indigo-600 bg-gradient-to-br from-white to-slate-50">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
+                        <i class="fas fa-robot text-lg"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-800">AI Clinical Insight</h2>
+                        <p class="text-xs text-slate-500">Automated analysis summary based on visual occlusion grading</p>
+                    </div>
+                </div>
+                <div class="prose prose-sm max-w-none text-slate-700 leading-relaxed">
+                    ## DISE 판독 소견서<br><br>**환자명:** F / 46세<br>**환자 ID:** [미제공]<br>**진료과:** 이비인후과<br>**판독일:** 2023년 10월 27일<br><br>---<br><br>### 1. 환자 개요 및 중증도 평가<br><br>본 환자(F/46세)는 기저 질환으로 수면무호흡증(sleep apnea)을 가지고 있으며, 수면다원검사 상 AHI는 8.2로 확인되었습니다. 이는 경증의 수면무호흡증에 해당하나, 임상적으로 호흡 장애를 유발할 수 있는 수준입니다. 상기도 폐색 부위 및 양상을 파악하기 위해 약물유도 수면내시경(DISE) 검사를 시행하였으며, 총 18.0초 길이의 영상(30192461_78_OTEclip.mp4)을 분석하였습니다.<br><br>---<br><br>### 2. 부위별(OTE/Velum) 폐색 패턴 분석 (Grade 0~2 기준 사용)<br><br>*   **OTE (Oro-Hypopharyngeal Tongue Base / Epiglottis) 영역:**<br>    *   총 1개의 폐색 이벤트가 감지되었습니다.<br>    *   이벤트 #1은 3.0초부터 16.0초까지 **총 13.0초**간 지속되었습니다.<br>    *   이 이벤트의 최대 감소율은 **92.0%**로 확인되었으며, 이는 기준 면적 210032 px² 대비 현저한 감소를 의미합니다.<br>    *   Visual Occlusion 등급 기준에 따르면, 75% 이상의 폐쇄는 **Grade 2 (완전 폐쇄)**에 해당합니다. 따라서 감지된 단일 이벤트는 OTE 부위의 **Grade 2 완전 폐쇄**로 분류됩니다.<br>    *   영상 전체 길이(18.0초) 대비 폐색 지속 시간(13.0초)은 약 72%에 달하며, 이는 영상 촬영 시간의 상당 부분 동안 OTE 부위의 심각한 폐쇄가 지속되었음을 시사합니다.<br>*   **Velum (연구개) 영역:**<br>    *   폐색 이벤트는 감지되지 않았습니다 (0개).<br><br>---<br><br>### 3. Grade 2 (완전 폐쇄) 발생 빈도 및 지속시간에 대한 임상적 해석<br><br>DISE 영상 분석 결과, OTE 부위에서 단 1개의 폐색 이벤트가 관찰되었으나, 해당 이벤트가 **총 13.0초의 긴 시간 동안 최대 92.0%의 완전 폐쇄 (Grade 2)** 양상으로 지속되었다는 점은 임상적으로 매우 중요합니다.<br>18초의 짧은 영상 클립 내에서 13초 동안의 완전 폐쇄는 수면 중 해당 부위의 반복적이고 장기적인 기도의 협착 및 완전 폐쇄 발생 가능성이 높음을 강력히 시사합니다. 이는 AHI 8.2라는 수면무호흡증의 원인 중 OTE 부위의 해부학적 구조가 주요한 기여 인자로 작용할 가능성이 매우 높음을 의미합니다. 특히 92.0%의 최대 감소율은 기도 개방성을 유지하기 위한 노력이 심하며, 결국 거의 완전한 폐쇄에 도달함을 나타냅니다.<br><br>---<br><br>### 4. 종합 평가 및 치료 제안<br><br>*   **종합 평가:**<br>    본 환자(F/46세, AHI 8.2)는 DISE 영상 분석 결과, OTE(구인두/설근부/후두개) 부위에서 **장시간(13.0초) 지속되는 심한 완전 폐쇄(Grade 2, 최대 92.0% 감소)**가 명확하게 관찰되었습니다. 반면 연구개(Velum) 부위에서는 폐색 이벤트가 감지되지 않았습니다. 이는 환자의 수면무호흡증 발생에 **OTE 부위의 해부학적 구조적 이상이 핵심적인 역할**을 하고 있음을 강력히 시사합니다.<br><br>*   **치료 제안:**<br>    DISE 결과는 OTE 영역의 폐쇄가 환자의 수면무호흡증에 주된 영향을 미치고 있음을 보여주므로, 이에 초점을 맞춘 치료 전략을 수립하는 것이 중요합니다.<br>    1.  **일차적 접근:** OTE 부위의 폐쇄 해소를 위한 치료 전략을 우선적으로 고려해야 합니다.<br>    2.  **지속적 양압기 (CPAP):** 환자의 CPAP 순응도 및 효과를 확인하여, OTE 부위 폐쇄에 대한 일차적 비수술적 치료로서 CPAP 사용을 지속적으로 권장합니다.<br>    3.  **수술적 치료 고려:** CPAP 치료의 효과가 불충분하거나 순응도가 낮은 경우, OTE 부위의 해부학적 구조를 개선할 수 있는 수술적 치료를 적극적으로 고려할 수 있습니다. 가능한 수술적 옵션으로는 설근부 축소술, 설골 전진술, 후두개 고정술 등이 있으며, 수술 전 추가적인 3D CT 등의 정밀 평가를 통해 해부학적 이상을 더욱 정확히 확인하는 것이 필요합니다.<br>    4.  **생활 습관 개선:** 전반적인 수면무호흡증 관리를 위해 체중 감량, 금주, 금연 등 생활 습관 개선을 병행하도록 지도합니다.<br><br>---<br><br>**판독 의사:** [이비인후과 전문의] (서명)
+                </div>
+            </div>
+
+            <div class="lg:col-span-1 flex flex-col gap-4">
+                <div class="card p-6 h-full">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Reference Anatomy</h3>
+                    
+            <div class="relative group rounded-2xl overflow-hidden border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                <div class="absolute top-3 left-3 bg-indigo-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm z-10">Manual Ref</div>
+                <div class="w-full aspect-[4/3] bg-slate-100">
+                    <img src="overlays/manual_reference.jpg" class="w-full h-full object-cover"> 
+                </div>
+                <div class="bg-white p-3 border-t border-slate-50 flex justify-between items-center">
+                    <span class="text-xs font-semibold text-slate-500">Max Area</span>
+                    <span class="text-sm font-bold text-slate-800">55521 px²</span>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 card p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-bold text-slate-800 text-lg">Timeline Analysis</h3>
+                    <span class="text-xs font-mono bg-slate-100 px-2 py-1 rounded text-slate-500">Interactive Plot</span>
+                </div>
+                <img src="timeline.png" class="w-full rounded-xl border border-slate-100 shadow-sm">
+                <div class="mt-4 p-4 bg-slate-50 rounded-xl border border-slate-100 flex gap-3 items-start">
+                    <i class="fas fa-info-circle text-indigo-500 mt-0.5"></i>
+                    <p class="text-xs text-slate-600 leading-relaxed"><strong>Interpretation:</strong> 환자는 3.0초부터 16.0초까지 OTE 부위에서 단일하고 장시간 지속된 완전 폐쇄(Grade 2, 최대 감소율 92.0%)를 보였으며, 해당 폐쇄 이벤트 내에서는 등급 변화가 관찰되지 않았습니다.</p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-1 card p-6 flex flex-col">
+                <h3 class="font-bold text-slate-800 text-lg mb-6">Severity Distribution</h3>
+                <div class="flex-1 flex items-center justify-center p-4 bg-slate-50 rounded-xl border border-slate-100 border-dashed">
+                    <img src="severity_chart.png" class="max-h-[250px] object-contain">
+                </div>
+                 <div class="mt-4 p-4 bg-slate-50 rounded-xl border border-slate-100 flex gap-3 items-start">
+                    <i class="fas fa-chart-pie text-orange-500 mt-0.5"></i>
+                    <p class="text-xs text-slate-600 leading-relaxed"><strong>Interpretation:</strong> 제공된 등급별 분포에는 폐쇄 이벤트가 없다고 보고되었으나, 단 한 번의 감지된 폐쇄 이벤트가 OTE 부위에서 92%의 최대 감소율을 보여 **전반적인 폐쇄 심각도는 Grade 2(완전 폐쇄)에 해당합니다.**</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card overflow-hidden">
+            <div class="px-8 py-6 border-b border-slate-100 flex justify-between items-center bg-white">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center text-rose-500">
+                        <i class="fas fa-list-ul"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800">Event Logs</h3>
+                </div>
+                <div class="flex gap-2">
+                     <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-bold text-slate-600 border border-slate-200">1 Events Detected</span>
+                </div>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50/50 border-b border-slate-100 text-xs uppercase text-slate-400 font-bold tracking-wider">
+                            <th class="px-8 py-4">Severity Grade</th>
+                            <th class="px-6 py-4">Anatomy</th>
+                            <th class="px-6 py-4">Timestamp</th>
+                            <th class="px-6 py-4">Duration</th>
+                            <th class="px-6 py-4">Max Reduction</th>
+                            <th class="px-6 py-4 text-center">Replay</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-50 text-sm">
+        
+                <tr onclick="playVideo('event_clips/event_01_OTE_Critical.mp4', 'Critical - OTE')" class="hover-row-g0 transition-colors cursor-pointer group">
+                    <td class="px-8 py-4">
+                        <span class="badge badge-g0">Critical</span>
+                    </td>
+                    <td class="px-6 py-4 font-bold text-slate-700">OTE</td>
+                    <td class="px-6 py-4 text-slate-500 font-mono text-xs">
+                        <i class="far fa-clock mr-1 opacity-50"></i>3.0s — 16.0s
+                    </td>
+                    <td class="px-6 py-4 text-slate-600 font-medium">13.0s</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-16 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-rose-500" style="width: 91.96836672507047%"></div>
+                            </div>
+                            <span class="font-bold text-rose-600 text-xs">92%</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <button class="w-8 h-8 rounded-full bg-white border border-slate-200 text-slate-400 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600 transition-all shadow-sm">
+                            <i class="fas fa-play text-[10px] pl-0.5"></i>
+                        </button>
+                    </td>
+                </tr>
+                
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        
+        <button id="chatToggleBtn" onclick="toggleChat()" class="fixed bottom-8 right-8 w-14 h-14 bg-indigo-600 text-white rounded-full shadow-[0_8px_30px_rgb(79,70,229,0.4)] flex items-center justify-center hover:scale-110 hover:bg-indigo-700 transition-all z-50 group">
+            <i class="fas fa-comment-medical text-xl group-hover:animate-pulse"></i>
+        </button>
+
+        <div id="chatWindow" class="fixed bottom-24 right-8 w-[380px] h-[600px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col z-50 hidden origin-bottom-right">
+            <div class="p-4 border-b border-slate-100 flex justify-between items-center bg-white rounded-t-2xl">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-white text-xs shadow-md">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-slate-800">AI Medical Assistant</h4>
+                        <p class="text-[10px] text-green-500 font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Online</p>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="w-8 h-8 rounded-full hover:bg-slate-50 text-slate-400 flex items-center justify-center transition"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div id="chatContainer" class="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50">
+                <div class="flex gap-3">
+                    <div class="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-robot text-indigo-500 text-xs"></i>
+                    </div>
+                    <div class="bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none text-sm text-slate-600 shadow-sm max-w-[85%]">
+                        안녕하세요! 분석 결과에 대해 궁금한 점을 질문해주세요.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-4 bg-white border-t border-slate-100 rounded-b-2xl">
+                <div class="flex gap-2 mb-3 overflow-x-auto no-scrollbar pb-1">
+                    <button onclick="setQ('가장 심각한 이벤트 요약해줘')" class="whitespace-nowrap px-3 py-1.5 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full hover:bg-indigo-100 border border-indigo-100 transition">심각한 구간?</button>
+                    <button onclick="setQ('치료 권고사항은?')" class="whitespace-nowrap px-3 py-1.5 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full hover:bg-indigo-100 border border-indigo-100 transition">치료 제안</button>
+                    <button onclick="setQ('이벤트 횟수는 몇 번인가요?')" class="whitespace-nowrap px-3 py-1.5 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full hover:bg-indigo-100 border border-indigo-100 transition">이벤트 횟수</button>
+                </div>
+                <div class="relative">
+                    <input type="text" id="vqaQuestion" class="w-full pl-4 pr-12 py-3 bg-slate-100 border-none rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all outline-none" placeholder="Type your question..." onkeypress="if(event.key==='Enter') askAI()">
+                    <button onclick="askAI()" class="absolute right-2 top-2 w-8 h-8 bg-indigo-600 text-white rounded-lg flex items-center justify-center hover:bg-indigo-700 shadow-sm transition">
+                        <i class="fas fa-paper-plane text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+
+        <div id="videoModal" class="fixed inset-0 z-[100] hidden" onclick="closeModal()">
+            <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity"></div>
+            <div class="fixed inset-0 flex items-center justify-center p-4">
+                <div class="bg-black rounded-2xl overflow-hidden max-w-5xl w-full relative shadow-2xl border border-white/10" onclick="event.stopPropagation()">
+                    <div class="bg-gradient-to-r from-slate-900 to-slate-800 px-6 py-4 flex justify-between items-center border-b border-white/10">
+                        <h3 class="text-white font-bold flex items-center gap-2" id="modalTitle">
+                            <i class="fas fa-play-circle text-indigo-400"></i> Event Replay
+                        </h3>
+                        <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-white/10 text-white hover:bg-white/20 flex items-center justify-center transition"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="aspect-video bg-black flex items-center justify-center">
+                        <video id="player" controls class="w-full h-full"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        const videoStem = "30192461_78_OTEclip";  // ✅ 이건 Python 변수니까 { 없이
+        let history = [];
+        let chatOpen = false;
+        
+        // typing indicator 스타일 추가
+        (function() {
+            const style = document.createElement('style');
+            // f-string 이스케이프: CSS 중괄호는 두 개씩 { }
+            style.textContent = `
+                @keyframes blink {
+                    0%, 100% { opacity: 0.2; }
+                    50% { opacity: 1; }
+                }
+                .typing-dots span {
+                    display: inline-block;
+                    width: 6px;
+                    height: 6px;
+                    margin-right: 4px;
+                    background: #0ea5e9;
+                    border-radius: 9999px;
+                    animation: blink 1s infinite;
+                }
+                .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+                .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+            `;
+            document.head.appendChild(style);
+        })();
+        
+        function toggleChat() {
+            const win = document.getElementById('chatWindow');
+            chatOpen = !chatOpen;
+            if(chatOpen) {
+                win.classList.remove('hidden');
+                win.classList.add('chat-slide-enter');
+                win.classList.remove('chat-slide-exit');
+                setTimeout(() => document.getElementById('vqaQuestion').focus(), 300);
+            } else {
+                win.classList.add('chat-slide-exit');
+                win.classList.remove('chat-slide-enter');
+                setTimeout(() => win.classList.add('hidden'), 280);
+            }
+        }
+        
+        function setQ(text) { 
+            const input = document.getElementById('vqaQuestion');
+            input.value = text;
+            input.focus();
+        }
+        
+        async function askAI() {
+            const input = document.getElementById('vqaQuestion');
+            const q = input.value.trim();
+            if(!q) return;
+            
+            const cont = document.getElementById('chatContainer');
+            // User Message (pulse 제거)
+            cont.innerHTML += `
+                <div class="flex items-end gap-2 justify-end">
+                    <div class="bg-indigo-600 text-white p-3 rounded-2xl rounded-tr-none text-sm max-w-[85%] shadow-md">
+                        ${q}
+                    </div>
+                </div>`;
+            
+            input.value = '';
+            input.disabled = true;
+            cont.scrollTop = cont.scrollHeight;
+            
+            history.push({'role':'user', 'content':q});
+            
+            // 타이핑 인디케이터 추가
+            const loadingId = "typing-" + Date.now();
+            cont.innerHTML += `
+                <div id="${loadingId}" class="flex items-start gap-3 mt-2">
+                    <div class="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <i class="fas fa-robot text-emerald-500 text-xs"></i>
+                    </div>
+                    <div class="bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none text-sm text-slate-700 shadow-sm max-w-[85%] leading-relaxed">
+                        <div class="typing-dots flex items-center gap-1">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>`;
+            cont.scrollTop = cont.scrollHeight;
+            
+            try {
+                const res = await fetch('/api/vqa', {
+                    method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({question:q, video_stem:videoStem, conversation_history:history.slice(0,-1)})
+                });
+                const data = await res.json();
+                const ans = data.success ? data.answer : "Error: " + data.error;
+                
+                // 타이핑 인디케이터 제거
+                const loadingEl = document.getElementById(loadingId);
+                if(loadingEl) loadingEl.remove();
+                
+                // Bot Message
+                cont.innerHTML += `
+                    <div class="flex items-start gap-3 mt-2">
+                        <div class="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 shadow-sm">
+                            <i class="fas fa-robot text-emerald-500 text-xs"></i>
+                        </div>
+                        <div class="bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none text-sm text-slate-700 shadow-sm max-w-[85%] leading-relaxed">
+                            ${ans}
+                        </div>
+                    </div>`;
+                    
+                history.push({'role':'assistant', 'content':ans});
+            } catch(e) {
+                cont.innerHTML += `<div class="text-center my-2"><span class="bg-red-50 text-red-500 text-xs px-2 py-1 rounded">Network Error</span></div>`;
+            } finally {
+                input.disabled = false;
+                input.focus();
+                cont.scrollTop = cont.scrollHeight;
+            }
+        }
+        
+        function playVideo(src, title) {
+            const m = document.getElementById('videoModal');
+            const p = document.getElementById('player');
+            const t = document.getElementById('modalTitle');
+            
+            p.src = src;
+            t.innerHTML = `<i class="fas fa-play-circle text-indigo-400"></i> ${title}`;
+            m.classList.remove('hidden');
+            p.play();
+        }
+        
+        function closeModal() {
+            document.getElementById('videoModal').classList.add('hidden');
+            const p = document.getElementById('player');
+            p.pause();
+            p.src = '';
+        }
+    </script>
+</body>
+</html>

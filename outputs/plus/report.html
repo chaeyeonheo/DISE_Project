@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DISE Clinical Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Manrope', sans-serif; background: #f8fafc; color: #1e293b; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Modern Card Utility */
+        .card { background: white; border-radius: 1.5rem; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02); transition: transform 0.2s; }
+        .card:hover { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025); }
+        
+        /* Grade Badges */
+        .badge { padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+        .badge-g2 { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
+        .badge-g1 { background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; }
+        .badge-g0 { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
+        
+        /* Row Hover Colors for Table */
+        .hover-row-g2:hover { background-color: #fef2f2; }
+        .hover-row-g1:hover { background-color: #fff7ed; }
+        .hover-row-g0:hover { background-color: #f0fdf4; }
+
+        /* Layout Utilities */
+        .glass-header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e2e8f0; }
+        
+        /* Chat Animation */
+        .chat-slide-enter { animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .chat-slide-exit { animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes slideDown { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(20px) scale(0.96); } }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="selection:bg-indigo-100 selection:text-indigo-900">
+
+    <nav class="fixed top-0 w-full z-40 glass-header h-16 flex items-center px-6 lg:px-12 justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center text-white shadow-md">
+                <i class="fas fa-wave-square text-xs"></i>
+            </div>
+            <span class="font-bold text-lg tracking-tight text-slate-800">DISE <span class="text-indigo-600">Analytics</span></span>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="text-right">
+                <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Exam Date</p>
+                <p class="text-sm font-bold text-slate-900">2025-12-06</p>
+            </div>
+            <div class="h-8 w-px bg-slate-200"></div>
+            <div class="text-right">
+                <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Patient ID</p>
+                <p class="text-sm font-bold text-slate-900">Velum_OTE_plus</p>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20 px-6 lg:px-12 max-w-[1600px] mx-auto space-y-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="card p-6 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute right-0 top-0 p-4 opacity-10 group-hover:scale-110 transition-transform"><i class="fas fa-user-circle text-6xl text-indigo-500"></i></div>
+                <div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Patient</p>
+                    <h3 class="text-xl font-bold text-slate-800 mt-1">57 <span class="text-sm font-normal text-slate-500">Years</span> / M</h3>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-100">
+                    <p class="text-xs text-slate-500">Diagnosis</p>
+                    <p class="text-sm font-bold text-indigo-600 truncate">sleepapnea</p>
+                </div>
+            </div>
+
+            <div class="card p-6 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute right-0 top-0 p-4 opacity-10 group-hover:scale-110 transition-transform"><i class="fas fa-exclamation-triangle text-6xl text-rose-500"></i></div>
+                <div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Events</p>
+                    <h3 class="text-4xl font-extrabold text-slate-900 mt-1 font-mono">3</h3>
+                </div>
+                <div class="mt-4 flex gap-2">
+                    <span class="px-2 py-1 rounded bg-red-50 text-red-700 text-xs font-bold border border-red-100">3 Complete</span>
+                    <span class="px-2 py-1 rounded bg-orange-50 text-orange-700 text-xs font-bold border border-orange-100">0 Partial</span>
+                    <span class="px-2 py-1 rounded bg-green-50 text-green-700 text-xs font-bold border border-green-100">0 Open</span>
+                </div>
+            </div>
+
+             <div class="card p-6 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute right-0 top-0 p-4 opacity-10 group-hover:scale-110 transition-transform"><i class="fas fa-lungs text-6xl text-emerald-500"></i></div>
+                <div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">AHI Score</p>
+                    <h3 class="text-4xl font-extrabold text-slate-900 mt-1 font-mono">32.6</h3>
+                </div>
+                 <div class="mt-4 pt-4 border-t border-slate-100">
+                    <p class="text-xs text-slate-500">Reference Max Area</p>
+                    <p class="text-sm font-bold text-slate-700">414401 px²</p>
+                </div>
+            </div>
+            
+            <div class="card p-6 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute right-0 top-0 p-4 opacity-10 group-hover:scale-110 transition-transform"><i class="fas fa-chart-area text-6xl text-purple-500"></i></div>
+                <div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Dominant Region</p>
+                    <h3 class="text-3xl font-bold text-slate-900 mt-1">OTE</h3>
+                </div>
+                 <div class="mt-4 pt-4 border-t border-slate-100">
+                    <p class="text-xs text-slate-500">Video Duration</p>
+                    <p class="text-sm font-bold text-slate-700">28.3 sec</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 card p-8 border-l-4 border-l-indigo-600 bg-gradient-to-br from-white to-slate-50">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
+                        <i class="fas fa-robot text-lg"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-800">AI Clinical Insight</h2>
+                        <p class="text-xs text-slate-500">Automated analysis summary based on visual occlusion grading</p>
+                    </div>
+                </div>
+                <div class="prose prose-sm max-w-none text-slate-700 leading-relaxed">
+                    ## DISE (Drug-induced Sleep Endoscopy) 판독 소견서<br><br>**환자 기본 정보:**<br>*   성별/나이: M / 57세<br>*   기저 질환: 수면 무호흡증(Sleep Apnea)<br>*   AHI (Apnea-Hypopnea Index): 32.6 (중증 폐쇄성 수면 무호흡증, Severe OSA)<br>*   영상 정보: plus.mp4 (28.3초)<br><br>---<br><br>**1. 환자 개요 및 중증도 평가**<br>본 57세 남성 환자는 AHI 32.6으로 중증 폐쇄성 수면 무호흡증(Severe Obstructive Sleep Apnea, OSA)으로 진단된 환자입니다. 수면 중 상기도 폐쇄의 해부학적 위치와 패턴을 확인하기 위해 약물 유도 수면 내시경(DISE)을 시행하였습니다. DISE 결과는 환자의 OSA 중증도에 부합하는 다단계(multilevel)의 심각한 기도 폐쇄를 시사합니다.<br><br>**2. 부위별 폐색 패턴 분석 (Visual Occlusion 등급 기준 적용)**<br>DISE 영상 분석 결과, 총 3회의 유의미한 상기도 폐색 이벤트가 감지되었습니다. 흥미롭게도, 분석 요약의 등급별 분포에는 "Grade 2: 0개, Grade 1: 0개, Grade 0: 0개"로 표기되어 있으나, **개별 이벤트의 상세 내용(최대 감소율 > 75%, 등급: Critical)을 고려할 때, 모든 폐색 이벤트는 Grade 2(완전 폐쇄, >75% 감소)에 해당합니다.**<br><br>*   **OTE (Oropharyngeal Tongue Base / Epiglottis) 영역:**<br>    *   **이벤트 #1:**<br>        *   부위: OTE<br>        *   등급: Critical (-> **Grade 2, 완전 폐쇄**)<br>        *   시간: 2.0s ~ 12.0s (지속시간: 10.0s)<br>        *   최대 감소율: **82.7%**<br>        *   해석: OTE 영역에서 10초간 지속된 심각한 완전 폐쇄가 관찰되었습니다. 이는 혀 기저부 또는 후두개 부위의 후방 이동에 의한 기도 협착 또는 폐쇄를 강력히 시사합니다.<br><br>*   **Velum (연구개) 영역:**<br>    *   **이벤트 #2:**<br>        *   부위: Velum<br>        *   등급: Critical (-> **Grade 2, 완전 폐쇄**)<br>        *   시간: 13.0s ~ 21.0s (지속시간: 8.0s)<br>        *   최대 감소율: **99.0%**<br>        *   해석: Velum 영역에서 8초간 지속된 거의 완전 폐쇄에 가까운(99.0%) 매우 심각한 폐쇄가 확인되었습니다. 이는 연구개의 후방 및 측방 허탈(collapse)이 주요 원인으로 작용할 가능성이 높습니다.<br>    *   **이벤트 #3:**<br>        *   부위: Velum<br>        *   등급: Critical (-> **Grade 2, 완전 폐쇄**)<br>        *   시간: 23.0s ~ 25.0s (지속시간: 2.0s)<br>        *   최대 감소율: **93.8%**<br>        *   해석: Velum 영역에서 비교적 짧지만 역시 완전 폐쇄(93.8%)에 해당하는 심각한 폐쇄가 다시 관찰되었습니다. Velum 영역은 반복적이고 심한 완전 폐쇄를 보이는 취약 부위임을 시사합니다.<br><br>**3. Grade 2 (완전 폐쇄) 발생 빈도 및 지속시간에 대한 임상적 해석**<br>본 환자의 DISE에서 감지된 **모든 3개의 폐색 이벤트가 Grade 2(완전 폐쇄, >75% 기도 감소)**에 해당하며, 이는 환자의 수면 중 상기도가 극도로 불안정하며 대부분의 폐쇄가 심각한 형태로 나타남을 의미합니다.<br><br>*   **높은 완전 폐쇄 빈도:** 전체 폐색 이벤트가 완전 폐쇄로만 구성되어 있다는 점은 환자의 OSA가 해부학적으로 매우 심각한 수준임을 반영합니다. 이는 AHI 32.6의 중증도를 뒷받침하는 소견입니다.<br>*   **긴 지속 시간:** OTE 영역에서 10.0초, Velum 영역에서 8.0초의 긴 지속 시간을 가진 완전 폐쇄가 관찰되었습니다. 이러한 장시간의 완전 폐쇄는 수면 중 심각한 산소포화도 저하(desaturation)와 수면 단편화를 유발하여 주간 졸림, 피로감 등의 증상뿐만 아니라 고혈압, 심혈관 질환 등 OSA 관련 합병증 발생 위험을 현저히 증가시킬 수 있습니다.<br>*   **99%의 최대 감소율:** Velum 영역의 이벤트 #2에서 관찰된 99.0%의 최대 감소율은 사실상 100%에 가까운 완전 폐쇄를 의미하며, 해당 부위의 근육 긴장도 저하 및 해부학적 구조의 허탈 정도가 매우 심각함을 시사합니다.<br><br>**4. 종합 평가 및 치료 제안**<br><br>**종합 평가:**<br>본 환자는 DISE 결과, OTE(혀 기저부/후두개) 및 Velum(연구개) 영역 모두에서 Grade 2(완전 폐쇄)가 관찰되는 **다단계(Multilevel) 폐쇄성 수면 무호흡증** 양상을 보입니다. 특히 Velum 영역에서는 반복적이고 거의 완전한 폐쇄가 두드러지며, OTE 영역에서도 장시간의 완전 폐쇄가 확인되어 심각한 상기도 폐쇄를 유발하고 있습니다. 이는 AHI 32.6으로 진단된 중증 OSA의 병태생리를 명확히 설명해 줍니다.<br><br>**치료 제안:**<br><br>1.  **일차 치료 및 비수술적 접근:**<br>    *   **지속형 양압기 (CPAP):** 현재 중증 OSA의 일차 치료법인 CPAP 치료에 대한 환자의 순응도를 최우선으로 평가하고, 적극적인 사용을 권장합니다. CPAP 순응이 어려운 경우 다른 치료 옵션을 고려할 수 있습니다.<br>    *   **생활 습관 개선:** 체중 감량(필요시), 금주, 금연, 수면 자세 교정(측와위) 등 일반적인 생활 습관 개선을 교육합니다.<br><br>2.  **수술적 치료 고려 (CPAP 실패 또는 거부 시):**<br>    환자의 다단계 폐쇄 패턴을 고려할 때, 단일 부위 수술보다는 다단계 접근이 필요할 가능성이 높습니다.<br><br>    *   **Velum(연구개) 영역:**<br>        *   **연구개 성형술 (Uvulopalatopharyngoplasty, UPPP) 또는 변형 UPPP:** 연구개 후방 허탈을 개선하기 위해 고려할 수 있습니다. 특히 99%의 감소율을 보인 만큼, 연구개 수술의 효과가 클 것으로 예상됩니다.<br>        *   **연구개 전진술 (Palatal advancement) 또는 강직술 (Palatal stiffening):** 연구개의 전방 이동 또는 안정화를 통해 기도를 확보하는 방법도 고려할 수 있습니다.<br><br>    *   **OTE(혀 기저부/후두개) 영역:**<br>        *   **혀 기저부 축소술:** 고주파 설근부 축소술(Radiofrequency Ablation of Tongue Base) 또는 부분 설근 절제술(Partial Glossectomy)을 통해 혀 기저부 부피를 줄여 기도를 확장합니다.<br>        *   **설골 전진술 (Hyoid Suspension):** 설골을 전방으로 이동시켜 혀 기저부와 후두개 사이의 기도를 넓히는 수술을 고려할 수 있습니다.<br>        *   **후두개 성형술 (Epiglottoplasty):** 후두개 허탈이 명확한 경우 후두개 일부를 절제하거나 고정하여 기도를 확보합니다.<br><br>    *   **악안면 전진술 (Maxillomandibular Advancement, MMA):** 광범위한 다단계 폐쇄에 대해 가장 효과적인 수술로 알려져 있으며, 상악골과 하악골을 동시에 전방으로 이동시켜 상기도 전체를 확장합니다. 침습적인 수술이므로 환자와의 충분한 상담이 필수적입니다.<br><br>3.  **지속적인 평가 및 추적 관찰:**<br>    어떤 치료법을 선택하든, 치료 후 객관적인 AHI 재평가 및 증상 개선 여부를 확인하는 것이 중요합니다. 치료에도 불구하고 잔존 폐쇄가 있거나 증상 개선이 미미할 경우, 치료 전략 재검토가 필요합니다.<br><br>---<br><br>**결론:**<br>본 환자의 DISE 소견은 중증 OSA 환자에서 관찰되는 전형적인 다단계 완전 폐쇄 양상으로, OTE 및 Velum 영역 모두에서 심각한 기도 허탈을 보였습니다. 이는 적극적인 치료 계획 수립에 중요한 정보를 제공하며, CPAP 순응이 어렵거나 수술적 치료를 고려할 경우 다단계 접근을 통한 상기도 재건이 필요할 것으로 사료됩니다.<br><br>**판독 의사:** [이비인후과 전문의 서명]<br>**판독일:** [오늘 날짜]
+                </div>
+            </div>
+
+            <div class="lg:col-span-1 flex flex-col gap-4">
+                <div class="card p-6 h-full">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Reference Anatomy</h3>
+                    <div class='grid grid-cols-1 gap-4'>
+                    <div class="relative group rounded-2xl overflow-hidden border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                        <div class="absolute top-3 left-3 bg-sky-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm z-10">OTE</div>
+                        <div class="w-full aspect-[4/3] bg-slate-100">
+                            <img src="overlays/reference_OTE.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <div class="bg-white p-2 border-t border-slate-50 text-right">
+                             <span class="text-xs font-bold text-slate-700">296610 px²</span>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-2xl overflow-hidden border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                        <div class="absolute top-3 left-3 bg-purple-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm z-10">Velum</div>
+                        <div class="w-full aspect-[4/3] bg-slate-100">
+                            <img src="overlays/reference_Velum.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <div class="bg-white p-2 border-t border-slate-50 text-right">
+                             <span class="text-xs font-bold text-slate-700">414401 px²</span>
+                        </div>
+                    </div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 card p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="font-bold text-slate-800 text-lg">Timeline Analysis</h3>
+                    <span class="text-xs font-mono bg-slate-100 px-2 py-1 rounded text-slate-500">Interactive Plot</span>
+                </div>
+                <img src="timeline.png" class="w-full rounded-xl border border-slate-100 shadow-sm">
+                <div class="mt-4 p-4 bg-slate-50 rounded-xl border border-slate-100 flex gap-3 items-start">
+                    <i class="fas fa-info-circle text-indigo-500 mt-0.5"></i>
+                    <p class="text-xs text-slate-600 leading-relaxed"><strong>Interpretation:</strong> 환자는 영상 2.0초부터 25.0초까지 OTE와 Velum 부위에서 최대 82.7%에서 99.0%에 이르는 심한 폐쇄(Visual Occlusion 등급 기준으로 모두 Grade 2: 완전 폐쇄)가 지속적으로 관찰되었습니다.</p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-1 card p-6 flex flex-col">
+                <h3 class="font-bold text-slate-800 text-lg mb-6">Severity Distribution</h3>
+                <div class="flex-1 flex items-center justify-center p-4 bg-slate-50 rounded-xl border border-slate-100 border-dashed">
+                    <img src="severity_chart.png" class="max-h-[250px] object-contain">
+                </div>
+                 <div class="mt-4 p-4 bg-slate-50 rounded-xl border border-slate-100 flex gap-3 items-start">
+                    <i class="fas fa-chart-pie text-orange-500 mt-0.5"></i>
+                    <p class="text-xs text-slate-600 leading-relaxed"><strong>Interpretation:</strong> 제공된 등급별 분포에는 0으로 표시되어 있으나, 감지된 3개의 모든 폐색 이벤트가 최대 82.7%에서 99.0%에 이르는 'Critical' 수준의 Grade 2(완전 폐쇄)로 분류되어 전체적인 폐쇄 심각도가 매우 높음을 시사합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card overflow-hidden">
+            <div class="px-8 py-6 border-b border-slate-100 flex justify-between items-center bg-white">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center text-rose-500">
+                        <i class="fas fa-list-ul"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800">Event Logs</h3>
+                </div>
+                <div class="flex gap-2">
+                     <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-bold text-slate-600 border border-slate-200">3 Events Detected</span>
+                </div>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50/50 border-b border-slate-100 text-xs uppercase text-slate-400 font-bold tracking-wider">
+                            <th class="px-8 py-4">Severity Grade</th>
+                            <th class="px-6 py-4">Anatomy</th>
+                            <th class="px-6 py-4">Timestamp</th>
+                            <th class="px-6 py-4">Duration</th>
+                            <th class="px-6 py-4">Max Reduction</th>
+                            <th class="px-6 py-4 text-center">Replay</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-50 text-sm">
+        
+                <tr onclick="playVideo('event_clips/event_01_OTE_Critical.mp4', 'Critical - OTE')" class="hover-row-g0 transition-colors cursor-pointer group">
+                    <td class="px-8 py-4">
+                        <span class="badge badge-g0">Critical</span>
+                    </td>
+                    <td class="px-6 py-4 font-bold text-slate-700">OTE</td>
+                    <td class="px-6 py-4 text-slate-500 font-mono text-xs">
+                        <i class="far fa-clock mr-1 opacity-50"></i>2.0s — 12.0s
+                    </td>
+                    <td class="px-6 py-4 text-slate-600 font-medium">10.0s</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-16 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-rose-500" style="width: 82.66477866558782%"></div>
+                            </div>
+                            <span class="font-bold text-rose-600 text-xs">83%</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <button class="w-8 h-8 rounded-full bg-white border border-slate-200 text-slate-400 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600 transition-all shadow-sm">
+                            <i class="fas fa-play text-[10px] pl-0.5"></i>
+                        </button>
+                    </td>
+                </tr>
+                
+                <tr onclick="playVideo('event_clips/event_02_Velum_Critical.mp4', 'Critical - Velum')" class="hover-row-g0 transition-colors cursor-pointer group">
+                    <td class="px-8 py-4">
+                        <span class="badge badge-g0">Critical</span>
+                    </td>
+                    <td class="px-6 py-4 font-bold text-slate-700">Velum</td>
+                    <td class="px-6 py-4 text-slate-500 font-mono text-xs">
+                        <i class="far fa-clock mr-1 opacity-50"></i>13.0s — 21.0s
+                    </td>
+                    <td class="px-6 py-4 text-slate-600 font-medium">8.0s</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-16 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-rose-500" style="width: 99.02558150197514%"></div>
+                            </div>
+                            <span class="font-bold text-rose-600 text-xs">99%</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <button class="w-8 h-8 rounded-full bg-white border border-slate-200 text-slate-400 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600 transition-all shadow-sm">
+                            <i class="fas fa-play text-[10px] pl-0.5"></i>
+                        </button>
+                    </td>
+                </tr>
+                
+                <tr onclick="playVideo('event_clips/event_03_Velum_Critical.mp4', 'Critical - Velum')" class="hover-row-g0 transition-colors cursor-pointer group">
+                    <td class="px-8 py-4">
+                        <span class="badge badge-g0">Critical</span>
+                    </td>
+                    <td class="px-6 py-4 font-bold text-slate-700">Velum</td>
+                    <td class="px-6 py-4 text-slate-500 font-mono text-xs">
+                        <i class="far fa-clock mr-1 opacity-50"></i>23.0s — 25.0s
+                    </td>
+                    <td class="px-6 py-4 text-slate-600 font-medium">2.0s</td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-16 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-rose-500" style="width: 93.82795890936558%"></div>
+                            </div>
+                            <span class="font-bold text-rose-600 text-xs">94%</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <button class="w-8 h-8 rounded-full bg-white border border-slate-200 text-slate-400 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600 transition-all shadow-sm">
+                            <i class="fas fa-play text-[10px] pl-0.5"></i>
+                        </button>
+                    </td>
+                </tr>
+                
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        
+        <button id="chatToggleBtn" onclick="toggleChat()" class="fixed bottom-8 right-8 w-14 h-14 bg-indigo-600 text-white rounded-full shadow-[0_8px_30px_rgb(79,70,229,0.4)] flex items-center justify-center hover:scale-110 hover:bg-indigo-700 transition-all z-50 group">
+            <i class="fas fa-comment-medical text-xl group-hover:animate-pulse"></i>
+        </button>
+
+        <div id="chatWindow" class="fixed bottom-24 right-8 w-[380px] h-[600px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col z-50 hidden origin-bottom-right">
+            <div class="p-4 border-b border-slate-100 flex justify-between items-center bg-white rounded-t-2xl">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-white text-xs shadow-md">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-slate-800">AI Medical Assistant</h4>
+                        <p class="text-[10px] text-green-500 font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Online</p>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="w-8 h-8 rounded-full hover:bg-slate-50 text-slate-400 flex items-center justify-center transition"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div id="chatContainer" class="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50">
+                <div class="flex gap-3">
+                    <div class="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-robot text-indigo-500 text-xs"></i>
+                    </div>
+                    <div class="bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none text-sm text-slate-600 shadow-sm max-w-[85%]">
+                        안녕하세요! 분석 결과에 대해 궁금한 점을 질문해주세요.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-4 bg-white border-t border-slate-100 rounded-b-2xl">
+                <div class="flex gap-2 mb-3 overflow-x-auto no-scrollbar pb-1">
+                    <button onclick="setQ('가장 심각한 이벤트 요약해줘')" class="whitespace-nowrap px-3 py-1.5 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full hover:bg-indigo-100 border border-indigo-100 transition">심각한 구간?</button>
+                    <button onclick="setQ('치료 권고사항은?')" class="whitespace-nowrap px-3 py-1.5 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full hover:bg-indigo-100 border border-indigo-100 transition">치료 제안</button>
+                    <button onclick="setQ('이벤트 횟수는 몇 번인가요?')" class="whitespace-nowrap px-3 py-1.5 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full hover:bg-indigo-100 border border-indigo-100 transition">이벤트 횟수</button>
+                </div>
+                <div class="relative">
+                    <input type="text" id="vqaQuestion" class="w-full pl-4 pr-12 py-3 bg-slate-100 border-none rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all outline-none" placeholder="Type your question..." onkeypress="if(event.key==='Enter') askAI()">
+                    <button onclick="askAI()" class="absolute right-2 top-2 w-8 h-8 bg-indigo-600 text-white rounded-lg flex items-center justify-center hover:bg-indigo-700 shadow-sm transition">
+                        <i class="fas fa-paper-plane text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+
+        <div id="videoModal" class="fixed inset-0 z-[100] hidden" onclick="closeModal()">
+            <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity"></div>
+            <div class="fixed inset-0 flex items-center justify-center p-4">
+                <div class="bg-black rounded-2xl overflow-hidden max-w-5xl w-full relative shadow-2xl border border-white/10" onclick="event.stopPropagation()">
+                    <div class="bg-gradient-to-r from-slate-900 to-slate-800 px-6 py-4 flex justify-between items-center border-b border-white/10">
+                        <h3 class="text-white font-bold flex items-center gap-2" id="modalTitle">
+                            <i class="fas fa-play-circle text-indigo-400"></i> Event Replay
+                        </h3>
+                        <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-white/10 text-white hover:bg-white/20 flex items-center justify-center transition"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="aspect-video bg-black flex items-center justify-center">
+                        <video id="player" controls class="w-full h-full"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        const videoStem = "plus";  // ✅ 이건 Python 변수니까 { 없이
+        let history = [];
+        let chatOpen = false;
+        
+        // typing indicator 스타일 추가
+        (function() {
+            const style = document.createElement('style');
+            // f-string 이스케이프: CSS 중괄호는 두 개씩 { }
+            style.textContent = `
+                @keyframes blink {
+                    0%, 100% { opacity: 0.2; }
+                    50% { opacity: 1; }
+                }
+                .typing-dots span {
+                    display: inline-block;
+                    width: 6px;
+                    height: 6px;
+                    margin-right: 4px;
+                    background: #0ea5e9;
+                    border-radius: 9999px;
+                    animation: blink 1s infinite;
+                }
+                .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+                .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+            `;
+            document.head.appendChild(style);
+        })();
+        
+        function toggleChat() {
+            const win = document.getElementById('chatWindow');
+            chatOpen = !chatOpen;
+            if(chatOpen) {
+                win.classList.remove('hidden');
+                win.classList.add('chat-slide-enter');
+                win.classList.remove('chat-slide-exit');
+                setTimeout(() => document.getElementById('vqaQuestion').focus(), 300);
+            } else {
+                win.classList.add('chat-slide-exit');
+                win.classList.remove('chat-slide-enter');
+                setTimeout(() => win.classList.add('hidden'), 280);
+            }
+        }
+        
+        function setQ(text) { 
+            const input = document.getElementById('vqaQuestion');
+            input.value = text;
+            input.focus();
+        }
+        
+        async function askAI() {
+            const input = document.getElementById('vqaQuestion');
+            const q = input.value.trim();
+            if(!q) return;
+            
+            const cont = document.getElementById('chatContainer');
+            // User Message (pulse 제거)
+            cont.innerHTML += `
+                <div class="flex items-end gap-2 justify-end">
+                    <div class="bg-indigo-600 text-white p-3 rounded-2xl rounded-tr-none text-sm max-w-[85%] shadow-md">
+                        ${q}
+                    </div>
+                </div>`;
+            
+            input.value = '';
+            input.disabled = true;
+            cont.scrollTop = cont.scrollHeight;
+            
+            history.push({'role':'user', 'content':q});
+            
+            // 타이핑 인디케이터 추가
+            const loadingId = "typing-" + Date.now();
+            cont.innerHTML += `
+                <div id="${loadingId}" class="flex items-start gap-3 mt-2">
+                    <div class="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <i class="fas fa-robot text-emerald-500 text-xs"></i>
+                    </div>
+                    <div class="bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none text-sm text-slate-700 shadow-sm max-w-[85%] leading-relaxed">
+                        <div class="typing-dots flex items-center gap-1">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>`;
+            cont.scrollTop = cont.scrollHeight;
+            
+            try {
+                const res = await fetch('/api/vqa', {
+                    method:'POST', headers:{'Content-Type':'application/json'},
+                    body: JSON.stringify({question:q, video_stem:videoStem, conversation_history:history.slice(0,-1)})
+                });
+                const data = await res.json();
+                const ans = data.success ? data.answer : "Error: " + data.error;
+                
+                // 타이핑 인디케이터 제거
+                const loadingEl = document.getElementById(loadingId);
+                if(loadingEl) loadingEl.remove();
+                
+                // Bot Message
+                cont.innerHTML += `
+                    <div class="flex items-start gap-3 mt-2">
+                        <div class="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 shadow-sm">
+                            <i class="fas fa-robot text-emerald-500 text-xs"></i>
+                        </div>
+                        <div class="bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none text-sm text-slate-700 shadow-sm max-w-[85%] leading-relaxed">
+                            ${ans}
+                        </div>
+                    </div>`;
+                    
+                history.push({'role':'assistant', 'content':ans});
+            } catch(e) {
+                cont.innerHTML += `<div class="text-center my-2"><span class="bg-red-50 text-red-500 text-xs px-2 py-1 rounded">Network Error</span></div>`;
+            } finally {
+                input.disabled = false;
+                input.focus();
+                cont.scrollTop = cont.scrollHeight;
+            }
+        }
+        
+        function playVideo(src, title) {
+            const m = document.getElementById('videoModal');
+            const p = document.getElementById('player');
+            const t = document.getElementById('modalTitle');
+            
+            p.src = src;
+            t.innerHTML = `<i class="fas fa-play-circle text-indigo-400"></i> ${title}`;
+            m.classList.remove('hidden');
+            p.play();
+        }
+        
+        function closeModal() {
+            document.getElementById('videoModal').classList.add('hidden');
+            const p = document.getElementById('player');
+            p.pause();
+            p.src = '';
+        }
+    </script>
+</body>
+</html>

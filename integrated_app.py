@@ -8,8 +8,8 @@ import cv2
 import numpy as np
 from dotenv import load_dotenv
 
-# .env 파일 로드
-load_dotenv()
+# .env 파일 로드 (기존 환경 변수가 있어도 .env 파일의 값으로 덮어쓰기)
+load_dotenv(override=True)
 
 # 통합 분석기 import
 sys.path.append(str(Path(__file__).parent))
@@ -21,7 +21,17 @@ app.config['MAX_CONTENT_LENGTH'] = 500 * 1024 * 1024
 app.config['UPLOAD_FOLDER'] = Path('uploads')
 app.config['OUTPUT_FOLDER'] = Path('outputs')
 app.config['MODEL_PATH'] = Path('ote_velum_classification_final/checkpoints/best_model.pth')
-app.config['GEMINI_API_KEY'] = os.getenv('GEMINI_API_KEY', '') 
+
+# Gemini API Key 로드
+gemini_api_key = os.getenv('GEMINI_API_KEY', '').strip()
+print(f"🔑 GEMINI_API_KEY: {gemini_api_key}") 
+if not gemini_api_key:
+    print("⚠️ 경고: GEMINI_API_KEY가 환경 변수에서 로드되지 않았습니다.")
+    print("   .env 파일을 확인하거나 환경 변수를 설정해주세요.")
+    print("   .env 파일 예시: GEMINI_API_KEY=your_api_key_here")
+else:
+    print(f"✅ GEMINI_API_KEY 로드 완료 (길이: {len(gemini_api_key)}자, 시작: {gemini_api_key[:10]}...)")
+app.config['GEMINI_API_KEY'] = gemini_api_key 
 
 app.config['UPLOAD_FOLDER'].mkdir(exist_ok=True)
 app.config['OUTPUT_FOLDER'].mkdir(exist_ok=True)
