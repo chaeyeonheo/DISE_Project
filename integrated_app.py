@@ -195,17 +195,29 @@ def analyze_video():
             }), 500
         
         # 분석 실행 - manual_max_area 포함
-        analyzer = IntegratedDISEAnalyzer(
-            model_path=str(model_path),
-            fps_extract=fps_extract,
-            threshold_percent=threshold_percent,
-            min_event_duration=min_event_duration,
-            manual_max_area=manual_max_area  # ✅ 추가!
-        )
-        
-        output_dir = app.config['OUTPUT_FOLDER'] / Path(filename).stem
-        
-        results = analyzer.analyze_video(str(video_path), output_dir=str(output_dir))
+        try:
+            analyzer = IntegratedDISEAnalyzer(
+                model_path=str(model_path),
+                fps_extract=fps_extract,
+                threshold_percent=threshold_percent,
+                min_event_duration=min_event_duration,
+                manual_max_area=manual_max_area  # ✅ 추가!
+            )
+            
+            output_dir = app.config['OUTPUT_FOLDER'] / Path(filename).stem
+            
+            print(f"📹 비디오 분석 시작: {filename}")
+            results = analyzer.analyze_video(str(video_path), output_dir=str(output_dir))
+            print(f"✅ 비디오 분석 완료: {filename}")
+        except Exception as e:
+            import traceback
+            error_trace = traceback.format_exc()
+            print(f"❌ 비디오 분석 중 오류 발생: {e}")
+            print(f"상세 오류:\n{error_trace}")
+            return jsonify({
+                'error': f'비디오 분석 실패: {str(e)}',
+                'details': '서버 로그를 확인해주세요.'
+            }), 500
         
         results['patient_info'] = patient_info
         
@@ -214,8 +226,23 @@ def analyze_video():
             results['manual_ref_image'] = str(manual_ref_path)
 
         # 보고서 생성
-        report_gen = IntegratedReportGenerator(results, api_key=app.config['GEMINI_API_KEY'])
-        report_gen.generate_report(output_dir)
+        try:
+            print(f"📄 보고서 생성 시작: {Path(filename).stem}")
+            report_gen = IntegratedReportGenerator(results, api_key=app.config['GEMINI_API_KEY'])
+            report_gen.generate_report(output_dir)
+            print(f"✅ 보고서 생성 완료: {Path(filename).stem}")
+        except Exception as e:
+            import traceback
+            error_trace = traceback.format_exc()
+            print(f"⚠️ 보고서 생성 중 오류 발생: {e}")
+            print(f"상세 오류:\n{error_trace}")
+            # 보고서 생성 실패해도 분석 결과는 반환
+            return jsonify({
+                'success': True,
+                'warning': f'보고서 생성 실패: {str(e)}',
+                'report_url': None,
+                'results': results
+            }), 200
         
         return jsonify({
             'success': True,
