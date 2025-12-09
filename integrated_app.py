@@ -62,7 +62,7 @@ def ensure_model_exists():
             print("   Google Drive 공유 설정을 확인해주세요:")
             print("   1. 파일 우클릭 → '링크 가져오기'")
             print("   2. '링크가 있는 모든 사용자'로 변경")
-            print("   3. 파일 ID 확인: 1pH9VUsm0sxsdV94ZSNRU5SNFEQbFkgUx")
+            print("   3. 파일 ID 확인: 161GXpszELcLSc6ACP1Uzdpz26a8jXYDK")
 
 # 앱 시작 시 모델 파일 확인
 ensure_model_exists()

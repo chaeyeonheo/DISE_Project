@@ -19,7 +19,7 @@ except ImportError:
     print("⚠️ gdown 라이브러리가 없습니다. 기본 방법을 사용합니다.")
 
 # Google Drive 파일 ID
-GOOGLE_DRIVE_FILE_ID = "1pH9VUsm0sxsdV94ZSNRU5SNFEQbFkgUx"
+GOOGLE_DRIVE_FILE_ID = "161GXpszELcLSc6ACP1Uzdpz26a8jXYDK"
 MODEL_DIR = Path("ote_velum_classification_final/checkpoints")
 MODEL_PATH = MODEL_DIR / "best_model.pth"
 
