@@ -54,6 +54,15 @@ def ensure_model_exists():
     else:
         file_size = model_path.stat().st_size / (1024 * 1024)  # MB
         print(f"✅ 모델 파일 확인: {model_path} ({file_size:.2f} MB)")
+        
+        # 모델 파일 크기 검증
+        if file_size < 1.0:  # 1MB 미만이면 문제
+            print(f"⚠️ 경고: 모델 파일 크기가 비정상적입니다 ({file_size:.2f} MB)")
+            print("   Google Drive에서 제대로 다운로드되지 않았을 수 있습니다.")
+            print("   Google Drive 공유 설정을 확인해주세요:")
+            print("   1. 파일 우클릭 → '링크 가져오기'")
+            print("   2. '링크가 있는 모든 사용자'로 변경")
+            print("   3. 파일 ID 확인: 1pH9VUsm0sxsdV94ZSNRU5SNFEQbFkgUx")
 
 # 앱 시작 시 모델 파일 확인
 ensure_model_exists()
@@ -173,9 +182,21 @@ def analyze_video():
                 else:
                     print(f"⚠️ Failed to calculate manual max_area, will use auto-detection")
 
+        # 모델 파일 존재 및 크기 확인
+        model_path = app.config['MODEL_PATH']
+        if not model_path.exists():
+            return jsonify({'error': '모델 파일을 찾을 수 없습니다. 서버 로그를 확인해주세요.'}), 500
+        
+        model_size_mb = model_path.stat().st_size / (1024 * 1024)
+        if model_size_mb < 1.0:  # 1MB 미만이면 문제
+            return jsonify({
+                'error': f'모델 파일이 손상되었습니다. 크기: {model_size_mb:.2f} MB (예상: 수백 MB)',
+                'debug': 'Google Drive에서 모델 파일이 제대로 다운로드되지 않았을 수 있습니다.'
+            }), 500
+        
         # 분석 실행 - manual_max_area 포함
         analyzer = IntegratedDISEAnalyzer(
-            model_path=str(app.config['MODEL_PATH']),
+            model_path=str(model_path),
             fps_extract=fps_extract,
             threshold_percent=threshold_percent,
             min_event_duration=min_event_duration,

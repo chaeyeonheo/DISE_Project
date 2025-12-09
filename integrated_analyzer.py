@@ -65,7 +65,8 @@ class IntegratedDISEAnalyzer:
     
     def _load_classification_model(self, model_path):
         model = create_model('resnet50', num_classes=3, pretrained=False)
-        checkpoint = torch.load(model_path, map_location=self.device)
+        # PyTorch 2.6+ 호환성: weights_only=False 명시
+        checkpoint = torch.load(model_path, map_location=self.device, weights_only=False)
         model.load_state_dict(checkpoint['model_state_dict'])
         model = model.to(self.device)
         model.eval()

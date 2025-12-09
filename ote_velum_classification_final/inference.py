@@ -23,8 +23,8 @@ class FrameClassifierInference:
         self.device = torch.device(device if torch.cuda.is_available() else 'cpu')
         self.img_size = img_size
         
-        # 모델 로드
-        checkpoint = torch.load(model_path, map_location=self.device)
+        # 모델 로드 (PyTorch 2.6+ 호환성)
+        checkpoint = torch.load(model_path, map_location=self.device, weights_only=False)
         config = checkpoint.get('config', {})
         
         self.model = create_model(

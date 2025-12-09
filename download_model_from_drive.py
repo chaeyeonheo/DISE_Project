@@ -19,7 +19,7 @@ except ImportError:
     print("⚠️ gdown 라이브러리가 없습니다. 기본 방법을 사용합니다.")
 
 # Google Drive 파일 ID
-GOOGLE_DRIVE_FILE_ID = "161GXpszELcLSc6ACP1Uzdpz26a8jXYDK"
+GOOGLE_DRIVE_FILE_ID = "1pH9VUsm0sxsdV94ZSNRU5SNFEQbFkgUx"
 MODEL_DIR = Path("ote_velum_classification_final/checkpoints")
 MODEL_PATH = MODEL_DIR / "best_model.pth"
 
@@ -128,11 +128,22 @@ def main():
         if HAS_GDOWN:
             print("📥 gdown을 사용하여 Google Drive에서 모델 다운로드...")
             url = f"https://drive.google.com/uc?id={GOOGLE_DRIVE_FILE_ID}"
-            gdown.download(url, str(MODEL_PATH), quiet=False)
+            
+            try:
+                gdown.download(url, str(MODEL_PATH), quiet=False, fuzzy=True)
+            except Exception as e:
+                print(f"⚠️ gdown 다운로드 실패: {e}")
+                print("   기본 방법으로 재시도...")
+                download_file_from_google_drive(GOOGLE_DRIVE_FILE_ID, MODEL_PATH)
             
             if MODEL_PATH.exists():
                 file_size = MODEL_PATH.stat().st_size / (1024 * 1024)  # MB
                 if file_size < 1.0:  # 1MB 미만이면 문제
+                    print(f"❌ 다운로드된 파일 크기가 비정상적입니다: {file_size:.2f} MB")
+                    print("   Google Drive 공유 설정을 확인해주세요:")
+                    print("   1. 파일 우클릭 → '링크 가져오기'")
+                    print("   2. '링크가 있는 모든 사용자'로 변경")
+                    print("   3. 파일이 실제로 공유되어 있는지 확인")
                     raise ValueError(f"다운로드된 파일 크기가 비정상적입니다: {file_size:.2f} MB")
                 print(f"✅ 모델 다운로드 완료: {file_size:.2f} MB")
             else:
