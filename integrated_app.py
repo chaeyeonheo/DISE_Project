@@ -288,4 +288,6 @@ if __name__ == '__main__':
     
     # ✅ use_reloader=False로 설정하여 자동 재시작 방지
     # 개발 중에는 debug=False로 설정
-    app.run(debug=False, host='0.0.0.0', port=5000, use_reloader=False)
+    # 배포 환경에서는 PORT 환경 변수 사용 (Render, Heroku 등)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=False, host='0.0.0.0', port=port, use_reloader=False)

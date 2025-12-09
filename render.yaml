@@ -1,0 +1,19 @@
+# Render 배포 설정 파일 (선택사항)
+# 이 파일이 있으면 Render에서 자동으로 설정을 인식합니다
+
+services:
+  - type: web
+    name: dise-analyzer
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn integrated_app:app
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false  # 수동으로 설정해야 함
+      - key: PYTHONUNBUFFERED
+        value: 1
+    disk:
+      name: outputs
+      mountPath: /opt/render/project/src/outputs
+      sizeGB: 1
+
