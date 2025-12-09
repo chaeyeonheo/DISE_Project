@@ -11,6 +11,9 @@ from dotenv import load_dotenv
 # .env 파일 로드 (기존 환경 변수가 있어도 .env 파일의 값으로 덮어쓰기)
 load_dotenv(override=True)
 
+# Matplotlib 폰트 캐시 빌드 방지 (앱 시작 시 느려지는 것 방지)
+os.environ['MPLCONFIGDIR'] = '/tmp/matplotlib'  # 임시 디렉토리 사용
+
 # 통합 분석기 import
 sys.path.append(str(Path(__file__).parent))
 from integrated_analyzer import IntegratedDISEAnalyzer

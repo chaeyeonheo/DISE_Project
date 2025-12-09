@@ -4,14 +4,20 @@
 
 from pathlib import Path
 from datetime import datetime
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
 import json
 import shutil
 import google.generativeai as genai
-import matplotlib.ticker as ticker
 import numpy as np
+
+# Matplotlib는 필요할 때만 import (지연 로딩)
+# 앱 시작 시 폰트 캐시 빌드를 방지하기 위해
+def _import_matplotlib():
+    """Matplotlib를 필요할 때만 import"""
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    import matplotlib.ticker as ticker
+    return plt, ticker
 
 class IntegratedReportGenerator:
     def __init__(self, results, api_key=None):
@@ -141,6 +147,9 @@ class IntegratedReportGenerator:
 
     # ===================== 차트 디자인 업그레이드 =====================
     def generate_timeline_chart(self, output_dir):
+        # Matplotlib 지연 로딩 (앱 시작 시 폰트 캐시 빌드 방지)
+        plt, _ = _import_matplotlib()
+        
         # 스타일 설정
         plt.style.use('seaborn-v0_8-whitegrid')
         fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(18, 10), gridspec_kw={'height_ratios': [4, 1]}, sharex=True)
@@ -189,6 +198,9 @@ class IntegratedReportGenerator:
         plt.close()
 
     def generate_severity_chart(self, output_dir):
+        # Matplotlib 지연 로딩 (앱 시작 시 폰트 캐시 빌드 방지)
+        plt, _ = _import_matplotlib()
+        
         plt.style.use('seaborn-v0_8-whitegrid')
         fig, ax = plt.subplots(figsize=(10, 6))
         fig.patch.set_facecolor('white')
