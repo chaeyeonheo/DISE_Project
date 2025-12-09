@@ -22,6 +22,39 @@ app.config['UPLOAD_FOLDER'] = Path('uploads')
 app.config['OUTPUT_FOLDER'] = Path('outputs')
 app.config['MODEL_PATH'] = Path('ote_velum_classification_final/checkpoints/best_model.pth')
 
+# 모델 파일 자동 다운로드 (배포 환경에서)
+def ensure_model_exists():
+    """모델 파일이 없으면 Google Drive에서 자동 다운로드"""
+    model_path = app.config['MODEL_PATH']
+    
+    if not model_path.exists():
+        print("⚠️ 모델 파일이 없습니다. Google Drive에서 다운로드를 시도합니다...")
+        try:
+            # download_model_from_drive.py 스크립트 실행
+            import subprocess
+            script_path = Path(__file__).parent / 'download_model_from_drive.py'
+            result = subprocess.run(
+                [sys.executable, str(script_path)],
+                capture_output=True,
+                text=True,
+                timeout=600  # 10분 타임아웃
+            )
+            
+            if result.returncode == 0:
+                print("✅ 모델 다운로드 완료")
+            else:
+                print(f"❌ 모델 다운로드 실패: {result.stderr}")
+                print("   수동으로 다운로드하거나 모델 파일을 확인해주세요.")
+        except Exception as e:
+            print(f"❌ 모델 다운로드 중 오류: {e}")
+            print("   수동으로 다운로드하거나 모델 파일을 확인해주세요.")
+    else:
+        file_size = model_path.stat().st_size / (1024 * 1024)  # MB
+        print(f"✅ 모델 파일 확인: {model_path} ({file_size:.2f} MB)")
+
+# 앱 시작 시 모델 파일 확인
+ensure_model_exists()
+
 # Gemini API Key 로드
 gemini_api_key = os.getenv('GEMINI_API_KEY', '').strip()
 print(f"🔑 GEMINI_API_KEY: {gemini_api_key}") 

@@ -5,7 +5,9 @@ services:
   - type: web
     name: dise-analyzer
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      pip install -r requirements.txt &&
+      python download_model_from_drive.py
     startCommand: gunicorn integrated_app:app
     envVars:
       - key: GEMINI_API_KEY

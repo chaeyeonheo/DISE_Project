@@ -36,8 +36,10 @@ git push -u origin main
 
    **빌드 명령어:**
    ```
-   pip install -r requirements.txt
+   pip install -r requirements.txt && python download_model_from_drive.py
    ```
+   
+   > 💡 **설명**: 모델 파일을 Google Drive에서 자동으로 다운로드합니다.
 
    **시작 명령어 (중요!):**
    ```
