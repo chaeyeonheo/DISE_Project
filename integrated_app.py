@@ -69,13 +69,12 @@ ensure_model_exists()
 
 # Gemini API Key 로드
 gemini_api_key = os.getenv('GEMINI_API_KEY', '').strip()
-print(f"🔑 GEMINI_API_KEY: {gemini_api_key}") 
 if not gemini_api_key:
     print("⚠️ 경고: GEMINI_API_KEY가 환경 변수에서 로드되지 않았습니다.")
     print("   .env 파일을 확인하거나 환경 변수를 설정해주세요.")
     print("   .env 파일 예시: GEMINI_API_KEY=your_api_key_here")
 else:
-    print(f"✅ GEMINI_API_KEY 로드 완료 (길이: {len(gemini_api_key)}자, 시작: {gemini_api_key[:10]}...)")
+    print(f"✅ GEMINI_API_KEY 로드 완료 (길이: {len(gemini_api_key)}자)")
 app.config['GEMINI_API_KEY'] = gemini_api_key 
 
 app.config['UPLOAD_FOLDER'].mkdir(exist_ok=True)
